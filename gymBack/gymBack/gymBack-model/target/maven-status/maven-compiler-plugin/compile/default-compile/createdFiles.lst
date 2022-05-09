@@ -1,0 +1,3 @@
+org\example\model\core\dao\UserDao.class
+org\example\model\core\dao\UserRoleDao.class
+org\example\model\core\service\UserService.class
