@@ -1,4 +1,4 @@
-package org.example.api.core.service;
+package org.example.ws.core.rest;
 
 import org.example.api.core.service.IClientService;
 import org.springframework.beans.factory.annotation.Autowired;
