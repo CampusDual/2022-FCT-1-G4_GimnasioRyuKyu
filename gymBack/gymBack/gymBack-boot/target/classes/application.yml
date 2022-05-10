@@ -65,7 +65,7 @@ spring:
       driver-class-name: org.postgresql.Driver
       jdbc-url: jdbc:postgresql://45.84.210.174:65432/FCT_2022_G4
       username: FCT_2022_G4
-      password: FCTimatia.2022
+      password: FTCimatia.2022
       initial-size: 10
       test-on-borrow: true
    main:
