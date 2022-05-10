@@ -21,9 +21,3 @@ _
 /gymBack-model/src/main/db/templateDB.properties,1\e\1e1e8b3510d1e4459bf3c82655476a5fa32c31d9
 X
 (gymBack-model/src/main/db/templateDB.txt,3\7\376121220030668688c318b2bfe836d12c9572b3
-m
-=gymBack-boot/src/main/java/org/example/ServerApplication.java,7\3\73a2e3c0b46fefb4676c0e63c36cded443dffc05
-z
-JgymBack-api/src/main/java/org/example/api/core/service/IClientService.java,d\7\d71a2e3485457dc28c6d38465ab3a394ecab1306
-x
-HgymBack-api/src/main/java/org/example/api/core/service/IRoomService.java,5\f\5f6582bf3b869ef51c59a52fb6498abb77aefe6d
