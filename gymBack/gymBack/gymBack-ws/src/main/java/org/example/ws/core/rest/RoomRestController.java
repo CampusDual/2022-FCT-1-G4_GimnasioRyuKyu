@@ -1,22 +1,20 @@
 package org.example.ws.core.rest;
-
-import org.example.api.core.service.IClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.ontimize.gymBack.api.core.service.IRoomService;
 import com.ontimize.jee.server.rest.ORestController;
-
 @RestController
-@RequestMapping("/clients")
-public class ClientRestController extends ORestController<IClientService> {
+@RequestMapping("/rooms")
+public class RoomRestController {
 
     @Autowired
-    private IClientService clientService;
+    private IRoomService roomService;
 
     @Override
-    public IClientService getService() {
-        return this.clientService;
+    public IRoomService getService() {
+        return this.roomService;
     }
+
 }
