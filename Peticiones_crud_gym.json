@@ -1,21 +1,36 @@
 {
 	"info": {
-		"_postman_id": "08f40f2f-afe2-474b-85e4-23d0017c2f3f",
-		"name": "Ontimize Boot Training",
+		"_postman_id": "fd41dff7-8d9b-43cd-bc30-f8ddd2436219",
+		"name": "GYM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Candidates",
+			"name": "Clients",
 			"item": [
 				{
-					"name": "candidate -C",
+					"name": "client -C",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"PHONE\": \"555-444-8888\",\n        \"BIRTHDAY\": 788224700000,\n        \"SURNAME\": \"Wilson\",\n        \"EMAIL\": \"wwiilsoon@example.org\",\n        \"SPECIALTIES\": \"C#\",\n        \"NAME\": \"William\",\n        \"DNI\": \"88643946Z\"\n    },\n    \"sqltypes\": {\n        \"SPECIALTIES\": 12,\n        \"LINKEDIN\": 12,\n        \"PHONE\": 12,\n        \"EXPERIENCE_LEVEL\": 4,\n        \"STATUS\": 4,\n        \"EMAIL\": 12,\n        \"WAGE_LEVEL\": 2,\n        \"DNI\": 12,\n        \"ID\": 4,\n        \"ORIGIN\": 4,\n        \"EDUCATION\": 4,\n        \"COMMENT\": 12,\n        \"PROFILE\": 4,\n        \"SURNAME\": 12,\n        \"NAME\": 12,\n        \"BIRTHDAY\": 91\n    }\n}",
+							"raw": "{\r\n    \"data\": {\r\n            \"ACTIVE\": true,\r\n            \"LASTNAME\": \"Perez Romero\",\r\n            \"PHONE\": \"670223322\",\r\n            \"GENDER\": \"F\",\r\n            \"EMAIL\": \"mperezromero@gmail.com\",\r\n            \"DNI\": \"22113322D\",\r\n            \"BIRTHDAY\": 340066800000,\r\n            \"REGISTRATION_DATE\": 1652047200000,\r\n            \"NAME\": \"María\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n        \"ACTIVE\": -7,\r\n        \"PHONE\": 12,\r\n        \"EMAIL\": 12,\r\n        \"NAME\": 12,\r\n        \"LASTNAME\": 12,\r\n        \"GENDER\": 1,\r\n        \"ID\": 4,\r\n        \"DNI\": 12,\r\n        \"BIRTHDAY\": 91,\r\n        \"REGISTRATION_DATE\": 91\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,69 +38,62 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:33333/candidates/candidate",
+							"raw": "http://localhost:33333/clients/client",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "33333",
 							"path": [
-								"candidates",
-								"candidate"
+								"clients",
+								"client"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "candidate -C Non Related",
+					"name": "client -R",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"PHONE\": \"555-444-8888\",\n        \"BIRTHDAY\": 788224700000,\n        \"SURNAME\": \"Wilson\",\n        \"EMAIL\": \"wwiilsoon@example.org\",\n        \"SPECIALTIES\": \"C#\",\n        \"NAME\": \"William\",\n        \"DNI\": \"88643946Z\",\n        \"EDUCATION\": 1,\n        \"EXPERIENCE_LEVEL\": 1,\n        \"ORIGIN\": \"Event\",\n        \"PROFILE\": \"Administrator\",\n        \"STATUS\": 1\n    },\n    \"sqltypes\": {\n        \"SPECIALTIES\": 12,\n        \"LINKEDIN\": 12,\n        \"PHONE\": 12,\n        \"EMAIL\": 12,\n        \"WAGE_LEVEL\": 2,\n        \"DNI\": 12,\n        \"ID\": 4,\n        \"COMMENT\": 12,\n        \"SURNAME\": 12,\n        \"NAME\": 12,\n        \"BIRTHDAY\": 91\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
 								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:33333/candidates/candidate",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"candidates",
-								"candidate"
 							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "candidate -R",
-					"request": {
+						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:33333/candidates/candidate?columns=ID,NAME,SURNAME,BIRTHDAY,DNI,PHONE,EMAIL,EDUCATION,SPECIALTIES,STATUS,ORIGIN,WAGE_LEVEL,EXPERIENCE_LEVEL,PROFILE,COMMENT,LINKEDIN",
+							"raw": "http://localhost:33333/clients/client?columns=ID,NAME,LASTNAME,DNI,GENDER,BIRTHDAY,REGISTRATION_DATE,PHONE,EMAIL,ACTIVE",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "33333",
 							"path": [
-								"candidates",
-								"candidate"
+								"clients",
+								"client"
 							],
 							"query": [
 								{
 									"key": "columns",
-									"value": "ID,NAME,SURNAME,BIRTHDAY,DNI,PHONE,EMAIL,EDUCATION,SPECIALTIES,STATUS,ORIGIN,WAGE_LEVEL,EXPERIENCE_LEVEL,PROFILE,COMMENT,LINKEDIN"
+									"value": "ID,NAME,LASTNAME,DNI,GENDER,BIRTHDAY,REGISTRATION_DATE,PHONE,EMAIL,ACTIVE"
 								}
 							]
 						}
@@ -93,43 +101,13 @@
 					"response": []
 				},
 				{
-					"name": "candidate -R (complex)",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"filter\": {\n    \t\"ID\": 0\n    },\n    \"columns\": [\n        \"ID\",\n        \"NAME\",\n        \"SURNAME\",\n        \"BIRTHDAY\",\n        \"DNI\",\n        \"PHONE\",\n        \"EMAIL\",\n        \"EDUCATION\",\n        \"SPECIALTIES\",\n        \"STATUS\",\n        \"ORIGIN\",\n        \"WAGE_LEVEL\",\n        \"EXPERIENCE_LEVEL\",\n        \"PROFILE\",\n        \"COMMENT\",\n        \"LINKEDIN\"\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:33333/candidates/candidate/search",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"candidates",
-								"candidate",
-								"search"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "candidate -U",
+					"name": "client -U",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"filter\" :{\n\t\t\"ID\" :16\n\t},\n    \"data\": {\n        \"EMAIL\": \"wwilson@example.org\",\n        \"PROFILE\": \"Tester\"\n    },\n    \"sqltypes\": {\n        \"SPECIALTIES\": 12,\n        \"LINKEDIN\": 12,\n        \"PHONE\": 12,\n        \"EMAIL\": 12,\n        \"WAGE_LEVEL\": 2,\n        \"DNI\": 12,\n        \"ID\": 4,\n        \"COMMENT\": 12,\n        \"SURNAME\": 12,\n        \"NAME\": 12,\n        \"BIRTHDAY\": 91\n    }\n}",
+							"raw": "{\r\n    \"filter\": {\r\n        \"ID\": 1\r\n    },\r\n    \"data\": {\r\n        \"EMAIL\": \"rdiazromero@yahoo.es\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"PHONE\": 12,\r\n        \"DNI\": 12,\r\n        \"EMAIL\": 12,\r\n        \"REGISTRATION_DATE\": 2,\r\n        \"ID\": 4,\r\n        \"LASTNAME\": 12,\r\n        \"NAME\": 12,\r\n        \"BIRTHDAY\": 91,\r\n        \"GENDER\": 1,\r\n        \"ACTIVE\": -7\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -137,28 +115,28 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:33333/candidates/candidate",
+							"raw": "http://localhost:33333/clients/client",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "33333",
 							"path": [
-								"candidates",
-								"candidate"
+								"clients",
+								"client"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "candidate -D",
+					"name": "client -D",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"filter\" :{\n\t\t\"ID\" :15\n\t}\n}",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"ID\" :3\r\n\t}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -166,15 +144,45 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:33333/candidates/candidate",
+							"raw": "http://localhost:33333/clients/client",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "33333",
 							"path": [
-								"candidates",
-								"candidate"
+								"clients",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client -R (complex)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"DNI\":  \"12345678K\"\r\n    },\r\n   \"columns\": [\"ID\",\"NAME\",\"LASTNAME\",\"BIRTHDAY\",\"DNI\",\"PHONE\",\"EMAIL\",\"REGISTRATION_DATE\",\r\n               \"ACTIVE\",\"GENDER\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clients/client/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clients",
+								"client",
+								"search"
 							]
 						}
 					},
@@ -183,1582 +191,536 @@
 			]
 		},
 		{
-			"name": "Masters",
+			"name": "Rooms",
 			"item": [
 				{
-					"name": "Education",
-					"item": [
-						{
-							"name": "education -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"DESCRIPTION\": \"Degree in TSE\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+					"name": "room -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
 								},
-								"url": {
-									"raw": "http://localhost:33333/master/education",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"education"
-									]
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
 								}
-							},
-							"response": []
+							]
 						},
-						{
-							"name": "education -R",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:33333/master/education?columns=ID,DESCRIPTION",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"education"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,DESCRIPTION"
-										}
-									]
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"NAME\": \"Piscina\",\r\n            \"DESCRIPTION\": \"Piscina olímpica del gimnasio y de natación lenta\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n        \"ID\": 4,\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							},
-							"response": []
+							}
 						},
-						{
-							"name": "education -R (complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n\t\t\"ID\": 0\n\t},\n\t\"columns\": [\"DESCRIPTION\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/education/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"education",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "education -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\":{\n    \t\"ID\":\t1\n    },\n    \"data\": {\n        \"DESCRIPTION\": \"Degree in Telecommunications Systems Engineering\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/education",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"education"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "education -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\":{\n    \t\"ID\":\t1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/education",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"education"
-									]
-								}
-							},
-							"response": []
+						"url": {
+							"raw": "http://localhost:33333/rooms/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Experience Level",
-					"item": [
-						{
-							"name": "experienceLevel -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"DESCRIPTION\": \"Experienced\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/experienceLevel",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"experienceLevel"
-									]
+					"name": "room-R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:33333/rooms/room?columns=ID,NAME,DESCRIPTION",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "ID,NAME,DESCRIPTION"
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "experienceLevel -R",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:33333/master/experienceLevel?columns=ID,DESCRIPTION",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"experienceLevel"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,DESCRIPTION"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "experienceLevel -R (complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n\t\t\"ID\": 0\n\t},\n\t\"columns\": [\"DESCRIPTION\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/experienceLevel/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"experienceLevel",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "experienceLevel -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n        \"ID\": 1\n    },\n    \"data\": {\n        \"DESCRIPTION\": \"Senior\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/experienceLevel",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"experienceLevel"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "experienceLevel -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\":{\n    \t\"ID\":\t1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/experienceLevel",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"experienceLevel"
-									]
-								}
-							},
-							"response": []
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Origin",
-					"item": [
-						{
-							"name": "origin -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"DESCRIPTION\": \"Web\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/origin",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"origin"
-									]
+					"name": "room -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"ID\": 4\r\n    },\r\n    \"data\": {\r\n        \"NAME\": \"Sala de artes marciales\",\r\n        \"DESCRIPTION\": \"Sala habilitada para las artes marciales\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12,\r\n        \"ID\":4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							},
-							"response": []
+							}
 						},
-						{
-							"name": "origin -R",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:33333/master/origin?columns=ID,DESCRIPTION",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"origin"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,DESCRIPTION"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "origin -R (complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n\t\t\"ID\": 0\n\t},\n\t\"columns\": [\"DESCRIPTION\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/origin/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"origin",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "origin -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n        \"ID\": 1\n    },\n    \"data\": {\n        \"DESCRIPTION\": \"LinkedIn\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/origin",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"origin"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "origin -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\":{\n    \t\"ID\":\t1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/origin",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"origin"
-									]
-								}
-							},
-							"response": []
+						"url": {
+							"raw": "http://localhost:33333/rooms/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Profile",
-					"item": [
-						{
-							"name": "profile -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"DESCRIPTION\": \"HR\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/profile",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"profile"
-									]
+					"name": "room -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"ID\" :1\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							},
-							"response": []
+							}
 						},
-						{
-							"name": "profile -R",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:33333/master/profile?columns=ID,DESCRIPTION",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"profile"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,DESCRIPTION"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "profile -R (complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n\t\t\"ID\": 0\n\t},\n\t\"columns\": [\"DESCRIPTION\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/profile/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"profile",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "profile -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n        \"ID\": 1\n    },\n    \"data\": {\n        \"DESCRIPTION\": \"Human Resources\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/profile",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"profile"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "profile -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\":{\n    \t\"ID\":\t1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/profile",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"profile"
-									]
-								}
-							},
-							"response": []
+						"url": {
+							"raw": "http://localhost:33333/rooms/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Status",
-					"item": [
-						{
-							"name": "status -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"DESCRIPTION\": \"No Available\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+					"name": "room -R (complex)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
 								},
-								"url": {
-									"raw": "http://localhost:33333/master/status",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"status"
-									]
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
 								}
-							},
-							"response": []
+							]
 						},
-						{
-							"name": "status -R",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:33333/master/status?columns=ID,DESCRIPTION",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"status"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,DESCRIPTION"
-										}
-									]
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"ID\":  1\r\n    },\r\n   \"columns\": [\"ID\",\"NAME\",\"DESCRIPTION\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							},
-							"response": []
+							}
 						},
-						{
-							"name": "status -R (complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n\t\t\"ID\": 0\n\t},\n\t\"columns\": [\"DESCRIPTION\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/status/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"status",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "status -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n        \"ID\": 1\n    },\n    \"data\": {\n        \"DESCRIPTION\": \"Unavailable\"\n    },\n    \"sqltypes\": {\n        \"DESCRIPTION\": 12\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/status",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"status"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "status -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\":{\n    \t\"ID\":\t1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/master/status",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"master",
-										"status"
-									]
-								}
-							},
-							"response": []
+						"url": {
+							"raw": "http://localhost:33333/rooms/room/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room",
+								"search"
+							]
 						}
-					]
+					},
+					"response": []
 				}
 			]
 		},
 		{
-			"name": "Offers",
+			"name": "Classes",
 			"item": [
 				{
-					"name": "Offer",
-					"item": [
-						{
-							"name": "offer -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n\t\t\"ACRONYM\": \"Istari support\", \n\t\t\"DESCRIPTION\": \"Will provide administrative and logistical support to members of the executive team and may support other as needed. Must display professionalism and a strong work ethic while fostering a work environment that is positive, optimistic and collaborative. Position requires excellent administrative, communication, organizational and time management skills paired with flexibility, integrity and the ability to work independently. Must have Balrog fighting proficiency.\",\n\t\t\"APPLICANT\": \"Eru Iúvatar\",\n\t\t\"OFFER_STATUS\": 0,\n\t\t\"CREATION_DATE\": 1589148000000,\n\t\t\"START_DATE\": 1598911200000,\n\t\t\"END_DATE\": 1609369200000\n    },\n    \"sqltypes\": {\n        \"END_DATE\": 91,\n        \"CREATION_DATE\": 91,\n        \"START_DATE\": 91\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
+					"name": "class -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
 								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offer",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offer"
-									]
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
 								}
-							},
-							"response": []
+							]
 						},
-						{
-							"name": "offer -R",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"PHONE\": \"555-444-8888\",\n        \"BIRTHDAY\": 788224700000,\n        \"SURNAME\": \"Wilson\",\n        \"EMAIL\": \"wwiilsoon@example.org\",\n        \"SPECIALTIES\": \"C#\",\n        \"NAME\": \"William\",\n        \"DNI\": \"88643946Z\"\n    },\n    \"sqltypes\": {\n        \"SPECIALTIES\": 12,\n        \"LINKEDIN\": 12,\n        \"PHONE\": 12,\n        \"EXPERIENCE_LEVEL\": 4,\n        \"STATUS\": 4,\n        \"EMAIL\": 12,\n        \"WAGE_LEVEL\": 2,\n        \"DNI\": 12,\n        \"ID\": 4,\n        \"ORIGIN\": 4,\n        \"EDUCATION\": 4,\n        \"COMMENT\": 12,\n        \"PROFILE\": 4,\n        \"SURNAME\": 12,\n        \"NAME\": 12,\n        \"BIRTHDAY\": 91\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offer?columns=ID,ACRONYM,DESCRIPTION,APPLICANT,OFFER_STATUS,CREATION_DATE,START_DATE,END_DATE",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offer"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,ACRONYM,DESCRIPTION,APPLICANT,OFFER_STATUS,CREATION_DATE,START_DATE,END_DATE"
-										}
-									]
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"NAME\": \"Spinning\",\r\n            \"DESCRIPTION\": \"Clases de spinning en grupo con bicis de última generación\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n        \"ID\": 4,\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							},
-							"response": []
+							}
 						},
-						{
-							"name": "offer -R (Complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n    \t\"ID\": 0\n    },\n    \"columns\": [\"ID\",\"DESCRIPTION\",\"OFFER_STATUS\",\"END_DATE\",\"APPLICANT\",\"ACRONYM\",\"CREATION_DATE\",\"START_DATE\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offer/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offer",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer -R (Basic Expression)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n        \"@basic_expression\": {\n            \"lop\": \"START_DATE\",\n            \"op\": \">=\",\n            \"rop\": \"2020-01-15\"\n        }\n    },\n    \"columns\": [\n        \"ID\",\n        \"DESCRIPTION\",\n        \"OFFER_STATUS\",\n        \"END_DATE\",\n        \"APPLICANT\",\n        \"ACRONYM\",\n        \"CREATION_DATE\",\n        \"START_DATE\"\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offer/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offer",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer -R (Complex Basic Expression)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n        \"@basic_expression\": {\n            \"lop\": {\n                \"lop\": \"START_DATE\",\n                \"op\": \">=\",\n                \"rop\": \"2019-06-01\"\n            },\n            \"op\": \"AND\",\n            \"rop\": {\n                \"lop\": \"START_DATE\",\n                \"op\": \"<\",\n                \"rop\": \"2020-01-01\"\n            }\n        }\n    },\n    \"columns\": [\n        \"ID\",\n        \"DESCRIPTION\",\n        \"OFFER_STATUS\",\n        \"END_DATE\",\n        \"APPLICANT\",\n        \"ACRONYM\",\n        \"CREATION_DATE\",\n        \"START_DATE\"\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offer/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offer",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer -R (REST Basic Expression - Current)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"columns\": [\n        \"ID\",\n        \"DESCRIPTION\",\n        \"OFFER_STATUS\",\n        \"END_DATE\",\n        \"APPLICANT\",\n        \"ACRONYM\",\n        \"CREATION_DATE\",\n        \"START_DATE\"\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/currentOffers/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"currentOffers",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer -R (REST Basic Expression - FilterYear)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n        \"YEAR\": 2019\n    },\n    \"columns\": [\n        \"ID\",\n        \"DESCRIPTION\",\n        \"OFFER_STATUS\",\n        \"END_DATE\",\n        \"APPLICANT\",\n        \"ACRONYM\",\n        \"CREATION_DATE\",\n        \"START_DATE\"\n    ]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/yearOffers/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"yearOffers",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 1\n    },\n    \"data\": {\n    \t\"APPLICANT\": \"Rosaline Maddocks\",\n    \t\"DESCRIPTION\": \"Will provide administrative and logistical support to members of the executive team and may support other as needed. Must display professionalism and a strong work ethic while fostering a work environment that is positive, optimistic and collaborative. Position requires excellent administrative, communication, organizational and time management skills paired with flexibility, integrity and the ability to work independently.\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offer",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offer",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offer"
-									]
-								}
-							},
-							"response": []
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Offer Status",
-					"item": [
-						{
-							"name": "offer status -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n    \t\"DESCRIPTION\": \"STARTED\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerStatus",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerStatus"
-									]
+					"name": "class -R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:33333/classes/class?columns=ID,NAME,DESCRIPTION",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "ID,NAME,DESCRIPTION"
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer status-R",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"PHONE\": \"555-444-8888\",\n        \"BIRTHDAY\": 788224700000,\n        \"SURNAME\": \"Wilson\",\n        \"EMAIL\": \"wwiilsoon@example.org\",\n        \"SPECIALTIES\": \"C#\",\n        \"NAME\": \"William\",\n        \"DNI\": \"88643946Z\"\n    },\n    \"sqltypes\": {\n        \"SPECIALTIES\": 12,\n        \"LINKEDIN\": 12,\n        \"PHONE\": 12,\n        \"EXPERIENCE_LEVEL\": 4,\n        \"STATUS\": 4,\n        \"EMAIL\": 12,\n        \"WAGE_LEVEL\": 2,\n        \"DNI\": 12,\n        \"ID\": 4,\n        \"ORIGIN\": 4,\n        \"EDUCATION\": 4,\n        \"COMMENT\": 12,\n        \"PROFILE\": 4,\n        \"SURNAME\": 12,\n        \"NAME\": 12,\n        \"BIRTHDAY\": 91\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerStatus?columns=ID,DESCRIPTION",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerStatus"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,DESCRIPTION"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer status -R (Complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n    \t\"ID\": 0\n    },\n    \"columns\": [\"ID\", \"DESCRIPTION\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerStatus/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerStatus",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer status -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 1\n    },\n    \"data\": {\n    \t\"DESCRIPTION\": \"Started\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerStatus",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerStatus"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer status -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerStatus",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerStatus"
-									]
-								}
-							},
-							"response": []
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Offer Candidate",
-					"item": [
-						{
-							"name": "offer candidate -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"OFFER_ID\": 0,\n        \"CANDIDATE_ID\": 1,\n        \"OFFER_CANDIDATE_STATUS\": 0\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidate",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidate"
-									]
+					"name": "class -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"ID\": 1\r\n    },\r\n    \"data\": {\r\n        \"DESCRIPTION\": \"Clases de karate, disciplina y esfuerzo\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12,\r\n        \"ID\":4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate -R",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"PHONE\": \"555-444-8888\",\n        \"BIRTHDAY\": 788224700000,\n        \"SURNAME\": \"Wilson\",\n        \"EMAIL\": \"wwiilsoon@example.org\",\n        \"SPECIALTIES\": \"C#\",\n        \"NAME\": \"William\",\n        \"DNI\": \"88643946Z\"\n    },\n    \"sqltypes\": {\n        \"SPECIALTIES\": 12,\n        \"LINKEDIN\": 12,\n        \"PHONE\": 12,\n        \"EXPERIENCE_LEVEL\": 4,\n        \"STATUS\": 4,\n        \"EMAIL\": 12,\n        \"WAGE_LEVEL\": 2,\n        \"DNI\": 12,\n        \"ID\": 4,\n        \"ORIGIN\": 4,\n        \"EDUCATION\": 4,\n        \"COMMENT\": 12,\n        \"PROFILE\": 4,\n        \"SURNAME\": 12,\n        \"NAME\": 12,\n        \"BIRTHDAY\": 91\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidate?columns=ID,OFFER_ID,CANDIDATE_ID,OFFER_CANDIDATE_STATUS",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidate"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,OFFER_ID,CANDIDATE_ID,OFFER_CANDIDATE_STATUS"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate -R (Complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n    \t\"ID\": 0\n    },\n    \"columns\": [\"ID\",\"OFFER_ID\",\"CANDIDATE_ID\",\"OFFER_CANDIDATE_STATUS\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidate/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidate",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate -R (Details)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n    \t\"ID\": 0\n    },\n    \"columns\": [\"ID\",\"DESCRIPTION\",\"DESC_STATUS\",\"OFF_STATUS\",\"END_DATE\",\"APPLICANT\",\"ACRONYM\",\"CREATION_DATE\",\"START_DATE\",\"NAME\",\"SURNAME\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidateDetails/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidateDetails",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 4\n    },\n    \"data\": {\n    \t\"OFFER_ID\": 0,\n        \"CANDIDATE_ID\": 2,\n        \"OFFER_CANDIDATE_STATUS\": 0\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidate",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidate"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 4\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidate",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidate"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
 							}
 						},
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
 						}
-					]
+					},
+					"response": []
 				},
 				{
-					"name": "Offer Candidate Status",
-					"item": [
-						{
-							"name": "offer candidate status -C",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n    \t\"DESCRIPTION\": \"PENDING CV\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidateStatus",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidateStatus"
-									]
+					"name": "class -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"ID\" :1\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate status-R",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"data\": {\n        \"PHONE\": \"555-444-8888\",\n        \"BIRTHDAY\": 788224700000,\n        \"SURNAME\": \"Wilson\",\n        \"EMAIL\": \"wwiilsoon@example.org\",\n        \"SPECIALTIES\": \"C#\",\n        \"NAME\": \"William\",\n        \"DNI\": \"88643946Z\"\n    },\n    \"sqltypes\": {\n        \"SPECIALTIES\": 12,\n        \"LINKEDIN\": 12,\n        \"PHONE\": 12,\n        \"EXPERIENCE_LEVEL\": 4,\n        \"STATUS\": 4,\n        \"EMAIL\": 12,\n        \"WAGE_LEVEL\": 2,\n        \"DNI\": 12,\n        \"ID\": 4,\n        \"ORIGIN\": 4,\n        \"EDUCATION\": 4,\n        \"COMMENT\": 12,\n        \"PROFILE\": 4,\n        \"SURNAME\": 12,\n        \"NAME\": 12,\n        \"BIRTHDAY\": 91\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidateStatus?columns=ID,DESCRIPTION",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidateStatus"
-									],
-									"query": [
-										{
-											"key": "columns",
-											"value": "ID,DESCRIPTION"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate status -R (Complex)",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"filter\": {\n    \t\"ID\": 0\n    },\n    \"columns\": [\"ID\", \"DESCRIPTION\"]\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidateStatus/search",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidateStatus",
-										"search"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate status -U",
-							"request": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 1\n    },\n    \"data\": {\n    \t\"DESCRIPTION\": \"Pending CV\"\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidateStatus",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidateStatus"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "offer candidate status -D",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"filter\": {\n    \t\"ID\": 1\n    }\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:33333/offers/offerCandidateStatus",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "33333",
-									"path": [
-										"offers",
-										"offerCandidateStatus"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
 							}
 						},
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
 						}
-					]
+					},
+					"response": []
+				},
+				{
+					"name": "class -R (complex)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"ID\":  1\r\n    },\r\n   \"columns\": [\"ID\",\"NAME\",\"DESCRIPTION\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/classes/class/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ClassesRoom",
+			"item": [
+				{
+					"name": "roomclass -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"id_class\":3,\r\n            \"id_room\":3,\r\n            \"weekday\":\"Friday\",\r\n            \"h_start\":\"20:00:00\",\r\n            \"h_end\":\"21:00:00\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n         \"h_end\": 92,\r\n        \"id_room_class\": 4,\r\n        \"h_start\": 92,\r\n        \"id_class\": 4,\r\n        \"weekday\": 12,\r\n        \"id_room\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass?columns=id_room_class,id_room,id_class,weekday,h_start,h_end",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "id_room_class,id_room,id_class,weekday,h_start,h_end"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"id_room_class\": 1\r\n    },\r\n    \"data\": {\r\n            \"id_class\":3,\r\n            \"id_room\":2,\r\n            \"weekday\":\"Monday\",\r\n            \"h_start\":\"22:00:00\",\r\n            \"h_end\":\"00:00:00\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"h_end\": 92,\r\n        \"id_room_class\": 4,\r\n        \"h_start\": 92,\r\n        \"id_class\": 4,\r\n        \"weekday\": 12,\r\n        \"id_room\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"id_room_class\" :1\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -R (complex)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"id_room_class\":  1\r\n    },\r\n   \"columns\": [\"id_room_class\",\"id_room\",\"id_class\",\"weekday\",\"h_start\",\"h_end\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass",
+								"search"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
