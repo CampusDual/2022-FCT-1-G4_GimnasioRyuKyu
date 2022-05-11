@@ -21,42 +21,22 @@ public class RoomClassService implements IRoomClassService {
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
 
     @Override
-    public EntityResult roomCQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+    public EntityResult roomClassQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.roomClassDao, keyMap, attrList);
     }
 
     @Override
-    public EntityResult roomCInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+    public EntityResult roomClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.insert(this.roomClassDao, attrMap);
     }
 
     @Override
-    public EntityResult roomCUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult roomClassUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.update(this.roomClassDao, attrMap, keyMap);
     }
 
     @Override
-    public EntityResult roomCDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        return this.daoHelper.delete(this.roomClassDao, keyMap);
-    }
-
-    @Override
-    public EntityResult classRQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
-        return this.daoHelper.query(this.roomClassDao, keyMap, attrList);
-    }
-
-    @Override
-    public EntityResult classRInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-        return this.daoHelper.insert(this.roomClassDao, attrMap);
-    }
-
-    @Override
-    public EntityResult classRUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        return this.daoHelper.update(this.roomClassDao, attrMap, keyMap);
-    }
-
-    @Override
-    public EntityResult classRDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult roomClassDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.roomClassDao, keyMap);
     }
 }

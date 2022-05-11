@@ -21,42 +21,22 @@ public class ClientClassService implements IClientClassService {
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
 
     @Override
-    public EntityResult clientCQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+    public EntityResult clientClassQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.clientClassDao, keyMap, attrList);
     }
 
     @Override
-    public EntityResult clientCInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+    public EntityResult clientClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.insert(this.clientClassDao, attrMap);
     }
 
     @Override
-    public EntityResult clientCUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult clientClassUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.update(this.clientClassDao, attrMap, keyMap);
     }
 
     @Override
-    public EntityResult clientCDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        return this.daoHelper.delete(this.clientClassDao, keyMap);
-    }
-
-    @Override
-    public EntityResult classCQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
-        return this.daoHelper.query(this.clientClassDao, keyMap, attrList);
-    }
-
-    @Override
-    public EntityResult classCInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-        return this.daoHelper.insert(this.clientClassDao, attrMap);
-    }
-
-    @Override
-    public EntityResult classCUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        return this.daoHelper.update(this.clientClassDao, attrMap, keyMap);
-    }
-
-    @Override
-    public EntityResult classCDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+    public EntityResult clientClassDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.clientClassDao, keyMap);
     }
 }

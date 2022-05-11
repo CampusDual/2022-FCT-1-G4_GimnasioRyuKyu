@@ -8,15 +8,9 @@ import java.util.Map;
 
 public interface IRoomClassService {
 
-    public EntityResult roomCQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
-    public EntityResult roomCInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
-    public EntityResult roomCUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
-    public EntityResult roomCDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
-
-    // OFFER STATUS
-    public EntityResult classRQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
-    public EntityResult classRInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
-    public EntityResult classRUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
-    public EntityResult classRDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult roomClassQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
+    public EntityResult roomClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
+    public EntityResult roomClassUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult roomClassDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
 }
