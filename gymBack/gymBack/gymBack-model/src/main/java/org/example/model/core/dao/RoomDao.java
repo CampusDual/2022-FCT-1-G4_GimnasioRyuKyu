@@ -10,7 +10,7 @@ import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 @ConfigurationFile(configurationFile = "dao/RoomDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
 public class RoomDao extends OntimizeJdbcDaoSupport {
 
-    public static final String ATTR_ID = "ID";
-    public static final String ATTR_NAME = "NAME";
-    public static final String ATTR_DESCRIPTION = "DESCRIPTION";
+    public static final String ATTR_ID = "id";
+    public static final String ATTR_NAME = "name";
+    public static final String ATTR_DESCRIPTION = "description";
 }
