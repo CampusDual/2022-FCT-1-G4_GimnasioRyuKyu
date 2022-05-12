@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fd41dff7-8d9b-43cd-bc30-f8ddd2436219",
+		"_postman_id": "e00e0f27-8f6c-486b-95c9-5a144b9df1d3",
 		"name": "GYM",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -663,15 +663,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:33333/classes/class",
+							"raw": "http://localhost:33333/roomsClasses/roomClass",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "33333",
 							"path": [
-								"classes",
-								"class"
+								"roomsClasses",
+								"roomClass"
 							]
 						}
 					},
@@ -716,6 +716,184 @@
 							"path": [
 								"roomsClasses",
 								"roomClass",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ClientClass",
+			"item": [
+				{
+					"name": "clientclass -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"id_client_class\":5,\r\n            \"id_room_class\":3,\r\n            \"id_client\": 4\r\n            \r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n        \"id_room_class\": 4,\r\n        \"id_client\": 4,\r\n        \"id_client_class\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clientsClasses/clientClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clientsClasses",
+								"clientClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientclass -R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:33333/clientsClasses/clientClass?columns=id_client_class,id_room_class,id_client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clientsClasses",
+								"clientClass"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "id_client_class,id_room_class,id_client"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientclass -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"id_client_class\": 1\r\n    },\r\n    \"data\": {\r\n            \"id_room_class\":3,\r\n            \"id_client\":2\r\n    },\r\n    \"sqltypes\": {\r\n        \"id_room_class\": 4,\r\n        \"id_client\": 4,\r\n        \"id_client_class\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clientsClasses/clientClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clientsClasses",
+								"clientClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientclass -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"id_client_class\" :1\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clientsClasses/clientClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clientsClasses",
+								"clientClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientclass -R (complex)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"id_client_class\":  1\r\n    },\r\n   \"columns\": [\"id_client_class\",\"id_room_class\",\"id_client\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clientsClasses/clientClass/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clientsClasses",
+								"clientClass",
 								"search"
 							]
 						}
