@@ -18,7 +18,7 @@ export const CONFIG: Config = {
   title: 'Ryukyu Ryu',
 
   //  Language of the application.
-  locale: 'es',
+  locale: 'en',
 
   // The service type used (Ontimize REST standart, Ontimize REST JEE
   // or custom implementation) in the whole application.
