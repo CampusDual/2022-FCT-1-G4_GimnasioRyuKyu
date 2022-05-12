@@ -1,0 +1,763 @@
+{
+	"info": {
+		"_postman_id": "fd41dff7-8d9b-43cd-bc30-f8ddd2436219",
+		"name": "GYM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "client -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"ACTIVE\": true,\r\n            \"LASTNAME\": \"Perez Romero\",\r\n            \"PHONE\": \"670223322\",\r\n            \"GENDER\": \"F\",\r\n            \"EMAIL\": \"mperezromero@gmail.com\",\r\n            \"DNI\": \"22113322D\",\r\n            \"BIRTHDAY\": 340066800000,\r\n            \"REGISTRATION_DATE\": 1652047200000,\r\n            \"NAME\": \"María\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n        \"ACTIVE\": -7,\r\n        \"PHONE\": 12,\r\n        \"EMAIL\": 12,\r\n        \"NAME\": 12,\r\n        \"LASTNAME\": 12,\r\n        \"GENDER\": 1,\r\n        \"ID\": 4,\r\n        \"DNI\": 12,\r\n        \"BIRTHDAY\": 91,\r\n        \"REGISTRATION_DATE\": 91\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clients/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clients",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client -R",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:33333/clients/client?columns=ID,NAME,LASTNAME,DNI,GENDER,BIRTHDAY,REGISTRATION_DATE,PHONE,EMAIL,ACTIVE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clients",
+								"client"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "ID,NAME,LASTNAME,DNI,GENDER,BIRTHDAY,REGISTRATION_DATE,PHONE,EMAIL,ACTIVE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"ID\": 1\r\n    },\r\n    \"data\": {\r\n        \"EMAIL\": \"rdiazromero@yahoo.es\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"PHONE\": 12,\r\n        \"DNI\": 12,\r\n        \"EMAIL\": 12,\r\n        \"REGISTRATION_DATE\": 2,\r\n        \"ID\": 4,\r\n        \"LASTNAME\": 12,\r\n        \"NAME\": 12,\r\n        \"BIRTHDAY\": 91,\r\n        \"GENDER\": 1,\r\n        \"ACTIVE\": -7\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clients/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clients",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"ID\" :3\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clients/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clients",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client -R (complex)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"DNI\":  \"12345678K\"\r\n    },\r\n   \"columns\": [\"ID\",\"NAME\",\"LASTNAME\",\"BIRTHDAY\",\"DNI\",\"PHONE\",\"EMAIL\",\"REGISTRATION_DATE\",\r\n               \"ACTIVE\",\"GENDER\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/clients/client/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"clients",
+								"client",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rooms",
+			"item": [
+				{
+					"name": "room -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"NAME\": \"Piscina\",\r\n            \"DESCRIPTION\": \"Piscina olímpica del gimnasio y de natación lenta\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n        \"ID\": 4,\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/rooms/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "room-R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:33333/rooms/room?columns=ID,NAME,DESCRIPTION",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "ID,NAME,DESCRIPTION"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "room -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"ID\": 4\r\n    },\r\n    \"data\": {\r\n        \"NAME\": \"Sala de artes marciales\",\r\n        \"DESCRIPTION\": \"Sala habilitada para las artes marciales\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12,\r\n        \"ID\":4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/rooms/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "room -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"ID\" :1\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/rooms/room",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "room -R (complex)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"ID\":  1\r\n    },\r\n   \"columns\": [\"ID\",\"NAME\",\"DESCRIPTION\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/rooms/room/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"rooms",
+								"room",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Classes",
+			"item": [
+				{
+					"name": "class -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"NAME\": \"Spinning\",\r\n            \"DESCRIPTION\": \"Clases de spinning en grupo con bicis de última generación\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n        \"ID\": 4,\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "class -R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:33333/classes/class?columns=ID,NAME,DESCRIPTION",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "ID,NAME,DESCRIPTION"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "class -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"ID\": 1\r\n    },\r\n    \"data\": {\r\n        \"DESCRIPTION\": \"Clases de karate, disciplina y esfuerzo\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"NAME\": 12,\r\n        \"DESCRIPTION\": 12,\r\n        \"ID\":4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "class -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"ID\" :1\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "class -R (complex)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"ID\":  1\r\n    },\r\n   \"columns\": [\"ID\",\"NAME\",\"DESCRIPTION\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/classes/class/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ClassesRoom",
+			"item": [
+				{
+					"name": "roomclass -C",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n            \"id_class\":3,\r\n            \"id_room\":3,\r\n            \"weekday\":\"Friday\",\r\n            \"h_start\":\"20:00:00\",\r\n            \"h_end\":\"21:00:00\"\r\n        }\r\n    ,\r\n    \"sqltypes\": {\r\n         \"h_end\": 92,\r\n        \"id_room_class\": 4,\r\n        \"h_start\": 92,\r\n        \"id_class\": 4,\r\n        \"weekday\": 12,\r\n        \"id_room\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -R",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass?columns=id_room_class,id_room,id_class,weekday,h_start,h_end",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "id_room_class,id_room,id_class,weekday,h_start,h_end"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -U",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"id_room_class\": 1\r\n    },\r\n    \"data\": {\r\n            \"id_class\":3,\r\n            \"id_room\":2,\r\n            \"weekday\":\"Monday\",\r\n            \"h_start\":\"22:00:00\",\r\n            \"h_end\":\"00:00:00\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"h_end\": 92,\r\n        \"id_room_class\": 4,\r\n        \"h_start\": 92,\r\n        \"id_class\": 4,\r\n        \"weekday\": 12,\r\n        \"id_room\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -D",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"filter\" :{\r\n\t\t\"id_room_class\" :1\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/classes/class",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"classes",
+								"class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "roomclass -R (complex)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"filter\": {\r\n    \"id_room_class\":  1\r\n    },\r\n   \"columns\": [\"id_room_class\",\"id_room\",\"id_class\",\"weekday\",\"h_start\",\"h_end\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/roomsClasses/roomClass/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"roomsClasses",
+								"roomClass",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "demouser",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "demo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
