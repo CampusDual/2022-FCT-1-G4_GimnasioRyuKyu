@@ -1,3 +1,4 @@
+import { RoomsNewComponent } from './rooms-new/rooms-new.component';
 import { RoomsDetailComponent } from './rooms-detail/rooms-detail.component';
 import { RoomsHomeComponent } from './rooms-home/rooms-home.component';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,11 @@ const routes: Routes = [{
   component: RoomsHomeComponent
 },
 {
-  path: ":ID",
+  path : "new",
+  component: RoomsNewComponent
+},
+{
+  path: ":id",
   component: RoomsDetailComponent
 }];
 
