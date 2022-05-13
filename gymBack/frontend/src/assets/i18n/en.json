@@ -21,5 +21,14 @@
   "FOOTER_RIGHTS": "All rights reserved",
   "CLIENTS":"Clients",
   "CLASSES":"Classes",
-  "ROOMS":"Rooms"
+  "ROOMS":"Rooms",
+  "ACTIVE":"Active",
+  "NAME":"Name",
+  "LASTNAME":"Lastname",
+  "EMAIL":"Email",
+  "GENDER":"Gender",
+  "BIRTHDAY":"Birthday",
+  "REGISTRATION_DATE":"Registration date",
+  "PHONE":"Phone",
+  "DESCRIPTION": "Description"
 }

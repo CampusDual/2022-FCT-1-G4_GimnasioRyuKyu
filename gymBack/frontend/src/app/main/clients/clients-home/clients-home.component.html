@@ -1,9 +1,18 @@
-<div fxFill fxLayout="column" fxLayoutAlign="start">
-    <o-table attr="clientsTable" service="client" entity="client" keys="id"
-    columns="id;ID;PHOTO"
-    visible-columns="ID" query-rows="20">
-    <o-table-column attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="yes"
-      empty-image="assets/images/no-image.png" image-type="base64"></o-table-column>
-    <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
-  </o-table>
-</div>
+<o-form-layout-manager title="{{ 'CLIENTS' | oTranslate }}" separator=" " mode="tab" label-columns="NAME">
+  <div fxFill>
+    <o-table fxFlex attr="clientsTable" service="clients" entity="client" keys="id"
+      columns="id;name;lastname;dni;gender;birthday;registration_date;phone;email;active"
+      visible-columns="id;name;lastname;dni;gender;birthday;registration_date;phone;email;active" query-rows="20">
+      <o-table-column attr="id" title="ID" width="100px"></o-table-column>
+      <o-table-column attr="name" title="NAME" width="100px"></o-table-column>
+      <o-table-column attr="lastname" title="LASTNAME" width="100px"></o-table-column>
+      <o-table-column attr="dni" title="DNI" width="100px"></o-table-column>
+      <o-table-column attr="gender" title="GENDER" width="100px"></o-table-column>
+      <o-table-column attr="birthday" title="BIRTHDAY" width="100px"></o-table-column>
+      <o-table-column attr="registration_date" title="REGISTRATION_DATE" width="100px"></o-table-column>
+      <o-table-column attr="phone" title="PHONE" width="100px"></o-table-column>
+      <o-table-column attr="email" title="EMAIL" width="100px"></o-table-column>
+      <o-table-column attr="active" title="ACTIVE" width="100px"></o-table-column>
+    </o-table>
+  </div>
+</o-form-layout-manager>
