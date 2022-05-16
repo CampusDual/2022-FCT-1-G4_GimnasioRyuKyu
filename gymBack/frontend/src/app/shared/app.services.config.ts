@@ -7,5 +7,8 @@ export const SERVICE_CONFIG: Object = {
   },
   'classes': {
     'path': '/classes'
+  },
+  'roomsClasses': {
+    'path': '/roomsClasses'
   }
 };

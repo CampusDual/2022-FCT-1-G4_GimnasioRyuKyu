@@ -30,5 +30,9 @@
   "BIRTHDAY":"Birthday",
   "REGISTRATION_DATE":"Registration date",
   "PHONE":"Phone",
-  "DESCRIPTION": "Description"
+  "DESCRIPTION": "Description",
+  "ASSING CLASSES": "Assign classes",
+  "WEEKDAY":"Weekday",
+  "H_START":"Start",
+  "H_END":"End"
 }
