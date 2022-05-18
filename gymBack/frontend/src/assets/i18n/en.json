@@ -34,5 +34,11 @@
   "ASSING CLASSES": "Assign classes",
   "WEEKDAY":"Weekday",
   "H_START":"Start",
-  "H_END":"End"
+  "H_END":"End",
+  "ID_ROOM_CLASS":"ID",
+  "room_name":"Room name",
+  "room_description":"Room description",
+  "class_name":"Class name",
+  "class_description":"Class description",
+  "ASSING CLIENTS":"Assign clients"
 }

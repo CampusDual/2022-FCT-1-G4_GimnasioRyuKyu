@@ -34,5 +34,11 @@
   "ASSING CLASSES": "Asignación clases",
   "WEEKDAY":"Día de la semana",
   "H_START":"Inicio",
-  "H_END":"Fin"
+  "H_END":"Fin",
+  "ID_ROOM_CLASS":"ID",
+  "room_name":"Nombre de la sala",
+  "room_description":"Descripción de la sala",
+  "class_name":"Nombre de la clase",
+  "class_description":"Descripción de la clase",
+  "ASSING CLIENTS":"Asignación de clientes"
 }

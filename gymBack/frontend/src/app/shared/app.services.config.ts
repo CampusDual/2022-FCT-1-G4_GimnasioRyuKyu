@@ -10,5 +10,8 @@ export const SERVICE_CONFIG: Object = {
   },
   'roomsClasses': {
     'path': '/roomsClasses'
+  },
+  'clientsClasses': {
+    'path': '/clientsClasses'
   }
 };

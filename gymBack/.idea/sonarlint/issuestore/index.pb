@@ -17,11 +17,11 @@ RgymBack-model/src/main/java/org/example/model/core/service/ClientClassService.j
 PgymBack-ws/src/main/java/org/example/ws/core/rest/ClientClassRestController.java,6\4\644010006a8ab7f5cd6379aca08abec45b0a2d0c
 }
 MgymBack-model/src/main/java/org/example/model/core/service/ClientService.java,c\7\c7c6c00029150132dd379706e31eb80ee05ef657
+~
+NgymBack-ws/src/main/java/org/example/ws/core/rest/RoomClassRestController.java,c\9\c9a504acfaaf0d36ade689643040f10d6090668a
 }
 MgymBack-api/src/main/java/org/example/api/core/service/IRoomClassService.java,4\9\491b05ec47e90e6fb58618baba48de45164be2ff
 x
 HgymBack-model/src/main/java/org/example/model/core/dao/RoomClassDao.java,d\2\d2720e27fb99962cf1a91a14a926673785900c94
 €
 PgymBack-model/src/main/java/org/example/model/core/service/RoomClassService.java,b\3\b38dea31f16003d10be2a338ae19c67ca220609d
-~
-NgymBack-ws/src/main/java/org/example/ws/core/rest/RoomClassRestController.java,c\9\c9a504acfaaf0d36ade689643040f10d6090668a

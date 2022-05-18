@@ -22,7 +22,7 @@ public class RoomClassService implements IRoomClassService {
 
     @Override
     public EntityResult roomClassQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
-        return this.daoHelper.query(this.roomClassDao, keyMap, attrList);
+        return this.daoHelper.query(this.roomClassDao, keyMap, attrList, RoomClassDao.QUERY_ROOM_CLASS);
     }
 
     @Override
@@ -38,10 +38,5 @@ public class RoomClassService implements IRoomClassService {
     @Override
     public EntityResult roomClassDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.roomClassDao, keyMap);
-    }
-    @Override
-    public EntityResult roomClassDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
-            throws OntimizeJEERuntimeException {
-        return this.daoHelper.query(this.roomClassDao, keyMap, attrList, RoomClassDao.QUERY_ROOM_CLASS_DETAILS);
     }
 }
