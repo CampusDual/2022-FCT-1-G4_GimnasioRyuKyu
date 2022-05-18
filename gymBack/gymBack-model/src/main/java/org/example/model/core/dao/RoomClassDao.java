@@ -16,4 +16,8 @@ public class RoomClassDao extends OntimizeJdbcDaoSupport {
     public static final String ATTR_WEEKDAY = "weekday";
     public static final String ATTR_H_START = "h_start";
     public static final String ATTR_H_END = "h_end";
+    public static final String QUERY_ROOM_CLASS_DETAILS = "ROOMCLASS";
+    public RoomClassDao(){
+        super();
+    }
 }

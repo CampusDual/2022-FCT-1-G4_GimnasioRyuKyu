@@ -1,8 +1,9 @@
 <o-form-layout-manager title="{{ 'ROOM_CLASS' | oTranslate }}" separator=" " mode="tab" label-columns="ID_ROOMCLASS">
     <div fxFill>
-      <o-table fxFlex attr="roomClassTable" service="roomsClasses" entity="roomClass" keys="id_room_class"
-        columns="id_room_class;id_class;id_room;weekday;h_start;h_end"
-        visible-columns="id_room_class;id_class;id_room;weekday;h_start;h_end" query-rows="20">
+      <o-table fxFlex attr="roomClassTable" service="roomsClasses" entity="roomClassDetails" keys="id_room_class"
+        insert-button="no" refresh-button="no" detail-mode="none" delete-button="no" query-rows="20"
+        columns="id_room_class;id_class;id_room;weekday;h_start;class_name;class_description;room_name;room_description"
+        visible-columns="id_room_class;weekday;h_start;class_name;room_description" query-rows="20">
         <o-table-column attr="id_room_class" title="ID_ROOM_CLASS" width="100px"></o-table-column>
         <o-table-column attr="id_class" title="ID_CLASS" width="100px"></o-table-column>
         <o-table-column attr="id_room" title="ID_ROOM" width="100px"></o-table-column>
