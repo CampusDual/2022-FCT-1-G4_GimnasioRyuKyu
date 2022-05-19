@@ -1,21 +1,28 @@
-<o-form service="clients" entity="client" keys="ID" header-actions="R;I;U;D" show-header-navigation="no">
-    <o-row>
-      <o-column title-label="CLIENT_PERSONAL_INFORMATION" fxFlex>
-        <o-row>
-          <o-text-input class="input-padding" attr="NAME" fxFlex="40" required="yes"></o-text-input>
-          <o-text-input class="input-padding" attr="LASTNAME" fxFlex="40" required="yes"></o-text-input>
-          <o-text-input class="input-padding" attr="PHONE" fxFlex="40" required="yes"></o-text-input>
-          <o-date-input class="input-padding" attr="BIRTHDAY" fxFlex="40" required="yes"></o-date-input>
-        </o-row>
-        <o-row>
-          <o-email-input attr="EMAIL" fxFlex required="yes"></o-email-input>
-        </o-row>
-        <o-row>
-          <o-date-input class="input-padding" attr="REGISTRATION_DATE" fxFlex="40" required="yes"></o-date-input>
-        </o-row>
-        <o-row>
-        <o-text-input class="input-padding" attr="ACTIVE" fxFlex="40" required="yes"></o-text-input>
-        </o-row>
+<o-form service="clients" entity="client" keys="id" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-row>
+    <o-column title-label="CLIENT_PERSONAL_INFORMATION" fxFlex>
+      <o-column>
+        <o-image id="CUSTOMER_PHOTO" attr="photo" empty-image="assets/images/no-image.png" ></o-image>
       </o-column>
-    </o-row>
-  </o-form>
+      <o-row>
+        <o-text-input class="input-padding" attr="name"  fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="lastname" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="phone" fxFlex="40" required="yes"></o-text-input>
+        <o-date-input class="input-padding" attr="birthday" fxFlex="40" required="yes"></o-date-input>
+        <o-text-input class="input-padding" attr="dni" fxFlex="40" required="yes"></o-text-input>
+        <o-combo attr="gender" label="Gender" [static-data]="genderArray" value-column="genderCode" columns="genderCode;genderText"
+          visible-columns="genderText" required="yes" fxFlex>
+        </o-combo>
+      </o-row>
+      <o-row>
+        <o-email-input attr="email" fxFlex required="yes"></o-email-input>
+      </o-row>
+      <o-row>
+        <o-date-input class="input-padding" attr="registration_date" fxFlex="40" required="yes"></o-date-input>
+      </o-row>
+      <o-row>
+        <o-slide-toggle attr="active" label="ACTIVE" read-only="no"></o-slide-toggle>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>

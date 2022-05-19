@@ -5,6 +5,7 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.IClientClassService;
 import org.example.model.core.dao.ClientClassDao;
+import org.example.model.core.dao.RoomClassDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class ClientClassService implements IClientClassService {
 
     @Override
     public EntityResult clientClassQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
-        return this.daoHelper.query(this.clientClassDao, keyMap, attrList);
+        return this.daoHelper.query(this.clientClassDao, keyMap, attrList, ClientClassDao.QUERY_CLIENT_CLASS);
     }
 
     @Override

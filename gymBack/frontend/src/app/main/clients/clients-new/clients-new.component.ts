@@ -12,4 +12,15 @@ export class ClientsNewComponent implements OnInit {
   ngOnInit() {
   }
 
+  public genderArray = [{
+    genderCode: "M",
+    genderText: 'Male'
+  }, {
+    genderCode: "F",
+    genderText: 'Female'
+  }, {
+    genderCode: "O",
+    genderText: 'Other'
+  }];
+
 }

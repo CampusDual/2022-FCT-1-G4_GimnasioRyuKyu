@@ -21,4 +21,5 @@ public class ClientDao extends OntimizeJdbcDaoSupport {
     public static final String BIRTHDAY = "birthday";
     public static final String REGISTRATION_DATE = "registration_date";
     public static final String ACTIVE = "active";
+    public static final String PHOTO = "photo";
 }

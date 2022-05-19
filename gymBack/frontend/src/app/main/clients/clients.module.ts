@@ -15,4 +15,6 @@ import { ClientsNewComponent } from './clients-new/clients-new.component';
     ClientsRoutingModule
   ]
 })
-export class ClientsModule { }
+export class ClientsModule {
+
+}
