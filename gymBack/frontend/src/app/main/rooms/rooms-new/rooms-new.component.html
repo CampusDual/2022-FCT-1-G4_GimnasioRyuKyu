@@ -1,12 +1,13 @@
 <o-form service="rooms" entity="room" keys="id" header-actions="R;I;U;D" show-header-navigation="no">
-    <o-row>
-      <o-column title-label="CLASS_INFORMATION" fxFlex>
-        <o-row>
-          <o-text-input class="input-padding" attr="name" title="NAME" fxFlex="40" required="yes"></o-text-input>
-        </o-row>
-        <o-row>
-            <o-text-input class="input-padding" attr="description" title="DESCRIPTION" fxFlex required="yes"></o-text-input>
-        </o-row>
-      </o-column>
-    </o-row>
-  </o-form>
+  <o-image class="roomPhoto" id="ROOM_PHOTO" attr="photo" empty-image="assets/images/no-image.png"></o-image>
+  <o-row>
+    <o-column title-label="CLASS_INFORMATION" fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="name" title="NAME" fxFlex="40" required="yes"></o-text-input>
+      </o-row>
+      <o-row>
+        <o-text-input class="input-padding" attr="description" title="DESCRIPTION" fxFlex required="yes"></o-text-input>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>
