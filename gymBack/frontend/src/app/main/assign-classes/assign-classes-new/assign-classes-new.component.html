@@ -3,8 +3,14 @@
   <o-row>
     <o-column title-label="ROOM_CLASS_INFORMATION" fxFlex>
       <o-row>
-        <o-integer-input class="input-padding" attr="id_class" title="ID_CLASS" fxFlex="40" required="yes"></o-integer-input>
-        <o-integer-input class="input-padding" attr="id_room" title="ID_ROOM" fxFlex="40" required="yes"></o-integer-input>
+        <o-combo #comboClass attr="id_class" title="comboClass" required="yes" value-column="id"
+        query-method="query" service="classes" entity="class"
+        columns="name" visible-columns="name" keys="id">
+        </o-combo>
+        <o-combo #comboRoom attr="id_room" title="comboRoom" required="yes"
+        query-method="query" service="rooms" entity="room" value-column="id"
+        columns="name" visible-columns="name" keys="id">
+        </o-combo>
       </o-row>
       <o-row>
         <o-date-input class="input-padding" attr="date" fxFlex="40" required="yes"></o-date-input>

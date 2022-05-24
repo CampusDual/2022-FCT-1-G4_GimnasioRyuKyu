@@ -1,0 +1,8 @@
+o-combo{
+    width: 40%;
+}
+
+.test{
+  display: flex;
+  justify-content: space-around;
+}

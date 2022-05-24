@@ -1,15 +1,15 @@
-<o-form-layout-manager title="{{ 'ROOM_CLASS' | oTranslate }}" separator=" " mode="tab" label-columns="ID_ROOMCLASS">
+<o-form-layout-manager title="{{ 'ROOM_CLASS' | oTranslate }}" separator=" " mode="tab" label-columns="id_room_class">
     <div fxFill>
       <o-table fxFlex attr="roomClassTable" service="roomsClasses" entity="roomClass" keys="id_room_class"
         insert-button="yes" refresh-button="yes" delete-button="yes" query-rows="20"
         columns="id_room_class;id_class;id_room;date;h_start;h_end;class_name;class_description;room_name;room_description"
         visible-columns="id_room_class;date;class_name;room_name;h_start;h_end" query-rows="20">
-        <o-table-column attr="id_room_class" title="ID_ROOM_CLASS" width="100px"></o-table-column>
-        <o-table-column attr="id_class" title="ID_CLASS" width="100px"></o-table-column>
-        <o-table-column attr="id_room" title="ID_ROOM" width="100px"></o-table-column>
-        <o-table-column attr="date" title="DATE" width="300px" type="date"></o-table-column>
-        <o-table-column attr="h_start" title="H_START" width="200px" type="time"></o-table-column>
-        <o-table-column attr="h_end" title="H_END" width="200px" type="time"></o-table-column>
+        <o-table-column attr="id_room_class" title="ID_ROOM_CLASS" width="100px" content-align="center"></o-table-column>
+        <o-table-column attr="id_class" title="ID_CLASS" width="100px" content-align="center"></o-table-column>
+        <o-table-column attr="id_room" title="ID_ROOM" width="100px" content-align="center"></o-table-column>
+        <o-table-column attr="date" title="DATE" width="300px" type="date" content-align="center"></o-table-column>
+        <o-table-column attr="h_start" title="H_START" width="200px" type="time" content-align="center"></o-table-column>
+        <o-table-column attr="h_end" title="H_END" width="200px" type="time" content-align="center"></o-table-column>
       </o-table>
     </div>
   </o-form-layout-manager>

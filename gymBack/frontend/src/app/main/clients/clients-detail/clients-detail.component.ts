@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-clients-detail',
   templateUrl: './clients-detail.component.html',
   styleUrls: ['./clients-detail.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
-@Component({
-  selector: 'input-slidetoggle',
-  templateUrl: './clients-detail.component.html'
-})
+
 export class ClientsDetailComponent implements OnInit {
 
   constructor() { }

@@ -1,16 +1,24 @@
-<o-form service="roomsClasses" entity="roomClass" keys="id_room_class" header-actions="R;I;U;D" show-header-navigation="no">
-   <o-row>
-      <o-column title-label="ROOM_CLASS_INFORMATION" fxFlex>
-        <o-text-input attr="id_room_class" sql-type="INTEGER" enabled="no"></o-text-input>
-        <o-row>
-          <o-integer-input class="input-padding" attr="id_class" title="ID_CLASS" fxFlex="40" required="yes"></o-integer-input>
-          <o-integer-input class="input-padding" attr="id_room" title="ID_ROOM" fxFlex="40" required="yes"></o-integer-input>
-        </o-row>
-        <o-row>
-          <o-date-input class="input-padding" attr="date" title="DATE" fxFlex="40" required="yes"></o-date-input>
-          <o-hour-input value-type="timestamp" class="input-padding" attr="h_start" title="H_START" fxFlex="40" required="yes" ></o-hour-input>
-          <o-hour-input value-type="timestamp" class="input-padding" attr="h_end" title="H_END" fxFlex="40" required="yes" ></o-hour-input>
-        </o-row>
-      </o-column>
-    </o-row>
-  </o-form>
+<o-form service="roomsClasses" entity="roomClass" keys="id_room_class" header-actions="R;I;U;D"
+  show-header-navigation="no">
+  <o-row>
+    <o-column title-label="ROOM_CLASS_INFORMATION" fxFlex>
+      <o-text-input attr="id_room_class" sql-type="INTEGER" enabled="no"></o-text-input>
+      <o-row layout-align="center" layout-gap="30px">
+          <o-combo #comboClass attr="id_class" title="comboClass" required="yes" value-column="id" query-method="query"
+            service="classes" entity="class" columns="name" visible-columns="name" keys="id">
+          </o-combo>
+          <o-combo #comboRoom attr="id_room" title="comboRoom" required="yes" query-method="query" service="rooms"
+            entity="room" value-column="id" columns="name" visible-columns="name" keys="id">
+          </o-combo>
+      </o-row>
+      <o-row layout-align="center">
+
+      </o-row>
+      <o-row layout-gap="50px" layout-align="center">
+        <o-date-input class="input-padding" attr="date" title="DATE" fxFlex="40" required="yes"></o-date-input>
+        <o-hour-input class="input-padding" attr="h_start" title="H_START" fxFlex="40" required="yes"></o-hour-input>
+        <o-hour-input class="input-padding" attr="h_end" title="H_END" fxFlex="40" required="yes"></o-hour-input>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>
