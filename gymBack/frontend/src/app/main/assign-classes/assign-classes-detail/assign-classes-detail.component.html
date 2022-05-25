@@ -2,7 +2,7 @@
   show-header-navigation="no">
   <o-row>
     <o-column title-label="ROOM_CLASS_INFORMATION" fxFlex>
-      <o-text-input attr="id_room_class" sql-type="INTEGER" enabled="no"></o-text-input>
+      <o-text-input attr="id_room_class" sql-type="INTEGER" enabled="no" hidden="true"></o-text-input>
       <o-row layout-align="center" layout-gap="30px">
           <o-combo #comboClass attr="id_class" title="comboClass" required="yes" value-column="id" query-method="query"
             service="classes" entity="class" columns="name" visible-columns="name" keys="id">
