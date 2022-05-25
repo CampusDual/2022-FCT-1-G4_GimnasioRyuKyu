@@ -19,46 +19,46 @@
   "FORGOT_PWD": "Forgot your password?",
   "FOOTER_CREATED_BY": "Created by Imatia Innovation",
   "FOOTER_RIGHTS": "All rights reserved",
+
+
   "clients":"Clients",
-  "classes":"Classes",
-  "rooms":"Rooms",
   "photo": "Photo",
-  "active":"Subscription status",
+  "id_client":"Nº Membership",
+  "dni": "DNI",
   "name":"Name",
   "lastname":"Lastname",
+  "phone":"Phone",
   "email":"Email",
-  "dni": "DNI",
   "gender":"Gender",
   "birthday":"Date of birth",
   "registration_date":"Registration date",
-  "phone":"Phone",
+  "active":"Subscription status",
+  "Male":"Male",
+  "Female":"Female",
+  "Other":"Other",
+
+
+  "classes":"Classes",
   "description": "Description",
+
+
+  "rooms":"Rooms",
+
+
   "assing classes": "Assign classes",
-  "weekday":"Day",
-  "id_room_class":"ID",
-  "room_name":"Room",
-  "room_description":"Description",
-  "class_name":"Class",
-  "class_description":"Description",
-  "assing clients":"Assign clients",
   "room_class":"Classes assignation",
-  "lient_class":"Clients assignation",
-  "id_client_class":"ID",
-  "client_name":"Client",
   "class_name":"Class",
-  "date":"Date",
-  "comboRoom":"Select room",
-  "comboClass":"Select class",
-  "id_room":"Room",
-  "id_class":"Class",
-  "id_room_class": "Identifier",
+  "room_name":"Room",
   "date":"Date",
   "h_start":"Start hour",
   "h_end":"End hour",
-  "id_client_class": "Identifier",
-  "id_assing_room":"Class assigned",
-  "id_client":"Nº Membership",
-  "comboClass": "Class",
-  "comboClient": "Client",
-  "client_class":"Clients assignation"
+  "comboClass":"Select class",
+  "comboRoom":"Select room",
+  "comboHour":"Select hour",
+
+
+  "assing clients":"Assign clients",
+  "client_class":"Clients assignation",
+  "client_name":"Client",
+  "comboClient": "Select client"
 }

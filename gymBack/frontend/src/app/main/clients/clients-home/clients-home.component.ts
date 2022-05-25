@@ -12,4 +12,8 @@ export class ClientsHomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  public translateArgsFn(rowData: any): any[] {
+    return [rowData.active];
+  }
+
 }

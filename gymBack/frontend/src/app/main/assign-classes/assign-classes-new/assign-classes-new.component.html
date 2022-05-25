@@ -1,15 +1,14 @@
 <o-form service="roomsClasses" entity="roomClass" keys="id_room_class" header-actions="R;I;U;D" show-header-navigation="no">
-  <o-text-input attr="id_room_class" sql-type="INTEGER" enabled="no"></o-text-input>
   <o-row>
-    <o-column title-label="ROOM_CLASS_INFORMATION" fxFlex>
+    <o-column title-label="class_name" fxFlex>
       <o-row layout-gap="15px" layout-align="center">
-        <o-combo #comboClass attr="id_class" title="comboClass" required="yes" value-column="id"
+        <o-combo #comboClass attr="id_class" label="comboClass" required="yes" value-column="id"
         query-method="query" service="classes" entity="class"
-        columns="name" visible-columns="name" searchable="yes" keys="id">
+        columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
         </o-combo>
-        <o-combo #comboRoom attr="id_room" title="comboRoom" required="yes"
+        <o-combo #comboRoom attr="id_room" label="comboRoom" required="yes"
         query-method="query" service="rooms" entity="room" value-column="id"
-        columns="name" visible-columns="name" searchable="yes" keys="id">
+        columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
         </o-combo>
       </o-row>
       <o-row layout-gap="15px" layout-gap="50px">

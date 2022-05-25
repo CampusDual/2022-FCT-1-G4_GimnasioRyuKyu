@@ -10,7 +10,7 @@
         <o-text-input class="input-padding" attr="lastname" title="LASTNAME" fxFlex="40" required="yes"></o-text-input>
       </o-row>
       <o-row layout-gap="15px">
-        <o-text-input class="input-padding" attr="dni" title="DNI" fxFlex="40" required="yes"></o-text-input>
+        <o-nif-input #nif attr="dni" title="DNI" fxFlex="40" required="yes"></o-nif-input>
         <o-text-input class="input-padding" attr="phone" title="PHONE" fxFlex="40" required="yes"></o-text-input>
       </o-row>
       <o-row layout-gap="15px">
@@ -18,7 +18,7 @@
       </o-row>
       <o-row layout-gap="15px">
         <o-combo attr="gender" label="gender" [static-data]="genderArray" value-column="genderCode" columns="genderCode;genderText"
-        visible-columns="genderText" required="yes" fxFlex="40">
+        visible-columns="genderText" required="yes" fxFlex="40" translate="yes" null-selection="no">
         </o-combo>
         <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="40" required="yes"></o-date-input>
       </o-row>

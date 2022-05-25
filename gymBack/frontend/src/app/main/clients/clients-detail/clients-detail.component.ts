@@ -11,8 +11,7 @@ export class ClientsDetailComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   public genderArray = [{
     genderCode: "M",
@@ -24,4 +23,5 @@ export class ClientsDetailComponent implements OnInit {
     genderCode: "O",
     genderText: 'Other'
   }];
+
 }
