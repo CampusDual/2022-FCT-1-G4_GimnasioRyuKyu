@@ -29,6 +29,7 @@
   "email":"Correo",
   "dni": "DNI",
   "gender":"Género",
+  "M": "Hombre",
   "birthday":"Fecha de nacimiento",
   "registration_date":"Fecha de registro",
   "phone":"Teléfono",
@@ -59,5 +60,7 @@
   "h_end":"Hora fin",
   "id_client_class": "Identificador",
   "id_assing_room":"Clase asignada",
-  "id_client":"Nº Socio"
+  "id_client":"Nº Socio",
+  "comboClass": "Clase",
+  "comboClient": "Cliente"
 }

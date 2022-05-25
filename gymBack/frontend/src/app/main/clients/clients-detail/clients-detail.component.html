@@ -1,46 +1,31 @@
 <o-form fxFill #form service="clients" entity="client" keys="id" header-actions="R;I;U;D" show-header-navigation="no">
-    <o-text-input attr="id" label="id_client" sql-type="INTEGER" enabled="no"></o-text-input>
-
-    <!-- Prueba -->
-    <o-row fxFlex>
-      <o-column class="columPhoto">
-        <o-image class="clientPhoto" id="CUSTOMER_PHOTO" attr="photo" empty-image="assets/images/no-image.png"></o-image>
-      </o-column>
-      <o-column fxFlex layout-padding>
-        <o-row layout-gap="15px">
-          <o-text-input class="input-padding" attr="name" title="NAME" fxFlex="40" required="yes"></o-text-input>
-          <o-text-input class="input-padding" attr="lastname" title="LASTNAME" fxFlex="40" required="yes"></o-text-input>
-        </o-row>
-        <o-row layout-gap="15px">
-          <o-text-input class="input-padding" attr="dni" title="DNI" fxFlex="40" required="yes"></o-text-input>
-          <o-text-input class="input-padding" attr="phone" title="PHONE" fxFlex="40" required="yes"></o-text-input>
-        </o-row>
-        <o-row layout-gap="15px">
-          <o-email-input attr="email" title="EMAIL" fxFlex="81" required="yes"></o-email-input>
-        </o-row>
-        <o-row layout-gap="15px">
-          <o-combo attr="gender" label="gender" [static-data]="genderArray" value-column="genderCode" columns="genderCode;genderText"
-          visible-columns="genderText" required="yes" fxFlex="40">
-          </o-combo>
-          <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="40" required="yes"></o-date-input>
-        </o-row>
-        <o-row layout-gap="15px">
-          <o-date-input class="input-padding" attr="registration_date" title="REGISTRATION_DATE" fxFlex="40" required="yes"></o-date-input>
-          <o-text-input class="input-padding" attr="active" title="ACTIVE" fxFlex="40" enabled="no"></o-text-input>
-        </o-row>
-      </o-column>
-    </o-row>
-
-    <!-- Prueba -->
-
-    <!-- <o-row>
-      <o-column title-label="CLIENT_PERSONAL_INFORMATION" fxFlex>
-
-
-        <o-row>
-          <o-date-input class="input-padding" attr="registration_date" title="REGISTRATION_DATE" fxFlex="40" required="yes"></o-date-input>
-        </o-row>
-
-      </o-column>
-    </o-row> -->
-  </o-form>
+  <o-text-input attr="id" label="id_client" sql-type="INTEGER" enabled="no"></o-text-input>
+  <o-row fxFlex >
+    <o-column class="columPhoto">
+      <o-image class="clientPhoto" id="CUSTOMER_PHOTO" attr="photo" empty-image="assets/images/no-image.png"></o-image>
+    </o-column>
+    <o-column fxFlex layout-padding>
+      <o-row layout-gap="15px">
+        <o-text-input class="input-padding" attr="name" title="NAME" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="lastname" title="LASTNAME" fxFlex="40" required="yes"></o-text-input>
+      </o-row>
+      <o-row layout-gap="15px">
+        <o-text-input class="input-padding" attr="dni" title="DNI" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="phone" title="PHONE" fxFlex="40" required="yes"></o-text-input>
+      </o-row>
+      <o-row layout-gap="15px">
+        <o-email-input attr="email" title="EMAIL" fxFlex="81" required="yes"></o-email-input>
+      </o-row>
+      <o-row layout-gap="15px">
+        <o-combo attr="gender" label="gender" [static-data]="genderArray" value-column="genderCode" columns="genderCode;genderText"
+        visible-columns="genderText" required="yes" fxFlex="40">
+        </o-combo>
+        <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="40" required="yes"></o-date-input>
+      </o-row>
+      <o-row layout-gap="15px">
+        <o-date-input class="input-padding" attr="registration_date" title="REGISTRATION_DATE" fxFlex="40" required="yes"></o-date-input>
+        <o-text-input class="input-padding" attr="active" title="ACTIVE" fxFlex="40" enabled="no"></o-text-input>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>

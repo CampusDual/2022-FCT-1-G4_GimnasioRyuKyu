@@ -45,8 +45,6 @@ s
 CgymBack-model/src/main/java/org/example/model/core/dao/UserDao.java,e\d\eda9bf63f65ea273f0a809b5447ad1e7965ede2d
 s
 CgymBack-model/src/main/java/org/example/model/core/dao/RoomDao.java,e\3\e3367274514361d574fad4cf41e0b3c8225ab4a8
-u
-EgymBack-model/src/main/java/org/example/model/core/dao/ClientDao.java,7\b\7bdf2245772dcb2ca8ba19277b71c943a39181e9
 {
 KgymBack-model/src/main/java/org/example/model/core/service/RoomService.java,8\8\88cb057deda16eff7035b03c3829107ea233ddbb
 y

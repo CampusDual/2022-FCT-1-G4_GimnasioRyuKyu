@@ -57,5 +57,8 @@
   "h_end":"End hour",
   "id_client_class": "Identifier",
   "id_assing_room":"Class assigned",
-  "id_client":"No Membership"
+  "id_client":"Nº Membership",
+  "comboClass": "Class",
+  "comboClient": "Client",
+  "client_class":"Clients assignation"
 }

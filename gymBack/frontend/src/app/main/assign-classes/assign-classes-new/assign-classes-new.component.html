@@ -5,11 +5,11 @@
       <o-row layout-gap="15px" layout-align="center">
         <o-combo #comboClass attr="id_class" title="comboClass" required="yes" value-column="id"
         query-method="query" service="classes" entity="class"
-        columns="name" visible-columns="name" keys="id">
+        columns="name" visible-columns="name" searchable="yes" keys="id">
         </o-combo>
         <o-combo #comboRoom attr="id_room" title="comboRoom" required="yes"
         query-method="query" service="rooms" entity="room" value-column="id"
-        columns="name" visible-columns="name" keys="id">
+        columns="name" visible-columns="name" searchable="yes" keys="id">
         </o-combo>
       </o-row>
       <o-row layout-gap="15px" layout-gap="50px">
