@@ -12,4 +12,5 @@ export class AssignClassesDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }

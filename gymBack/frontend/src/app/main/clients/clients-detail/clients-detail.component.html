@@ -1,6 +1,6 @@
 <o-form fxFill #form service="clients" entity="client" keys="id" header-actions="R;I;U;D" show-header-navigation="no">
   <o-text-input attr="id" label="id_client" sql-type="INTEGER" enabled="no"></o-text-input>
-  <o-row fxFlex >
+  <o-row fxFlex>
     <o-column class="columPhoto">
       <o-image class="clientPhoto" id="CUSTOMER_PHOTO" attr="photo" empty-image="assets/images/no-image.png"></o-image>
     </o-column>
@@ -17,15 +17,40 @@
         <o-email-input attr="email" title="EMAIL" fxFlex="81" required="yes"></o-email-input>
       </o-row>
       <o-row layout-gap="15px">
-        <o-combo attr="gender" label="gender" [static-data]="genderArray" value-column="genderCode" columns="genderCode;genderText"
-        visible-columns="genderText" required="yes" fxFlex="40" translate="yes" null-selection="no">
+        <o-combo attr="gender" label="gender" [static-data]="genderArray" value-column="genderCode"
+          columns="genderCode;genderText" visible-columns="genderText" required="yes" fxFlex="40" translate="yes"
+          null-selection="no">
         </o-combo>
-        <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="40" required="yes"></o-date-input>
+        <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="40" required="yes">
+        </o-date-input>
       </o-row>
       <o-row layout-gap="15px">
-        <o-date-input class="input-padding" attr="registration_date" title="REGISTRATION_DATE" fxFlex="40" required="yes"></o-date-input>
+        <o-date-input class="input-padding" attr="registration_date" title="REGISTRATION_DATE" fxFlex="40"
+          required="yes"></o-date-input>
         <o-text-input class="input-padding" attr="active" title="ACTIVE" fxFlex="40" enabled="no"></o-text-input>
       </o-row>
+      <o-row layout-gap="15px">
+        <o-text-input class="input-padding" attr="id_subscription" title="ID_SUBSCRIPTION" fxFlex="40"></o-text-input>
+        <o-date-input class="input-padding" attr="sub_expiration_date" title="SUB_EXPERITAION_DATE" fxFlex="40"></o-date-input>
+      </o-row>
     </o-column>
+  </o-row>
+  <o-row>
+
+   <!-- <o-column-collapsible fxFlex="95" title="{{ 'Clases del cliente' | oTranslate }}" appearance="outline">
+      <o-list #list  keys="id_room_class" columns="class_name;h_start" title="List" service="clientsClasses" entity="clientClass"
+        quick-filter="true" quick-filter-columns="class_name;h_start" refresh-button="true" insert-button="true"
+        delete-button="true" selectable="false" dense="false" detail-button-in-row="true"
+        detail-button-in-row-icon="chevron_right" edit-button-in-row="true" edit-button-in-row-icon="edit"
+        detail-mode="none">
+
+        <o-list-item *ngFor="let row of list.dataArray">
+          <o-list-item-text #item title="{{ row.class_name }}" primary-text="{{ row.h_start }}">
+          </o-list-item-text>
+        </o-list-item>
+
+      </o-list>
+    </o-column-collapsible>
+  -->
   </o-row>
 </o-form>

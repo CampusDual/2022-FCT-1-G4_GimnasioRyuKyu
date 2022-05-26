@@ -1,14 +1,18 @@
-<o-form service="clientsClasses" entity="clientClass" keys="id_client_class" header-actions="R;I;U;D" show-header-navigation="no">
+<o-form service="clientsClasses" entity="clientClass" keys="id_client_class" header-actions="R;I;U;D"
+    show-header-navigation="no">
     <o-row>
         <o-column title-label="CLIENT_CLASS_INFORMATION" fxFlex>
             <o-row layout-align="center" layout-gap="30px">
-                <o-combo #comboClient attr="id_client" label="comboClient" required="yes" value-column="id" query-method="query"
-                    service="clients" entity="client" columns="name;dni" visible-columns="name;dni" searchable="yes" keys="id" null-selection="no">
+                <o-combo #comboClient attr="id_client" label="comboClient" required="yes" value-column="id"
+                    query-method="query" service="clients" entity="client" columns="name;lastname;dni"
+                    visible-columns="name;lastname;dni" searchable="yes" keys="id" null-selection="no">
                 </o-combo>
-                <o-combo #comboClass attr="id_room_class" label="comboClass" required="yes" query-method="query" service="roomsClasses" entity="roomClass"
-                    value-column="id_room_class" columns="class_name" visible-columns="class_name" searchable="yes" keys="id_room_class" null-selection="no">
+                <o-combo #comboClass attr="id_room_class" label="comboClass" required="yes" query-method="query"
+                    service="roomsClasses" entity="roomClass" value-column="id_room_class" columns="class_name;h_start"
+                    visible-columns="class_name;h_start" searchable="yes" keys="id_room_class" null-selection="no">
+                    <app-assign-clients-render></app-assign-clients-render>
                 </o-combo>
-                </o-row>
+            </o-row>
         </o-column>
     </o-row>
 </o-form>

@@ -1,9 +1,25 @@
-<o-form-layout-manager title="{{ 'clients' | oTranslate }}" separator=" " mode="tab" label-columns="name">
+<o-form show-header="no">
+  <!--<o-slide-toggle attr="slidetoggle-editable" label="Slide toggle" read-only="no"
+    ></o-slide-toggle>-->
+    <o-column-collapsible title="{{ 'FILTERS' | oTranslate }}" appearance="outline">
+      <o-row >
+        <o-text-input attr="fActive" read-only="no" fxFlex="33"></o-text-input>
+      </o-row>
+    <o-list-picker attr="clientActive" read-only="no" service="clients" entity="client" columns="active" visible-colums="active"
+      value-column="id" keys="id" visible-columns="active" width="33%">
+    </o-list-picker>
+    <o-row layout-align="end">
+      <o-button attr="filter" [oFilterBuilderQuery]="filterActive" type="RAISED" label="Filter" class="filter-button"></o-button>
+      <o-button attr="clear" [oFilterBuilderClear]="filterActive" type="RAISED" label="Clear" class="filter-button"></o-button>
+    </o-row>
+  </o-column-collapsible>
+    <o-filter-builder #filterActive attr="filterActive" filters="clientActive:fActive" [target]="clientsTable"
+    query-on-change="no" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
   <div fxFill>
-    <o-table class="o-table-column-centered" fxFlex attr="clientsTable" service="clients" entity="client" keys="id"
+    <o-table #clientsTable class="o-table-column-centered" fxFlex attr="clientsTable" service="clients" entity="client" keys="id"
       columns="id;photo;name;lastname;dni;gender;birthday;registration_date;phone;email;active"
-      visible-columns="photo;id;dni;name;lastname;phone" sort-columns="active:DESC" quick-filter="yes" query-rows="20">
-      <o-table-columns-filter columns="id;photo;name;lastname;dni;gender;birthday;registration_date;phone;email;active"></o-table-columns-filter>
+      visible-columns="photo;id;dni;name;lastname;phone" sort-columns="active:DESC" query-rows="20">
+      <!--<o-table-button attr="active" (onClick)="onAction1()" filters label="User" icon="check_circle"></o-table-button>-->
       <o-table-column attr="photo" title="photo" orderable="no" searchable="no" type="image" avatar="no"
         empty-image="assets/images/no-image.png" image-type="base64" width="50px"></o-table-column>
       <o-table-column attr="id" title="id_client" width="50px"></o-table-column>
@@ -15,8 +31,9 @@
       <o-table-column attr="registration_date" width="100px" type="date"></o-table-column>
       <o-table-column attr="phone" width="100px"></o-table-column>
       <o-table-column attr="email" width="100px"></o-table-column>
-      <o-table-column attr="active" type="boolean" true-value="true" false-value="false" boolean-type="boolean"
+      <o-table-column attr="active" type="boolean" width="100px" true-value="true" false-value="false" boolean-type="boolean"
       render-type="icon" render-true-value="check_circle" render-false-value="highlight_off"></o-table-column>
     </o-table>
   </div>
-</o-form-layout-manager>
+  <!---->
+</o-form>

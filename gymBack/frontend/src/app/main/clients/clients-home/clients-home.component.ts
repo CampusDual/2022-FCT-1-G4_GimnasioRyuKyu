@@ -1,19 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterExpressionUtils, Expression } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-clients-home',
   templateUrl: './clients-home.component.html',
   styleUrls: ['./clients-home.component.css']
 })
-export class ClientsHomeComponent implements OnInit {
+export class ClientsHomeComponent {
 
-  constructor() { }
+  createFilter(values: Array<{ attr, value }>): Expression {
+    // Prepare simple expressions from the filter components values
+    let filters: Array<Expression> = [];
+    values.forEach(fil => {
+      if (fil.value) {
+        if (fil.attr === 'filterActive') {
+          filters.push(FilterExpressionUtils.buildExpressionLike(fil.attr, fil.value));
+        }
+      }
+    });
 
-  ngOnInit() {
-  }
-
-  public translateArgsFn(rowData: any): any[] {
-    return [rowData.active];
+    // Build complex expression
+    if (filters.length > 0) {
+      return filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
+    } else {
+      return null;
+    }
   }
 
 }

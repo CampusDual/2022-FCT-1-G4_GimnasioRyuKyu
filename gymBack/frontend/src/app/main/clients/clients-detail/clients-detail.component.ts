@@ -24,4 +24,5 @@ export class ClientsDetailComponent implements OnInit {
     genderText: 'Other'
   }];
 
+
 }

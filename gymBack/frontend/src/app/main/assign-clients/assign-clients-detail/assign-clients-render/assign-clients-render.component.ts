@@ -15,10 +15,9 @@ export class AssignClientsRenderComponent extends OComboCustomRenderer  {
     super(injector);
     }
 
-    getComboData(value: any) {
-      let theDate = moment.unix(value.value).format("DD-MM-YYYY hh:mm a");
-      return value.value+theDate;
-    }
-
+  getComboData(value: any) {
+    let theDate = moment.unix(value.h_start).format("DD/MM h:mm:ss a");
+    return value.class_name+" "+theDate;
+  }
 
 }

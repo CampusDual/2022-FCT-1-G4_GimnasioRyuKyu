@@ -6,6 +6,7 @@
 
     <div class="wrapp-login">
       <div fxFill fxLayout="column" fxLayoutAlign="center center" class="login-inner-container">
+       <img src="assets/images/logo3_1_2.png" width="200px" style="position: relative;top: 40px;" alt="Logo Ryukyu Ryu">
         <form [formGroup]="loginForm" (ngSubmit)="login()">
 
           <div class="login-title-container" fxLayout="column">
@@ -33,7 +34,7 @@
             <mat-checkbox class="text">{{ 'REMEMBER_ME' | oTranslate }}</mat-checkbox>
           </div>
 
-          <button mat-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
+          <button mat-raised-button color="accent" type="submit">{{ 'LOGIN' | oTranslate }}</button>
           <div layout-padding></div>
           <div layout-padding></div>
           <div fxLayout="column" fxLayoutAlign="center center" layout-padding>
