@@ -72,7 +72,7 @@ atlassian-ide-plugin.xml
 .idea/replstate.xml
 
 # SonarLint plugin
-.idea/sonarlint/
+gymBack/.idea/sonarlint/
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
