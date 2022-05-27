@@ -1,5 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
 .o-table-column-centered{
-  text-align: center;
+  text-align: center !important;
 }
+
+//Toolbar
+.o-app-header-default-actions{
+  color: white;
+}
+
+.o-user-info-username.ng-star-inserted{
+  color: white;
+}
+
+o-user-info .mat-icon{
+  color: white;
+}
+
+//Menu
+.o-app-sidenav-sidenav.o-scroll.mat-drawer.mat-sidenav.ng-tns-c7-0.ng-trigger.ng-trigger-transform.mat-drawer-opened.mat-drawer-side.ng-star-inserted{
+  padding-bottom: 0;
+  background-color: #747474;
+}
+
+.sidenav-toggle-container.ng-star-inserted{
+  background-color: #383838;
+}
+
+mat-sidenav-container o-app-sidenav-image .o-app-sidenav-image-container.ng-star-inserted{
+  background-color: #383838;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 60px;
+  height: 150px;
+}
+
+mat-sidenav-container o-app-sidenav-image .o-app-sidenav-image-container.ng-star-inserted img{
+  padding-top: 25px;
+}
+
+.mat-button.mat-button-base.o-app-sidenav-viewer-sidenav-item-selected.ng-star-inserted{
+  margin-left: 0;
+}
+
+
+//Menu close
+.o-app-sidenav-sidenav.o-scroll.mat-drawer.mat-sidenav.ng-tns-c7-0.ng-trigger.ng-trigger-transform.mat-drawer-side.ng-star-inserted.mat-drawer-closed img{
+  margin-right: 5px;
+  padding-top: 10px;
+}
+
+.o-app-sidenav-sidenav.o-scroll.mat-drawer.mat-sidenav.ng-tns-c7-0.ng-trigger.ng-trigger-transform.mat-drawer-side.ng-star-inserted.mat-drawer-closed .navMenu{
+  margin-top: 20px;
+}
+
+
+
+
+
+
 

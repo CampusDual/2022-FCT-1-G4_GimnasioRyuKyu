@@ -13,7 +13,7 @@ export class ClientsHomeComponent {
     let filters: Array<Expression> = [];
     values.forEach(fil => {
       if (fil.value) {
-        if (fil.attr === 'filterActive') {
+        if (fil.attr == 'active') {
           filters.push(FilterExpressionUtils.buildExpressionLike(fil.attr, fil.value));
         }
       }

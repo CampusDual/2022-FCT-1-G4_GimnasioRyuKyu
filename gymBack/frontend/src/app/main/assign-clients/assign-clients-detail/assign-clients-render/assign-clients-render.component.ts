@@ -1,6 +1,6 @@
 import { ViewChild, TemplateRef, Injector, Component } from '@angular/core';
 import * as moment from 'moment';
-import { OComboCustomRenderer  } from 'ontimize-web-ngx';
+import { OComboCustomRenderer } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-assign-clients-render',

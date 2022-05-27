@@ -22,6 +22,7 @@
 
 
   "clients":"Clients",
+  "actives": "Actives",
   "photo": "Photo",
   "id_client":"Nº Membership",
   "dni": "DNI",
@@ -60,5 +61,9 @@
   "assing clients":"Assign clients",
   "client_class":"Clients assignation",
   "client_name":"Client",
-  "comboClient": "Select client"
+  "comboClient": "Select client",
+
+  "subscriptions":"Rates",
+  "price":"Price",
+  "sub_months":"Number of months"
 }

@@ -1,0 +1,10 @@
+<o-form-layout-manager title="{{'subscriptions' | oTranslate }}" separator=" " mode="tab" label-columns="id">
+    <div fxFill>
+          <o-table fxFlex attr="subscriptionsTable" service="subscriptions" entity="subscription" keys="id"
+          columns="sub_months;price"
+          visible-columns="sub_months;price" query-rows="20">
+          <o-table-column attr="sub_months" class="o-table-column-centered"></o-table-column>
+          <o-table-column attr="price" class="o-table-column-centered"  currency-symbol="€" type="currency" currency-symbol-position="right"></o-table-column>
+        </o-table>
+    </div>
+  </o-form-layout-manager>

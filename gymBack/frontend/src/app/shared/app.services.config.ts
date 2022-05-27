@@ -13,5 +13,8 @@ export const SERVICE_CONFIG: Object = {
   },
   'clientsClasses': {
     'path': '/clientsClasses'
+  },
+  'subscriptions': {
+    'path': '/subscriptions'
   }
 };

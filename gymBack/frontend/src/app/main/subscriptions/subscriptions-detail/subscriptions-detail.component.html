@@ -1,0 +1,13 @@
+<o-form service="subscriptions" entity="subscription" keys="id" header-actions="R;I;U;D" show-header-navigation="no">
+    <o-text-input attr="id" sql-type="INTEGER" enabled="no" hidden="true"></o-text-input>
+    <o-row>
+      <o-column title-label="ROOM_INFORMATION" fxFlex>
+        <o-row>
+          <o-currency-input class="input-padding" attr="price" fxFlex="40" required="yes"></o-currency-input>
+        </o-row>
+        <o-row>
+          <o-text-input class="input-padding" attr="sub_months" fxFlex required="yes"></o-text-input>
+        </o-row>
+      </o-column>
+    </o-row>
+  </o-form>

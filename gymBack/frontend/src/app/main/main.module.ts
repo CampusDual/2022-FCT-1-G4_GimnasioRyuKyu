@@ -12,7 +12,7 @@ import { MainComponent } from './main.component';
     MainRoutingModule
   ],
   declarations: [
-    MainComponent
+    MainComponent,
   ]
 })
 export class MainModule { }

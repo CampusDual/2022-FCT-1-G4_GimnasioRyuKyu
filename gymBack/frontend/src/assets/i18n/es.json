@@ -21,6 +21,7 @@
   "FOOTER_RIGHTS": "Todos los derechos reservados",
 
   "clients":"Clientes",
+  "actives": "Activos",
   "photo": "Foto",
   "id_client":"Nº Socio",
   "dni": "DNI",
@@ -59,5 +60,9 @@
   "assing clients":"Asignación clientes",
   "client_class":"Asignación de clientes",
   "client_name":"Cliente",
-  "comboClient": "Seleccionar cliente"
+  "comboClient": "Seleccionar cliente",
+
+  "subscriptions":"Tarifas",
+  "price":"Precio",
+  "sub_months":"Cantidad de meses"
 }

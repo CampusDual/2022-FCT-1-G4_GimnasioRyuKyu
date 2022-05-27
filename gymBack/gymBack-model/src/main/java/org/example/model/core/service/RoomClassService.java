@@ -33,6 +33,9 @@ public class RoomClassService implements IRoomClassService {
 
     @Override
     public EntityResult roomClassUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+        if (attrMap.containsKey("id_assing_class")) {
+            attrMap.put("id_room_class", attrMap.remove("id_assing_class"));
+        }
         return this.daoHelper.update(this.roomClassDao, attrMap, keyMap);
     }
 
