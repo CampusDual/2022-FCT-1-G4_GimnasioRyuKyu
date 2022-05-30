@@ -103,18 +103,21 @@ public class ClientService implements IClientService {
 
     private void updateExpirationDate(Map<String, Object> attrMap){
         for(Map.Entry<String,Object> entry:attrMap.entrySet()){
-            if(entry.getKey().equals(clientDao.ID_SUBSCRIPTION )){
-                Object id_sub=entry.getValue();
+            if(entry.getKey().equals(ClientDao.ID_SUBSCRIPTION )){
+                int id_sub= (int) entry.getValue();
                 Map<String,Object> keys=new HashMap<>();
                 keys.put(ClientDao.ID_SUBSCRIPTION,id_sub);
                 List<String> attrList=new ArrayList<>();
                 attrList.add(SubscriptionDao.SUB_MONTHS);
-                EntityResult months=this.daoHelper.query(clientDao,keys,attrList,ClientDao.CLIENT_SUB);
-                System.out.println(months);
-                System.out.println(id_sub);
-                Calendar c=Calendar.getInstance();
+                attrList.add(SubscriptionDao.PRICE);
+                EntityResult entityResult=this.daoHelper.query(clientDao,keys,attrList,ClientDao.CLIENT_SUB);
+                Object months=  entityResult.get(SubscriptionDao.SUB_MONTHS);
+                System.out.println(entityResult);
+
+                //System.out.println(id_sub);
+              /*  Calendar c=Calendar.getInstance();
                 c.add(Calendar.MONTH,2);
-                attrMap.put(clientDao.SUB_EXPIRATION_DATE,c);
+                attrMap.put(clientDao.SUB_EXPIRATION_DATE,c); */
             }
         }
     }

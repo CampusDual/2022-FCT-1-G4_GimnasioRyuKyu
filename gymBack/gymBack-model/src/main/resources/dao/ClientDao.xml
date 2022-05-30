@@ -15,14 +15,15 @@
     <Queries>
         <Query id="CLIENT_SUB_QUERY">
             <AmbiguousColumns>
-                <AmbiguousColumn name="id_subscription" prefix="s" databaseName="id"/>
-                <AmbiguousColumn name="id_subscription_client" prefix="c" databaseName="id_subscription"/>
+                <AmbiguousColumn name="id_subscription_s" prefix="s" databaseName="id"/>
+                <AmbiguousColumn name="id_subscription_c" prefix="c" databaseName="id_subscription"/>
             </AmbiguousColumns>
             <Sentence>
                 <![CDATA[
 			     SELECT
                     #COLUMNS#
-                   FROM client c INNER JOIN subscription s on s.id =c.id_subscription
+                   FROM client c
+                   INNER JOIN subscription s on s.id =c.id_subscription
                  #WHERE#
 			   ]]>
             </Sentence>

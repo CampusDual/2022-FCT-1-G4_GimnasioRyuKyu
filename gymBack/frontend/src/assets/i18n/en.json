@@ -37,6 +37,8 @@
   "Male":"Male",
   "Female":"Female",
   "Other":"Other",
+  "comboSubMonth": "Select months",
+  "sub_expiration_date": "Subscription expires",
 
 
   "classes":"Classes",

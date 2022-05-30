@@ -14,7 +14,7 @@ export class ClientsHomeComponent {
     values.forEach(fil => {
       if (fil.value) {
         if (fil.attr == 'active') {
-          filters.push(FilterExpressionUtils.buildExpressionLike(fil.attr, fil.value));
+          filters.push(FilterExpressionUtils.buildExpressionEquals(fil.attr, fil.value));
         }
       }
     });

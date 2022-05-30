@@ -19,6 +19,17 @@
 }
 
 .subscriptionTime{
-    margin-top: -7px;
+
 }
 
+.subExpirationDate{
+    margin-top: 6px;
+}
+
+.subcribeButton{
+    height: 20px;
+}
+
+.unsubscribeButton{
+
+}

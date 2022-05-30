@@ -36,6 +36,8 @@
   "Male":"Hombre",
   "Female":"Mujer",
   "Other":"Otro",
+  "comboSubMonth": "Seleccionar meses",
+  "sub_expiration_date": "Caducidad subscripción",
 
 
   "classes":"Clases",
