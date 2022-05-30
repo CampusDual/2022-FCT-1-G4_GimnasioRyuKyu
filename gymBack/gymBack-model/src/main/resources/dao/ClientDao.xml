@@ -14,16 +14,21 @@
     <GeneratedKey>id</GeneratedKey>
     <Queries>
         <Query id="CLIENT_SUB_QUERY">
-            <AmbiguousColumns>
-                <AmbiguousColumn name="id_subscription_s" prefix="s" databaseName="id"/>
-                <AmbiguousColumn name="id_subscription_c" prefix="c" databaseName="id_subscription"/>
-            </AmbiguousColumns>
             <Sentence>
                 <![CDATA[
 			     SELECT
                     #COLUMNS#
-                   FROM client c
-                   INNER JOIN subscription s on s.id =c.id_subscription
+                   FROM subscription
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+        <Query id="CLIENT_QUERY">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM client
                  #WHERE#
 			   ]]>
             </Sentence>

@@ -4,14 +4,16 @@ import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.IRoomClassService;
+import org.example.model.core.dao.ClientClassDao;
+import org.example.model.core.dao.ClientDao;
 import org.example.model.core.dao.RoomClassDao;
+import org.example.model.core.dao.SubscriptionDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.sql.Timestamp;
+import java.util.*;
 
 @Service("RoomClassService")
 @Lazy
@@ -42,6 +44,26 @@ public class RoomClassService implements IRoomClassService {
     @Override
     public EntityResult roomClassDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.roomClassDao, keyMap);
+    }
+
+    private void isValidHour(Map<String,Object> attrMap){
+        for(Map.Entry<String,Object> entry:attrMap.entrySet()){
+            Timestamp h_start_o, h_end_o;
+            Date date_o;
+            if(entry.getKey().equals(RoomClassDao.ATTR_H_START)){
+                h_start_o= (Timestamp) entry.getValue();
+                System.out.println(h_start_o);
+            }
+            if(entry.getKey().equals(RoomClassDao.ATTR_H_END)){
+                h_end_o= (Timestamp) entry.getValue();
+                System.out.println(h_end_o);
+            }
+            if(entry.getKey().equals(RoomClassDao.ATTR_DATE)){
+                date_o= (Date) entry.getValue();
+                System.out.println(date_o);
+            }
+
+            }
     }
 
 }

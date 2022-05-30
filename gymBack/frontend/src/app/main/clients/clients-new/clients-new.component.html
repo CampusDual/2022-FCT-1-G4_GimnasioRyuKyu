@@ -6,25 +6,21 @@
     </o-column>
     <o-column fxFlex layout-padding>
       <o-row layout-gap="15px">
-        <o-text-input class="input-padding" attr="name" title="NAME" fxFlex="40" required="yes"></o-text-input>
-        <o-text-input class="input-padding" attr="lastname" title="LASTNAME" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="name" title="NAME" fxFlex="46.8" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="lastname" title="LASTNAME" fxFlex="46.8" required="yes"></o-text-input>
       </o-row>
       <o-row layout-gap="15px">
-        <o-nif-input #nif attr="dni" title="DNI" fxFlex="40" required="yes"></o-nif-input>
-        <o-text-input class="input-padding" attr="phone" title="PHONE" fxFlex="40" required="yes"></o-text-input>
+        <o-nif-input #nif attr="dni" title="DNI" fxFlex="46.8" required="yes"></o-nif-input>
+        <o-text-input class="input-padding" attr="phone" title="PHONE" fxFlex="46.8" required="yes"></o-text-input>
       </o-row>
       <o-row layout-gap="15px">
-        <o-email-input attr="email" title="EMAIL" fxFlex="81" required="yes"></o-email-input>
+        <o-email-input attr="email" title="EMAIL" fxFlex="95" required="yes"></o-email-input>
       </o-row>
       <o-row layout-gap="15px">
         <o-combo attr="gender" label="gender" [static-data]="genderArray" value-column="genderCode" columns="genderCode;genderText"
-        visible-columns="genderText" required="yes" fxFlex="40" null-selection="no">
+        visible-columns="genderText" required="yes" fxFlex="46.8" null-selection="no">
         </o-combo>
-        <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="40" required="yes"></o-date-input>
-      </o-row>
-      <o-row layout-gap="15px">
-        <o-date-input class="input-padding" attr="registration_date" title="REGISTRATION_DATE" fxFlex="40" required="yes"></o-date-input>
-        <o-slide-toggle attr="active" label="ACTIVE"></o-slide-toggle>
+        <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="46.8" required="yes"></o-date-input>
       </o-row>
     </o-column>
   </o-row>

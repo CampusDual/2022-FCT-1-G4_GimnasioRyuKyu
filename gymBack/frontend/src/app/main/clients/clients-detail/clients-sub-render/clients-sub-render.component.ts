@@ -1,5 +1,6 @@
 import { OComboCustomRenderer } from 'ontimize-web-ngx';
 import { Component, TemplateRef, Injector, ViewChild } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-clients-sub-render',
@@ -17,5 +18,4 @@ export class ClientsSubRenderComponent extends OComboCustomRenderer {
   getComboData(value: any) {
     return value.sub_months+" - "+value.price+" €";
   }
-
 }

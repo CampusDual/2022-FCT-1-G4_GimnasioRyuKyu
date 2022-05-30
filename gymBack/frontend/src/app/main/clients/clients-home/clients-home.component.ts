@@ -6,7 +6,7 @@ import { FilterExpressionUtils, Expression } from 'ontimize-web-ngx';
   templateUrl: './clients-home.component.html',
   styleUrls: ['./clients-home.component.css']
 })
-export class ClientsHomeComponent {
+export class ClientsHomeComponent implements OnInit{
 
   createFilter(values: Array<{ attr, value }>): Expression {
     // Prepare simple expressions from the filter components values
@@ -25,6 +25,11 @@ export class ClientsHomeComponent {
     } else {
       return null;
     }
+  }
+
+  constructor() { }
+
+  ngOnInit() {
   }
 
 }

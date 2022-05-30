@@ -1,12 +1,10 @@
 <o-form-layout-manager title="{{'classes' | oTranslate }}" separator=" " mode="tab" label-columns="name">
-    <div fxFill>
-        <div fxFill fxLayout="column" fxLayoutAlign="start">
-            <o-table fxFlex attr="classTable" service="classes" entity="class" keys="id"
-                columns="name;description"
-                visible-columns="name;description" query-rows="20" >
-                <o-table-column class="o-table-column-centered" attr="name"></o-table-column>
-                <o-table-column attr="description"></o-table-column>
-            </o-table>
-        </div>
+    <div fxFill fxLayout="column" fxLayoutAlign="start">
+        <o-table fxFlex attr="classTable" service="classes" entity="class" keys="id"
+            columns="name;description"
+            visible-columns="name;description" query-rows="20" >
+            <o-table-column class="o-table-column-centered" attr="name"></o-table-column>
+            <o-table-column attr="description"></o-table-column>
+        </o-table>
     </div>
 </o-form-layout-manager>

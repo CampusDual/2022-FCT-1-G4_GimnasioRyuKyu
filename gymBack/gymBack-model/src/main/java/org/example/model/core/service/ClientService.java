@@ -30,13 +30,9 @@ public class ClientService implements IClientService {
     @Override
     public EntityResult clientQuery(Map<String, Object> keyMap, List<?> attrList)
             throws OntimizeJEERuntimeException {
-       /* for(int i=0;i<attrList.size();i++) {
-            Map<String, Object> values = this.daoHelper.query(this.clientDao, keyMap, attrList).getRecordValues(i);
-            //System.out.println(values);
-            updateActive(values);
-        } */
-
-       // System.out.println(daoHelper.query(this.clientDao, keyMap, attrList));
+        if(!keyMap.isEmpty()) {
+            updateActive(keyMap);
+        }
                 return this.daoHelper.query(this.clientDao, keyMap, attrList);
     }
 
@@ -104,34 +100,54 @@ public class ClientService implements IClientService {
     private void updateExpirationDate(Map<String, Object> attrMap){
         for(Map.Entry<String,Object> entry:attrMap.entrySet()){
             if(entry.getKey().equals(ClientDao.ID_SUBSCRIPTION )){
-                int id_sub= (int) entry.getValue();
-                Map<String,Object> keys=new HashMap<>();
-                keys.put(ClientDao.ID_SUBSCRIPTION,id_sub);
-                List<String> attrList=new ArrayList<>();
-                attrList.add(SubscriptionDao.SUB_MONTHS);
-                attrList.add(SubscriptionDao.PRICE);
-                EntityResult entityResult=this.daoHelper.query(clientDao,keys,attrList,ClientDao.CLIENT_SUB);
-                Object months=  entityResult.get(SubscriptionDao.SUB_MONTHS);
-                System.out.println(entityResult);
+                    int id_sub = (int) entry.getValue();
+                    Map<String, Object> keys = new HashMap<>();
+                    keys.put(SubscriptionDao.ID, id_sub);
+                    List<String> attrList = new ArrayList<>();
+                    attrList.add(SubscriptionDao.SUB_MONTHS);
+                    attrList.add(SubscriptionDao.PRICE);
+                    EntityResult entityResult = this.daoHelper.query(clientDao, keys, attrList, ClientDao.CLIENT_SUB);
+                    List<Object> months = (List<Object>) entityResult.get(SubscriptionDao.SUB_MONTHS);
+                    String monthString = months.get(0).toString();
+                    int month = Integer.parseInt(monthString);
 
-                //System.out.println(id_sub);
-              /*  Calendar c=Calendar.getInstance();
-                c.add(Calendar.MONTH,2);
-                attrMap.put(clientDao.SUB_EXPIRATION_DATE,c); */
+
+                    Calendar c = Calendar.getInstance();
+                    c.add(Calendar.MONTH, month);
+                    attrMap.put(clientDao.SUB_EXPIRATION_DATE, c);
             }
         }
     }
 
-    private void updateActive(Map<String, Object> attrMap){
-        Calendar today=Calendar.getInstance();
-        Calendar expirationDate= (Calendar) attrMap.get(clientDao.SUB_EXPIRATION_DATE);
-       // System.out.println("exp: "+expirationDate);
-       // System.out.println("tod: "+today);
 
-        if(today.compareTo(expirationDate)>0 && expirationDate!=null){
-            attrMap.put(clientDao.ACTIVE,false);
+    private void updateActive(Map<String, Object> keyMap){
+        List<String> attrList=new ArrayList<>();
+        attrList.add(ClientDao.SUB_EXPIRATION_DATE);
+        try {
+            EntityResult entityResult = this.daoHelper.query(clientDao, keyMap, attrList, ClientDao.CLIENT_Q);
+
+            List<Object> expirations = (List<Object>) entityResult.get(ClientDao.SUB_EXPIRATION_DATE);
+            String expDateString = expirations.get(0).toString();
+            String expDateArray[] = expDateString.split("-");
+            int year = Integer.parseInt(expDateArray[0]);
+            int month = Integer.parseInt(expDateArray[1]);
+            int day = Integer.parseInt(expDateArray[2]);
+            Calendar expDate = new GregorianCalendar(year, month, day);
+
+            Calendar today = Calendar.getInstance();
+
+            Map<String, Object> attrMap=new HashMap<>();
+            if(expDate.compareTo(today)<0){
+                attrMap.put(ClientDao.ACTIVE,false);
+            }else{
+                attrMap.put(ClientDao.ACTIVE,true);
+            }
+            clientUpdate(attrMap,keyMap);
+
         }
-
+        catch(NullPointerException e){
+            System.out.println("El cliente no tiene suscripción");
+        }
 
     }
 

@@ -25,4 +25,5 @@ public class ClientDao extends OntimizeJdbcDaoSupport {
     public static final String ID_SUBSCRIPTION = "id_subscription";
     public static String SUB_EXPIRATION_DATE = "sub_expiration_date";
     public static final String CLIENT_SUB="CLIENT_SUB_QUERY";
+    public static final String CLIENT_Q="CLIENT_QUERY";
 }

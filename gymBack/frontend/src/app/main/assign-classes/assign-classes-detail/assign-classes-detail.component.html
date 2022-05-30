@@ -19,6 +19,28 @@
         <o-hour-input class="input-padding" attr="h_start" fxFlex="40" required="yes"></o-hour-input>
         <o-hour-input class="input-padding" attr="h_end" fxFlex="40" required="yes"></o-hour-input>
       </o-row>
+
+      <o-row layout-gap="50px" layout-align="center">
+        <o-integer-input class="input-padding" attr="capacity" title="CAPACITY" fxFlex="40"></o-integer-input>
+        <o-integer-input class="input-padding" attr="available_capacity" title="AVAILABLE_CAPACITY" fxFlex="40"></o-integer-input>
+      </o-row>
+      <o-row class="colapsiblesStyles">
+        <o-column-collapsible fxFlex="95" title="{{ 'Clients' | oTranslate }}" appearance="outline">
+          <o-list #list attr="clientsTable" keys="id_assing_room;id_client_class" columns="client_name;lastname;dni;photo" title="List"
+            service="clientsClasses" entity="clientClass" quick-filter="true" quick-filter-columns="client_name;lastname;dni"
+            refresh-button="true" insert-button="false" delete-button="true" selectable="true" dense="false"
+            insert-button-position="top" detail-button-in-row="true" detail-button-in-row-icon="chevron_right"
+            edit-button-in-row="false" detail-mode="none" parent-keys="id_assing_room:id_room_class">
+
+
+            <o-list-item *ngFor="let row of list.dataArray">
+              <o-list-item-text #tem  title="{{ row.client_name }}" primary-text="{{ row.lastname }}" secondary-text="{{ row.dni }}">
+              </o-list-item-text>
+            </o-list-item>
+
+          </o-list>
+        </o-column-collapsible>
+      </o-row>
     </o-column>
   </o-row>
 </o-form>

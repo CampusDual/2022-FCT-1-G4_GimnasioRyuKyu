@@ -57,6 +57,8 @@
   "comboClass":"Seleccionar clase",
   "comboRoom":"Seleccionar sala",
   "comboHour":"Seleccionar hora",
+  "capacity": "Aforo",
+  "available_capacity":"Aforo disponible",
 
 
   "assing clients":"Asignación clientes",

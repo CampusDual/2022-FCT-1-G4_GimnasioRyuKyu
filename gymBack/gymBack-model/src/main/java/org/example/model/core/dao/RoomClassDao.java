@@ -16,6 +16,9 @@ public class RoomClassDao extends OntimizeJdbcDaoSupport {
     public static final String ATTR_DATE = "date";
     public static final String ATTR_H_START = "h_start";
     public static final String ATTR_H_END = "h_end";
+    public static final String ATTR_CAPACITY = "capacity";
+    public static final String ATTR_AVAILABLE_CAPACITY = "available_capacity";
+
     public static final String QUERY_ROOM_CLASS = "ROOMCLASS";
     public RoomClassDao(){
         super();

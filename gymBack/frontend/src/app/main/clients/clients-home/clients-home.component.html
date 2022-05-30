@@ -22,8 +22,11 @@
         boolean-type="boolean" render-type="icon" render-true-value="check_circle" render-false-value="highlight_off">
       </o-table-column>
       <o-filter-builder #filterActive attr="filterActive" filters="active:active" [target]="clientsTable"
-      query-on-change="yes" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
+        query-on-change="yes" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
     </o-table>
   </div>
-  <!---->
 </o-form>
+
+
+
+<!-- title="{{'clients' | oTranslate }}" separator=" " mode="tab" label-columns="name" -->

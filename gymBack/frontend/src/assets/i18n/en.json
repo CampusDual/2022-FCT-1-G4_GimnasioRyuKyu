@@ -58,6 +58,8 @@
   "comboClass":"Select class",
   "comboRoom":"Select room",
   "comboHour":"Select hour",
+  "capacity": "Capacity",
+  "available_capacity":"Available capacity",
 
 
   "assing clients":"Assign clients",
