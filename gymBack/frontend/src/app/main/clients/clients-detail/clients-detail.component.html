@@ -56,17 +56,15 @@
 
   <!-- Classes -->
   <o-row class="colapsiblesStyles">
-    <o-column-collapsible fxFlex="95" title="{{ 'Client classe' | oTranslate }}" appearance="outline">
-      <o-list fxFlex #list attr="classesTable" keys="id_assing_room;id_client_class"
-        columns="id_client;class_name;h_start" title="List" service="clientsClasses" entity="clientClass"
-        quick-filter="true" quick-filter-columns="class_name;h_start" refresh-button="true" insert-button="true"
-        delete-button="true" selectable="true" dense="false" insert-button-position="top" detail-button-in-row="true"
-        detail-button-in-row-icon="chevron_right" edit-button-in-row="true" edit-button-in-row-icon="edit"
-        detail-mode="none" parent-keys="id_client:id">
+    <o-column-collapsible fxFlex="95" title="{{ 'Client classes' | oTranslate }}" appearance="outline">
+      <o-list #list attr="classesTable" keys="id_assing_room;id_client_class"
+        columns="id_client;class_name;date;h_start" title="List" service="clientsClasses" entity="clientClass"
+        quick-filter="true" quick-filter-columns="class_name;h_start" refresh-button="true" delete-button="true"
+        selectable="true" dense="false" detail-button-in-row="dalse" detail-button-in-row-icon="chevron_right"
+        edit-button-in-row="false" edit-button-in-row-icon="edit" detail-mode="none" parent-keys="id_client:id">
 
         <o-list-item *ngFor="let row of list.dataArray">
-          <o-list-item-text #item title="{{ row.class_name }},{{ row.h_start }}" primary-text="{{ row.h_start }}"
-            fxFlex="40">
+          <o-list-item-text #item title="{{ row.class_name }} - {{row.date | date}} - {{ row.h_start }}" fxFlex="40">
           </o-list-item-text>
         </o-list-item>
 

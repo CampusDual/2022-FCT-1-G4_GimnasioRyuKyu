@@ -6,6 +6,7 @@ import {
 export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'home', name: 'HOME', icon: 'home', route: '/main/home' },
   { id: 'clients', name: 'clients', icon: 'people', route: '/main/clients' },
+  { id: 'monitors', name: 'monitors', icon: 'self_improvement', route: '/main/monitors' },
   { id: 'classes', name: 'classes', icon: 'class', route: '/main/classes' },
   { id: 'rooms', name: 'rooms', icon: 'room', route: '/main/rooms' },
   { id: 'subscriptions', name: 'subscriptions', icon: 'payment', route: '/main/subscriptions' },

@@ -3,8 +3,9 @@
   <o-row>
     <o-image class="roomPhoto" id="ROOM_PHOTO" attr="photo" empty-image="assets/images/no-image.png"></o-image>
     <o-column title-label="ROOM_INFORMATION" fxFlex>
-      <o-row>
-        <o-text-input class="input-padding" attr="name" fxFlex="40" required="yes"></o-text-input>
+      <o-row layout-gap="15px">
+        <o-text-input class="input-padding" attr="name" fxFlex required="yes"></o-text-input>
+        <o-integer-input class="input-padding" attr="max_room_capacity" min="0" fxFlex required="yes"></o-integer-input>
       </o-row>
       <o-row>
         <o-text-input class="input-padding" attr="description" fxFlex required="yes"></o-text-input>

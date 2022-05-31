@@ -24,7 +24,7 @@
   "clients":"Clients",
   "actives": "Actives",
   "photo": "Photo",
-  "id_client":"Nº Membership",
+  "id_client":"Membership No.",
   "dni": "DNI",
   "name":"Name",
   "lastname":"Lastname",
@@ -39,6 +39,12 @@
   "Other":"Other",
   "comboSubMonth": "Select months",
   "sub_expiration_date": "Subscription expires",
+  "Manage subscription": "Manage subscription",
+  "Client classes": "Client classes",
+
+
+  "monitors": "Monitors",
+  "id_monitor":"Employee No.",
 
 
   "classes":"Classes",
@@ -46,6 +52,7 @@
 
 
   "rooms":"Rooms",
+  "max_room_capacity": "Capacity",
 
 
   "assing classes": "Assign classes",
@@ -53,13 +60,14 @@
   "class_name":"Class",
   "room_name":"Room",
   "date":"Date",
-  "h_start":"Start hour",
-  "h_end":"End hour",
+  "h_start":"Start",
+  "h_end":"End",
   "comboClass":"Select class",
   "comboRoom":"Select room",
+  "comboMonitor":"Select monitor",
   "comboHour":"Select hour",
+  "monitor_name": "Monitor",
   "capacity": "Capacity",
-  "available_capacity":"Available capacity",
 
 
   "assing clients":"Assign clients",

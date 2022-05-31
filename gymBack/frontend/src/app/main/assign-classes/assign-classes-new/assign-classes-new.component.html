@@ -1,27 +1,22 @@
 <o-form service="roomsClasses" entity="roomClass" keys="id_room_class" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-row layout-gap="15px">
+    <o-combo #comboClass attr="id_class" label="comboClass" required="yes" value-column="id" query-method="query" fxFlex
+      service="classes" entity="class" columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
+    </o-combo>
+    <o-combo #comboRoom attr="id_room" label="comboRoom" required="yes" query-method="query" service="rooms" entity="room" fxFlex
+      value-column="id" columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
+    </o-combo>
+    <o-combo #comboMonitor attr="id_monitor" label="comboMonitor" required="yes" value-column="id" query-method="query" fxFlex
+      service="monitors" entity="monitor" columns="name;lastname;id" visible-columns="name;lastname;id" searchable="yes" keys="id" null-selection="no">
+    </o-combo>
+  </o-row>
+  <o-row layout-gap="15px">
+    <o-date-input class="input-padding" attr="date" fxFlex required="yes"></o-date-input>
+    <o-hour-input class="input-padding" attr="h_start" title="H_START" fxFlex required="yes" value-type="timestamp"></o-hour-input>
+    <o-hour-input class="input-padding" attr="h_end" title="H_END" fxFlex required="yes" value-type="timestamp"></o-hour-input>
+  </o-row>
   <o-row>
-    <o-column title-label="class_name" fxFlex>
-      <o-row layout-gap="15px" layout-align="center">
-        <o-combo #comboClass attr="id_class" label="comboClass" required="yes" value-column="id"
-        query-method="query" service="classes" entity="class"
-        columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
-        </o-combo>
-        <o-combo #comboRoom attr="id_room" label="comboRoom" required="yes"
-        query-method="query" service="rooms" entity="room" value-column="id"
-        columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
-        </o-combo>
-      </o-row>
-      <o-row layout-gap="15px" layout-gap="50px">
-        <o-date-input class="input-padding" attr="date" fxFlex="40" required="yes"></o-date-input>
-          <o-hour-input class="input-padding" attr="h_start" title="H_START" fxFlex="40" required="yes" value-type="timestamp"></o-hour-input>
-          <o-hour-input class="input-padding" attr="h_end" title="H_END" fxFlex="40" required="yes" value-type="timestamp"></o-hour-input>
-      </o-row>
-      <o-row layout-gap="50px" layout-align="center">
-        <o-integer-input class="input-padding" attr="capacity" title="CAPACITY" fxFlex="40"></o-integer-input>
-        <o-integer-input class="input-padding" attr="available_capacity" title="AVAILABLE_CAPACITY" fxFlex="40"></o-integer-input>
-
-      </o-row>
-    </o-column>
+    <o-integer-input class="input-padding" attr="capacity" title="CAPACITY" min="0" required="yes" fxFlex="32.5"></o-integer-input>
   </o-row>
 </o-form>
 

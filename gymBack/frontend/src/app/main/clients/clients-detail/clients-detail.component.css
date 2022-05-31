@@ -22,11 +22,11 @@
     margin-top: 6px;
 }
 
-.subcribeButton{
+.subcribeButton, .unsubscribeButton{
     margin-top: 19px;
 }
 
-.unsubscribeButton{
-    margin-top: 19px;
+.altMin{
+  min-height: 50%;
 }
 

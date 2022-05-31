@@ -13,5 +13,9 @@ public class ClientClassDao extends OntimizeJdbcDaoSupport {
     public static final String ATTR_ID_CLIENT = "id_client";
     public static final String ATTR_ID_CLIENT_CLASS = "id_client_class";
     public static final String QUERY_CLIENT_CLASS = "CLIENTCLASS";
+    public static final String QUERY_CLIENTCLASS_ROOMCLASS = "CLIENTCLASS_ROOMCLASS";
+    public static final String COUNT_CLIENTS="count(id_client)";
+    public static final String QUERY_ALL_ROOM_CLASS = "ALLROOMCLASS";
+    public static final String QUERY_ALL_CLIENT_CLASS = "ALLCLIENTCLASS";
 
 }

@@ -7,10 +7,11 @@ import { AssignClassesHomeComponent } from './assign-classes-home/assign-classes
 import { AssignClassesNewComponent } from './assign-classes-new/assign-classes-new.component';
 import { AssignClassesDetailComponent } from './assign-classes-detail/assign-classes-detail.component';
 import { AssingClassesRenderComponent } from './assign-classes-home/assign-classes-render/assing-classes-render.component';
+import { AssignClassesMonitorsRenderComponent } from './assign-classes-monitors-render/assign-classes-monitors-render.component';
 
 
 @NgModule({
-  declarations: [AssignClassesHomeComponent, AssignClassesDetailComponent, AssignClassesNewComponent, AssingClassesRenderComponent],
+  declarations: [AssignClassesHomeComponent, AssignClassesDetailComponent, AssignClassesNewComponent, AssingClassesRenderComponent, AssignClassesMonitorsRenderComponent],
   imports: [
     CommonModule,
     OntimizeWebModule,

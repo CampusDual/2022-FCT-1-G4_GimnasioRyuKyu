@@ -12,4 +12,5 @@ public interface IClientService {
     public EntityResult clientInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
     public EntityResult clientUpdate(Map<String, Object> attrMap, Map<String,Object> keyMap) throws OntimizeJEERuntimeException;
     public EntityResult clientDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+
 }

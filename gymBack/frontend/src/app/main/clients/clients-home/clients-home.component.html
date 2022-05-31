@@ -1,32 +1,31 @@
-<o-form show-header="no">
-  <div fxFill>
-    <o-table #clientsTable class="o-table-column-centered" fxFlex attr="clientsTable" service="clients" entity="client"
-      keys="id" columns="id;photo;name;lastname;dni;gender;birthday;registration_date;phone;email;active"
-      visible-columns="photo;id;dni;name;lastname;phone" sort-columns="active:DESC" query-rows="20">
-      <div o-table-custom-toolbar>
-        <o-slide-toggle attr="active" label="actives" onchange="" read-only="no">
-        </o-slide-toggle>
-      </div>
-      <o-table-column attr="photo" title="photo" orderable="no" searchable="no" type="image" avatar="no"
-        empty-image="assets/images/no-image.png" image-type="base64" width="50px"></o-table-column>
-      <o-table-column attr="id" title="id_client" width="50px"></o-table-column>
-      <o-table-column attr="dni" width="100px"></o-table-column>
-      <o-table-column attr="name" width="100px"></o-table-column>
-      <o-table-column attr="lastname" width="100px"></o-table-column>
-      <o-table-column attr="gender" width="100px"></o-table-column>
-      <o-table-column attr="birthday" width="100px" type="date"></o-table-column>
-      <o-table-column attr="registration_date" width="100px" type="date"></o-table-column>
-      <o-table-column attr="phone" width="100px"></o-table-column>
-      <o-table-column attr="email" width="100px"></o-table-column>
-      <o-table-column attr="active" type="boolean" width="100px" true-value="true" false-value="false"
-        boolean-type="boolean" render-type="icon" render-true-value="check_circle" render-false-value="highlight_off">
-      </o-table-column>
-      <o-filter-builder #filterActive attr="filterActive" filters="active:active" [target]="clientsTable"
-        query-on-change="yes" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
-    </o-table>
-  </div>
-</o-form>
+<o-form-layout-manager title="{{'clients' | oTranslate }}" separator=" " mode="tab" label-columns="name">
+  <o-form class="clientsForm" show-header="no">
+    <div fxFill >
+      <o-table #clientsTable class="o-table-column-centered" fxFlex attr="clientsTable" service="clients" entity="client"
+        keys="id" columns="id;photo;name;lastname;dni;gender;birthday;registration_date;phone;email;active"
+        visible-columns="photo;id;dni;name;lastname;phone" sort-columns="active:DESC" query-rows="20">
+        <div o-table-custom-toolbar>
+          <o-slide-toggle attr="active" label="actives" onchange="" read-only="no">
+          </o-slide-toggle>
+        </div>
+        <o-table-column attr="photo" title="photo" orderable="no" searchable="no" type="image" avatar="no"
+          empty-image="assets/images/no-image.png" image-type="base64" width="50px"></o-table-column>
+        <o-table-column attr="id" title="id_client" width="50px"></o-table-column>
+        <o-table-column attr="dni" width="100px"></o-table-column>
+        <o-table-column attr="name" width="100px"></o-table-column>
+        <o-table-column attr="lastname" width="100px"></o-table-column>
+        <o-table-column attr="gender" width="100px"></o-table-column>
+        <o-table-column attr="birthday" width="100px" type="date"></o-table-column>
+        <o-table-column attr="registration_date" width="100px" type="date"></o-table-column>
+        <o-table-column attr="phone" width="100px"></o-table-column>
+        <o-table-column attr="email" width="100px"></o-table-column>
+        <o-table-column attr="active" type="boolean" width="100px" true-value="true" false-value="false"
+          boolean-type="boolean" render-type="icon" render-true-value="check_circle" render-false-value="highlight_off">
+        </o-table-column>
+        <o-filter-builder #filterActive attr="filterActive" filters="active:active" [target]="clientsTable"
+          query-on-change="yes" query-on-change-delay="500" [expression-builder]="createFilter"></o-filter-builder>
+      </o-table>
+    </div>
+  </o-form>
+</o-form-layout-manager>
 
-
-
-<!-- title="{{'clients' | oTranslate }}" separator=" " mode="tab" label-columns="name" -->

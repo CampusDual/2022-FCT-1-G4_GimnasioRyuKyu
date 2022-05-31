@@ -2,6 +2,9 @@ export const SERVICE_CONFIG: Object = {
   'clients': {
     'path': '/clients'
   },
+  'monitors': {
+    'path': '/monitors'
+  },
   'rooms': {
     'path': '/rooms'
   },

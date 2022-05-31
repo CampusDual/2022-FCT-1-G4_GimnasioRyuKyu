@@ -21,7 +21,8 @@ import java.util.*;
 @Service("ClientService")
 public class ClientService implements IClientService {
 
-    @Autowired ClientDao clientDao;
+    @Autowired
+    ClientDao clientDao;
     @Autowired
     private DefaultOntimizeDaoHelper daoHelper;
     @Autowired
@@ -31,9 +32,9 @@ public class ClientService implements IClientService {
     public EntityResult clientQuery(Map<String, Object> keyMap, List<?> attrList)
             throws OntimizeJEERuntimeException {
         if(!keyMap.isEmpty()) {
-            updateActive(keyMap);
+           updateActive(keyMap);
         }
-                return this.daoHelper.query(this.clientDao, keyMap, attrList);
+        return this.daoHelper.query(this.clientDao, keyMap, attrList);
     }
 
     @Override
@@ -146,7 +147,6 @@ public class ClientService implements IClientService {
 
         }
         catch(NullPointerException e){
-            System.out.println("El cliente no tiene suscripción");
         }
 
     }

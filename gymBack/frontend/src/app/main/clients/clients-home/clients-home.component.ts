@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FilterExpressionUtils, Expression } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-clients-home',
   templateUrl: './clients-home.component.html',
-  styleUrls: ['./clients-home.component.css']
+  styleUrls: ['./clients-home.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ClientsHomeComponent implements OnInit{
 

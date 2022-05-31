@@ -10,6 +10,10 @@
           <o-combo #comboRoom attr="id_room" label="comboRoom" required="yes" query-method="query" service="rooms"
             entity="room" value-column="id" columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
           </o-combo>
+          <o-combo #comboMonitor attr="id_monitor" label="comboMonitor" required="yes" value-column="id" query-method="query"
+            service="monitors" entity="monitor" columns="name;lastname;id" visible-columns="name;lastname;id" searchable="yes" keys="id" null-selection="no">
+            <app-assign-classes-monitors-render></app-assign-classes-monitors-render>
+          </o-combo>
       </o-row>
       <o-row layout-align="center">
 
@@ -21,11 +25,11 @@
       </o-row>
 
       <o-row layout-gap="50px" layout-align="center">
-        <o-integer-input class="input-padding" attr="capacity" title="CAPACITY" fxFlex="40"></o-integer-input>
-        <o-integer-input class="input-padding" attr="available_capacity" title="AVAILABLE_CAPACITY" fxFlex="40"></o-integer-input>
+        <o-integer-input class="input-padding" attr="capacity" title="CAPACITY" min="0" required="yes" fxFlex="40"></o-integer-input>
       </o-row>
+
       <o-row class="colapsiblesStyles">
-        <o-column-collapsible fxFlex="95" title="{{ 'Clients' | oTranslate }}" appearance="outline">
+        <o-column-collapsible fxFlex title="{{ 'Clients' | oTranslate }}" appearance="outline">
           <o-list #list attr="clientsTable" keys="id_assing_room;id_client_class" columns="client_name;lastname;dni;photo" title="List"
             service="clientsClasses" entity="clientClass" quick-filter="true" quick-filter-columns="client_name;lastname;dni"
             refresh-button="true" insert-button="false" delete-button="true" selectable="true" dense="false"

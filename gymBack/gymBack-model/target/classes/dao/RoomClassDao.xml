@@ -21,6 +21,9 @@
                 <AmbiguousColumn name="room_name" prefix="r" databaseName="name"/>
                 <AmbiguousColumn name="class_description" prefix="c" databaseName="description"/>
                 <AmbiguousColumn name="room_description" prefix="r" databaseName="description"/>
+                <AmbiguousColumn name="id_monitor" prefix="m" databaseName="id"/>
+                <AmbiguousColumn name="monitor_name" prefix="m" databaseName="name"/>
+                <AmbiguousColumn name="monitor_lastname" prefix="m" databaseName="lastname"/>
 
             </AmbiguousColumns>
             <Sentence>
@@ -31,6 +34,32 @@
                     room_class rc
                  INNER JOIN class c on
                     rc.id_class = c.id
+                 INNER JOIN room r on
+                    rc.id_room =r.id
+                 INNER JOIN monitor m on
+                    rc.id_monitor = m.id
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+        <Query id="ALLROOMCLASS">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                 FROM
+                    room_class
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+        <Query id="ROOMCLASS_ROOM">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                 FROM
+                    room_class rc
                  INNER JOIN room r on
                     rc.id_room =r.id
                  #WHERE#

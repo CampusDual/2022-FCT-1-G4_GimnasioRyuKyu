@@ -1,19 +1,17 @@
 <o-form-layout-manager title="{{ 'room_class' | oTranslate }}" separator=" " mode="tab" label-columns="class detail">
     <div fxFill>
       <o-table class="o-table-column-centered" fxFlex attr="roomClassTable" service="roomsClasses" entity="roomClass" keys="id_room_class"
-        insert-button="yes" refresh-button="yes" delete-button="yes" query-rows="20"
-        columns="id_class;id_room;date;h_start;h_end;class_name;class_description;room_name;room_description;capacity;available_capacity"
-        visible-columns="class_name;room_name;date;h_start;h_end;hour_try;capacity;available_capacity" query-rows="20">
+        insert-button="yes" refresh-button="yes" delete-button="yes" query-rows="20" auto-adjust="true"
+        columns="id_class;id_room;date;h_start;h_end;class_name;class_description;id_monitor;monitor_name;monitor_lastname;room_name;room_description;capacity"
+        visible-columns="class_name;room_name;monitor_name;date;h_start;h_end;hour_try;capacity" query-rows="20">
         <o-table-column attr="id_class" width="100px"></o-table-column>
         <o-table-column attr="id_room" width="100px"></o-table-column>
-        <o-table-column attr="date" width="150px" type="date"></o-table-column>
-        <o-table-column attr="h_start" width="150px" type="date" format="LT"></o-table-column>
-        <o-table-column attr="h_end" width="150px" type="date" format="LT"></o-table-column>
-        <o-table-column attr="capacity" width="100px"></o-table-column>
-        <o-table-column attr="available_capacity" width="200px"></o-table-column>
-
-
-
+        <o-table-column attr="id_class" width="100px"></o-table-column>
+        <o-table-column attr="monitor_name" width="100px"></o-table-column>
+        <o-table-column attr="date" width="100px" type="date"></o-table-column>
+        <o-table-column attr="h_start" width="100px" type="text" format="LT"></o-table-column>
+        <o-table-column attr="h_end" width="100px" type="text" format="LT"></o-table-column>
+        <o-table-column attr="capacity" width="100px" type="integer" class="o-table-column-centered"></o-table-column>
       </o-table>
     </div>
   </o-form-layout-manager>

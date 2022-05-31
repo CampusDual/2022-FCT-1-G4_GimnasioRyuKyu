@@ -38,6 +38,12 @@
   "Other":"Otro",
   "comboSubMonth": "Seleccionar meses",
   "sub_expiration_date": "Caducidad subscripción",
+  "Manage subscription": "Administrar subscripción",
+  "Client classes": "Clases del cliente",
+
+
+  "monitors": "Monitores",
+  "id_monitor":"Nº empleado",
 
 
   "classes":"Clases",
@@ -45,6 +51,7 @@
 
 
   "rooms":"Salas",
+  "max_room_capacity": "Aforo",
 
 
   "assing classes": "Asignación clases",
@@ -56,9 +63,10 @@
   "h_end":"Fin",
   "comboClass":"Seleccionar clase",
   "comboRoom":"Seleccionar sala",
+  "comboMonitor":"Seleccionar monitor",
   "comboHour":"Seleccionar hora",
+  "monitor_name": "Monitor",
   "capacity": "Aforo",
-  "available_capacity":"Aforo disponible",
 
 
   "assing clients":"Asignación clientes",

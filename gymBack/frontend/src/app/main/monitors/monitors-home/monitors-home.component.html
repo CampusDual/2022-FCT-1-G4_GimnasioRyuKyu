@@ -1,0 +1,19 @@
+<o-form-layout-manager title="{{'monitors' | oTranslate }}" separator=" " mode="tab" label-columns="name">
+    <div fxFill >
+      <o-table #monitorsTable class="o-table-column-centered" fxFlex attr="monitorsTable" service="monitors" entity="monitor"
+        keys="id" columns="id;photo;name;lastname;dni;gender;birthday;start_date;phone;email"
+        visible-columns="photo;id;dni;name;lastname;phone" query-rows="20">
+        <o-table-column attr="photo" title="photo" orderable="no" searchable="no" type="image" avatar="no"
+          empty-image="assets/images/no-image.png" image-type="base64" width="50px"></o-table-column>
+        <o-table-column attr="id" title="id_monitor" width="50px"></o-table-column>
+        <o-table-column attr="dni" width="100px"></o-table-column>
+        <o-table-column attr="name" width="100px"></o-table-column>
+        <o-table-column attr="lastname" width="100px"></o-table-column>
+        <o-table-column attr="gender" width="100px"></o-table-column>
+        <o-table-column attr="birthday" width="100px" type="date"></o-table-column>
+        <o-table-column attr="start_date" width="100px" type="date"></o-table-column>
+        <o-table-column attr="phone" width="100px"></o-table-column>
+        <o-table-column attr="email" width="100px"></o-table-column>
+      </o-table>
+    </div>
+</o-form-layout-manager>

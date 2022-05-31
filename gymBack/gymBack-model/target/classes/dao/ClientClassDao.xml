@@ -38,5 +38,44 @@
 			   ]]>
             </Sentence>
         </Query>
+        <Query id="CLIENTCLASS_ROOMCLASS">
+            <AmbiguousColumns>
+                <AmbiguousColumn name="id_assing_room" prefix="rc" databaseName="id_room_class"/>
+                <AmbiguousColumn name="id_assing_client" prefix="cc" databaseName="id_room_class"/>
+            </AmbiguousColumns>
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                 FROM
+                    client_class cc
+                 INNER JOIN room_class rc on
+                    cc.id_room_class=rc.id_room_class
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+        <Query id="ALLROOMCLASS">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                   #COLUMNS#
+                 FROM
+                    room_class
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+        <Query id="ALLCLIENTCLASS">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                 FROM
+                    client_class
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
     </Queries>
 </JdbcEntitySetup>

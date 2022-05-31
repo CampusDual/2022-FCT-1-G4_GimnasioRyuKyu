@@ -1,5 +1,4 @@
 import { ViewChild, TemplateRef, Injector, Component } from '@angular/core';
-import * as moment from 'moment';
 import { OComboCustomRenderer } from 'ontimize-web-ngx';
 
 @Component({
@@ -16,8 +15,8 @@ export class AssignClientsRenderComponent extends OComboCustomRenderer  {
     }
 
   getComboData(value: any) {
-    let theDate = moment.unix(value.h_start).format("DD/MM h:mm:ss a");
-    return value.class_name+" "+theDate;
+    const date = new Date(value.date).toLocaleDateString("es-EU");
+    return value.class_name+" - "+date+" - "+value.h_start;
   }
 
 }

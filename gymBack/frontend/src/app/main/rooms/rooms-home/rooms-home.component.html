@@ -1,10 +1,11 @@
 <o-form-layout-manager title="{{'rooms' | oTranslate }}" separator=" " mode="tab" label-columns="name">
   <div fxFill>
         <o-table fxFlex attr="roomsTable" service="rooms" entity="room" keys="id"
-        columns="name;description"
-        visible-columns="name;description" query-rows="20">
+        columns="name;description;max_room_capacity"
+        visible-columns="name;description;max_room_capacity" class="o-table-column-centered" query-rows="20">
         <o-table-column class="o-table-column-centered" attr="name"></o-table-column>
         <o-table-column attr="description"></o-table-column>
+        <o-table-column attr="max_room_capacity"></o-table-column>
       </o-table>
   </div>
 </o-form-layout-manager>

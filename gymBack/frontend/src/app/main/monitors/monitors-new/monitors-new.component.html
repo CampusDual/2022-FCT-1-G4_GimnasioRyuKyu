@@ -1,0 +1,26 @@
+<o-form fxFill #form service="monitors" entity="monitor" keys="id" header-actions="R;I;U;D" show-header-navigation="no">
+    <o-row fxFlex >
+      <o-column class="columPhoto">
+        <o-image class="monitorPhoto" label="photo" attr="photo" empty-image="assets/images/no-image.png"></o-image>
+      </o-column>
+      <o-column fxFlex layout-padding>
+        <o-row layout-gap="15px">
+          <o-text-input class="input-padding" attr="name" title="NAME" fxFlex="46.8" required="yes"></o-text-input>
+          <o-text-input class="input-padding" attr="lastname" title="LASTNAME" fxFlex="46.8" required="yes"></o-text-input>
+        </o-row>
+        <o-row layout-gap="15px">
+          <o-nif-input #nif attr="dni" title="DNI" fxFlex="46.8" required="yes"></o-nif-input>
+          <o-text-input class="input-padding" attr="phone" title="PHONE" fxFlex="46.8" required="yes"></o-text-input>
+        </o-row>
+        <o-row layout-gap="15px">
+          <o-email-input attr="email" title="EMAIL" fxFlex="95" required="yes"></o-email-input>
+        </o-row>
+        <o-row layout-gap="15px">
+          <o-combo attr="gender" label="gender" [static-data]="genderArray" value-column="genderCode" columns="genderCode;genderText"
+          visible-columns="genderText" required="yes" fxFlex="46.8" null-selection="no">
+          </o-combo>
+          <o-date-input class="input-padding, birthdayDate" attr="birthday" title="BIRTHDAY" fxFlex="46.8" required="yes"></o-date-input>
+        </o-row>
+      </o-column>
+    </o-row>
+  </o-form>
