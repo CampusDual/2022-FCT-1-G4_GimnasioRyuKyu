@@ -1,5 +1,5 @@
 import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
-import { ViewChild, TemplateRef, Injector,Component, OnInit } from '@angular/core';
+import { ViewChild, TemplateRef, Injector,Component} from '@angular/core';
 
 @Component({
   selector: 'app-assing-classes-render',
@@ -14,7 +14,7 @@ export class AssingClassesRenderComponent extends OBaseTableCellRenderer {
     super(injector);
     }
 
-  getCellData(cellvalue: any, rowvalue?: any): string{
+  getCellData(rowvalue?: any): string{
     return  rowvalue["date_sart"]+" "+rowvalue["hour_start"];
   }
 

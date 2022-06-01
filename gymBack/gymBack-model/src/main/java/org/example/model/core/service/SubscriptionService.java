@@ -4,7 +4,6 @@ package org.example.model.core.service;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
-import org.example.api.core.service.IRoomService;
 import org.example.api.core.service.ISubscriptionService;
 import org.example.model.core.dao.SubscriptionDao;
 import org.springframework.beans.factory.annotation.Autowired;

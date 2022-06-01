@@ -53,15 +53,13 @@
 			   ]]>
             </Sentence>
         </Query>
-        <Query id="ROOMCLASS_ROOM">
+        <Query id="ALLROOMS">
             <Sentence>
                 <![CDATA[
 			     SELECT
                     #COLUMNS#
                  FROM
-                    room_class rc
-                 INNER JOIN room r on
-                    rc.id_room =r.id
+                    room
                  #WHERE#
 			   ]]>
             </Sentence>

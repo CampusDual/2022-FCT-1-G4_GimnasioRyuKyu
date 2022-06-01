@@ -1,13 +1,12 @@
 package org.example.model.core.service;
 
-import ch.qos.logback.core.net.server.Client;
 import com.ontimize.jee.common.dto.EntityResult;
+import com.ontimize.jee.common.dto.EntityResultMapImpl;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.IClientClassService;
 import org.example.model.core.dao.ClientClassDao;
 import org.example.model.core.dao.RoomClassDao;
-import org.example.model.core.dao.RoomDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -21,9 +20,11 @@ import java.util.Map;
 @Lazy
 public class ClientClassService implements IClientClassService {
 
-    @Autowired private ClientClassDao clientClassDao;
+    @Autowired
+    private ClientClassDao clientClassDao;
 
-    @Autowired private DefaultOntimizeDaoHelper daoHelper;
+    @Autowired
+    private DefaultOntimizeDaoHelper daoHelper;
 
     @Override
     public EntityResult clientClassQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
@@ -32,21 +33,15 @@ public class ClientClassService implements IClientClassService {
 
     @Override
     public EntityResult clientClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-        if(checkIfCapacityAvailable(attrMap)){
-            return this.daoHelper.insert(this.clientClassDao, attrMap);
-        }
-        return null;
+        return checkIfCapacityAvailable(getIdClientNew(attrMap), getIdRoomClassNew(attrMap), attrMap);
     }
 
     @Override
     public EntityResult clientClassUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-        if (attrMap.containsKey("id_assing_room")){
+        if (attrMap.containsKey("id_assing_room")) {
             attrMap.put("id_room_class", attrMap.remove("id_assing_room"));
         }
-       if(checkIfCapacityAvailable(attrMap)) {
-            return this.daoHelper.update(this.clientClassDao, attrMap, keyMap);
-        }
-        return null;
+        return checkIfCapacityAvailable(getIdClientUpdate(attrMap, keyMap), getIdRoomClassUpdate(attrMap, keyMap), attrMap);
     }
 
     @Override
@@ -54,41 +49,89 @@ public class ClientClassService implements IClientClassService {
         return this.daoHelper.delete(this.clientClassDao, keyMap);
     }
 
-    private boolean checkIfCapacityAvailable(Map<String, Object> attrMap){
-        for (Map.Entry<String, Object> entry : attrMap.entrySet()) {
+    private EntityResult checkIfCapacityAvailable(int id_client, int id_room_class, Map<String, Object> attrMap) {
+        EntityResult toret = new EntityResultMapImpl();
+        toret.setCode(EntityResult.OPERATION_WRONG);
+        List<Object> clientRoomClasses = new ArrayList<>();
+        List<String> attrList = new ArrayList<>();
+        Map<String, Object> keys = new HashMap<>();
+        EntityResult entityResult;
 
-            List<String> attrList = new ArrayList<>();
-            Map<String, Object> keys = new HashMap<>();
-            int id_room_class;
-            if(entry.getKey().equals(ClientClassDao.ATTR_ID_ROOM_CLASS)) {
+        keys.put(ClientClassDao.ATTR_ID_CLIENT, id_client);
+        attrList.add(ClientClassDao.ATTR_ID_ROOM_CLASS);
 
-                id_room_class = (int) entry.getValue();
-                keys.put(RoomClassDao.ATTR_ID_ROOM_CLASS, id_room_class);
-
-                attrList.add(RoomClassDao.ATTR_CAPACITY);
-                EntityResult entityResult = this.daoHelper.query(clientClassDao, keys, attrList, ClientClassDao.QUERY_ALL_ROOM_CLASS);
-                List<Object> capacities = (List<Object>) entityResult.get(RoomClassDao.ATTR_CAPACITY);
-                String capacityString = capacities.get(0).toString();
-                int capacity = Integer.parseInt(capacityString);
-
-
-                keys.clear();
-                attrList.clear();
-                keys.put(ClientClassDao.ATTR_ID_ROOM_CLASS,id_room_class);
-                attrList.add(ClientClassDao.ATTR_ID_CLIENT);
-                int count=0;
-                try {
-                    EntityResult entityResult2 = this.daoHelper.query(clientClassDao, keys, attrList, ClientClassDao.QUERY_ALL_CLIENT_CLASS);
-                    List<Object> idClients = (List<Object>) entityResult2.get(ClientClassDao.ATTR_ID_CLIENT);
-                    count = idClients.size();
-                }catch(NullPointerException e){
-
-                }
-               if(count+1<=capacity){
-                   return true;
-               }
+            entityResult = this.daoHelper.query(clientClassDao, keys, attrList, ClientClassDao.QUERY_ALL_CLIENT_CLASS);
+            if(!entityResult.isEmpty()) {
+                clientRoomClasses = (List<Object>) entityResult.get(ClientClassDao.ATTR_ID_ROOM_CLASS);
             }
+
+        keys.clear();
+        attrList.clear();
+
+        if (!clientRoomClasses.isEmpty()&&clientRoomClasses.contains(id_room_class)) {
+            toret.setMessage("REPEATED_CLIENT_CLASS");
+            return toret;
         }
-        return false;
+
+        keys.put(RoomClassDao.ATTR_ID_ROOM_CLASS, id_room_class);
+
+        attrList.add(RoomClassDao.ATTR_CAPACITY);
+        entityResult = this.daoHelper.query(clientClassDao, keys, attrList, ClientClassDao.QUERY_ALL_ROOM_CLASS);
+        List<Object> capacities = (List<Object>) entityResult.get(RoomClassDao.ATTR_CAPACITY);
+        String capacityString = capacities.get(0).toString();
+        int capacity = Integer.parseInt(capacityString);
+
+        keys.clear();
+        attrList.clear();
+        keys.put(ClientClassDao.ATTR_ID_ROOM_CLASS, id_room_class);
+        attrList.add(ClientClassDao.ATTR_ID_CLIENT);
+        int count = 0;
+
+            entityResult = this.daoHelper.query(clientClassDao, keys, attrList, ClientClassDao.QUERY_ALL_CLIENT_CLASS);
+            if(!entityResult.isEmpty()) {
+                List<Object> idClients = (List<Object>) entityResult.get(ClientClassDao.ATTR_ID_CLIENT);
+                count = idClients.size();
+            }
+
+        if (count + 1 <= capacity) {
+            return this.daoHelper.insert(this.clientClassDao, attrMap);
+        }
+        toret.setMessage("CAPACITY_ERROR");
+        return toret;
     }
+
+
+    private int getIdClientNew(Map<String, Object> attrMap) {
+        return (int) attrMap.get(ClientClassDao.ATTR_ID_CLIENT);
+    }
+
+    private int getIdClientUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) {
+        if (attrMap.containsKey(ClientClassDao.ATTR_ID_CLIENT)) {
+            return getIdClientNew(attrMap);
+        }
+        List<String> list = new ArrayList<>();
+        list.add(ClientClassDao.ATTR_ID_CLIENT);
+        EntityResult entityResult = this.daoHelper.query(clientClassDao, keyMap, list, ClientClassDao.QUERY_ALL_CLIENT_CLASS);
+        List<Object> listIdClient = (List<Object>) entityResult.get(ClientClassDao.ATTR_ID_CLIENT);
+        String idClientString = listIdClient.get(0).toString();
+        return Integer.parseInt(idClientString);
+    }
+
+    private int getIdRoomClassNew(Map<String, Object> attrMap) {
+        return (int) attrMap.get(ClientClassDao.ATTR_ID_ROOM_CLASS);
+    }
+
+    private int getIdRoomClassUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) {
+        if(attrMap.containsKey(ClientClassDao.ATTR_ID_ROOM_CLASS)){
+          return getIdRoomClassNew(attrMap);
+        }
+        List<String> attrList = new ArrayList<>();
+        attrList.add(ClientClassDao.ATTR_ID_ROOM_CLASS);
+        EntityResult entityResult = this.daoHelper.query(clientClassDao, keyMap, attrList, ClientClassDao.QUERY_ALL_CLIENT_CLASS);
+        List<Object> roomClasses = (List<Object>) entityResult.get(ClientClassDao.ATTR_ID_ROOM_CLASS);
+        String roomClassString = roomClasses.get(0).toString();
+        return Integer.parseInt(roomClassString);
+    }
+
+
 }

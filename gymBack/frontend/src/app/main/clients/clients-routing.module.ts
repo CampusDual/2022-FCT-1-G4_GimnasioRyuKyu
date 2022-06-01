@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ClientsDetailComponent } from './clients-detail/clients-detail.component';
 import { ClientsHomeComponent } from './clients-home/clients-home.component';
 import { ClientsNewComponent } from './clients-new/clients-new.component';
-import { AssignClientsDetailComponent } from '../assign-clients/assign-clients-detail/assign-clients-detail.component';
 
 const routes: Routes =  [{
   path : '',

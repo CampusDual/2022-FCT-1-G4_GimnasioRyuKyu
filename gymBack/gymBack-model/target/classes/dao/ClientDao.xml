@@ -13,6 +13,16 @@
     </UpdateKeys>
     <GeneratedKey>id</GeneratedKey>
     <Queries>
+        <Query id="default">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM vclient
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
         <Query id="CLIENT_SUB_QUERY">
             <Sentence>
                 <![CDATA[
@@ -23,12 +33,12 @@
 			   ]]>
             </Sentence>
         </Query>
-        <Query id="CLIENT_QUERY">
+        <Query id="ACTIVE_CLIENTS">
             <Sentence>
                 <![CDATA[
 			     SELECT
                     #COLUMNS#
-                   FROM client
+                   FROM vsubbedclient
                  #WHERE#
 			   ]]>
             </Sentence>

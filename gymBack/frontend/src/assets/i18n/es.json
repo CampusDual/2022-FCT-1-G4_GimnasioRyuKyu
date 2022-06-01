@@ -20,6 +20,12 @@
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
   "FOOTER_RIGHTS": "Todos los derechos reservados",
 
+
+  "ROOM_TIME_ERROR":"Esta sala esta ocupada para el tiempo seleccionado",
+  "CAPACITY_ERROR":"Esta clase esta llena",
+  "REPEATED_CLIENT_CLASS":"El cliente ya está registrado en esta clase",
+
+
   "clients":"Clientes",
   "actives": "Activos",
   "photo": "Foto",
@@ -73,6 +79,7 @@
   "client_class":"Asignación de clientes",
   "client_name":"Cliente",
   "comboClient": "Seleccionar cliente",
+
 
   "subscriptions":"Tarifas",
   "price":"Precio",

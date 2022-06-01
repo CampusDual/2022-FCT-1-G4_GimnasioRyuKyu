@@ -12,4 +12,7 @@
         <Column>id</Column>
     </UpdateKeys>
     <GeneratedKey>id</GeneratedKey>
+    <Queries>
+
+    </Queries>
 </JdbcEntitySetup>

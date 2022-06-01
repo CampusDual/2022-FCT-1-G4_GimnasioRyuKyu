@@ -21,6 +21,11 @@
   "FOOTER_RIGHTS": "All rights reserved",
 
 
+  "ROOM_TIME_ERROR":"This room is occupied for the selected time",
+  "CAPACITY_ERROR":"Full capacity for this class",
+  "REPEATED_CLIENT_CLASS":"The client is already registered in this class",
+
+
   "clients":"Clients",
   "actives": "Actives",
   "photo": "Photo",
@@ -74,6 +79,7 @@
   "client_class":"Clients assignation",
   "client_name":"Client",
   "comboClient": "Select client",
+
 
   "subscriptions":"Rates",
   "price":"Price",

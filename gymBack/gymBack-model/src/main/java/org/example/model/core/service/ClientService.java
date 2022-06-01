@@ -1,11 +1,10 @@
 package org.example.model.core.service;
 
-import ch.qos.logback.core.net.server.Client;
-import com.ontimize.jee.common.db.SQLStatementBuilder;
+
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
-import jdk.swing.interop.SwingInterOpUtils;
+
 import org.example.api.core.service.IClientService;
 
 import org.example.model.core.dao.ClientDao;
@@ -31,9 +30,6 @@ public class ClientService implements IClientService {
     @Override
     public EntityResult clientQuery(Map<String, Object> keyMap, List<?> attrList)
             throws OntimizeJEERuntimeException {
-        if(!keyMap.isEmpty()) {
-           updateActive(keyMap);
-        }
         return this.daoHelper.query(this.clientDao, keyMap, attrList);
     }
 
@@ -65,8 +61,8 @@ public class ClientService implements IClientService {
 
     private void insertNonRelatedData(Map<String, Object> nonClientData) {
         for (Map.Entry<String, Object> entry : nonClientData.entrySet()) {
-            Map<String, Object> data = new HashMap<String, Object>();
-            List<String> attr = new ArrayList<String>();
+            Map<String, Object> data = new HashMap<>();
+            List<String> attr = new ArrayList<>();
             EntityResult toret, query;
             switch (entry.getKey()) {
                 case ClientDao.ID_SUBSCRIPTION:
@@ -87,7 +83,7 @@ public class ClientService implements IClientService {
     }
 
     private Map<String, Object> removeNonRelatedData(Map<String, Object> attrMap, String... attrToExclude) {
-        HashMap<String, Object> data = new HashMap<String, Object>();
+        HashMap<String, Object> data = new HashMap<>();
 
         for (String attr : attrToExclude) {
 
@@ -115,43 +111,8 @@ public class ClientService implements IClientService {
 
                     Calendar c = Calendar.getInstance();
                     c.add(Calendar.MONTH, month);
-                    attrMap.put(clientDao.SUB_EXPIRATION_DATE, c);
+                    attrMap.put(ClientDao.SUB_EXPIRATION_DATE, c);
             }
         }
     }
-
-
-    private void updateActive(Map<String, Object> keyMap){
-        List<String> attrList=new ArrayList<>();
-        attrList.add(ClientDao.SUB_EXPIRATION_DATE);
-        try {
-            EntityResult entityResult = this.daoHelper.query(clientDao, keyMap, attrList, ClientDao.CLIENT_Q);
-
-            List<Object> expirations = (List<Object>) entityResult.get(ClientDao.SUB_EXPIRATION_DATE);
-            String expDateString = expirations.get(0).toString();
-            String expDateArray[] = expDateString.split("-");
-            int year = Integer.parseInt(expDateArray[0]);
-            int month = Integer.parseInt(expDateArray[1]);
-            int day = Integer.parseInt(expDateArray[2]);
-            Calendar expDate = new GregorianCalendar(year, month, day);
-
-            Calendar today = Calendar.getInstance();
-
-            Map<String, Object> attrMap=new HashMap<>();
-            if(expDate.compareTo(today)<0){
-                attrMap.put(ClientDao.ACTIVE,false);
-            }else{
-                attrMap.put(ClientDao.ACTIVE,true);
-            }
-            clientUpdate(attrMap,keyMap);
-
-        }
-        catch(NullPointerException e){
-        }
-
-    }
-
-
-
-
 }
