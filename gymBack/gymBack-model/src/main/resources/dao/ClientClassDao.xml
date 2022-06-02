@@ -17,8 +17,8 @@
             <AmbiguousColumns>
                 <AmbiguousColumn name="id_class" prefix="c1" databaseName="id"/>
                 <AmbiguousColumn name="class_name" prefix="c1" databaseName="name"/>
-                <AmbiguousColumn name="id_client" prefix="c2" databaseName="id"/>
-                <AmbiguousColumn name="client_name" prefix="c2" databaseName="name"/>
+                <AmbiguousColumn name="id_client" prefix="v" databaseName="id"/>
+                <AmbiguousColumn name="client_name" prefix="v" databaseName="name"/>
                 <AmbiguousColumn name="id_assing_room" prefix="rc" databaseName="id_room_class"/>
                 <AmbiguousColumn name="id_assing_client" prefix="cc" databaseName="id_room_class"/>
             </AmbiguousColumns>
@@ -28,8 +28,8 @@
                     #COLUMNS#
                  FROM
                     client_class cc
-                 INNER JOIN client c2 on
-                    cc.id_client = c2.id
+                 INNER JOIN client v on
+                    cc.id_client = v.id
                  INNER JOIN room_class rc on
                     cc.id_room_class=rc.id_room_class
                  INNER JOIN class c1 on

@@ -12,7 +12,7 @@ export class AssignClassesMonitorsRenderComponent extends OComboCustomRenderer {
     }
 
     getComboData(value: any): string{
-      return value.name+", "+value.lastname+", "+value.id;
+      return value.name+" "+value.lastname+" - "+value.id;
   }
 
 }

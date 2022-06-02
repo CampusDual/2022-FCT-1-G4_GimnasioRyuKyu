@@ -6,10 +6,11 @@ import { AssignClientsHomeComponent } from './assign-clients-home/assign-clients
 import { AssignClientsDetailComponent } from './assign-clients-detail/assign-clients-detail.component';
 import { AssignClientsNewComponent } from './assign-clients-new/assign-clients-new.component';
 import { AssignClientsRenderComponent } from './assign-clients-detail/assign-clients-render/assign-clients-render.component';
+import { AssignClientsRenderClientComponent } from './assign-clients-render-client/assign-clients-render-client.component';
 
 
 @NgModule({
-  declarations: [AssignClientsHomeComponent, AssignClientsDetailComponent, AssignClientsNewComponent, AssignClientsRenderComponent],
+  declarations: [AssignClientsHomeComponent, AssignClientsDetailComponent, AssignClientsNewComponent, AssignClientsRenderComponent, AssignClientsRenderClientComponent],
   imports: [
     CommonModule,
     OntimizeWebModule,

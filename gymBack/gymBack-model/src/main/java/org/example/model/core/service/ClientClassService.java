@@ -33,7 +33,13 @@ public class ClientClassService implements IClientClassService {
 
     @Override
     public EntityResult clientClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-        return checkIfCapacityAvailable(getIdClientNew(attrMap), getIdRoomClassNew(attrMap), attrMap);
+        EntityResult toret = new EntityResultMapImpl();
+        toret.setCode(EntityResult.OPERATION_WRONG);
+        switch(checkIfCapacityAvailable(getIdClientNew(attrMap), getIdRoomClassNew(attrMap), attrMap)){
+            case"CapacityError": toret.setMessage("CAPACITY_ERROR"); return toret;
+            case "RepeatedClientClassError": toret.setMessage("REPEATED_CLIENT_CLASS");return toret;
+            default: return this.daoHelper.insert(this.clientClassDao, attrMap);
+        }
     }
 
     @Override
@@ -41,7 +47,14 @@ public class ClientClassService implements IClientClassService {
         if (attrMap.containsKey("id_assing_room")) {
             attrMap.put("id_room_class", attrMap.remove("id_assing_room"));
         }
-        return checkIfCapacityAvailable(getIdClientUpdate(attrMap, keyMap), getIdRoomClassUpdate(attrMap, keyMap), attrMap);
+        EntityResult toret = new EntityResultMapImpl();
+        toret.setCode(EntityResult.OPERATION_WRONG);
+        switch(checkIfCapacityAvailable(getIdClientUpdate(attrMap, keyMap), getIdRoomClassUpdate(attrMap, keyMap), attrMap)){
+            case"CapacityError": toret.setMessage("CAPACITY_ERROR"); return toret;
+            case "RepeatedClientClassError": toret.setMessage("REPEATED_CLIENT_CLASS");return toret;
+            default: return this.daoHelper.update(this.clientClassDao, attrMap,keyMap);
+        }
+
     }
 
     @Override
@@ -49,9 +62,8 @@ public class ClientClassService implements IClientClassService {
         return this.daoHelper.delete(this.clientClassDao, keyMap);
     }
 
-    private EntityResult checkIfCapacityAvailable(int id_client, int id_room_class, Map<String, Object> attrMap) {
-        EntityResult toret = new EntityResultMapImpl();
-        toret.setCode(EntityResult.OPERATION_WRONG);
+    private String checkIfCapacityAvailable(int id_client, int id_room_class, Map<String, Object> attrMap) {
+
         List<Object> clientRoomClasses = new ArrayList<>();
         List<String> attrList = new ArrayList<>();
         Map<String, Object> keys = new HashMap<>();
@@ -69,8 +81,8 @@ public class ClientClassService implements IClientClassService {
         attrList.clear();
 
         if (!clientRoomClasses.isEmpty()&&clientRoomClasses.contains(id_room_class)) {
-            toret.setMessage("REPEATED_CLIENT_CLASS");
-            return toret;
+
+            return "RepeatedClientClassError";
         }
 
         keys.put(RoomClassDao.ATTR_ID_ROOM_CLASS, id_room_class);
@@ -94,10 +106,10 @@ public class ClientClassService implements IClientClassService {
             }
 
         if (count + 1 <= capacity) {
-            return this.daoHelper.insert(this.clientClassDao, attrMap);
+            return "OK";
         }
-        toret.setMessage("CAPACITY_ERROR");
-        return toret;
+
+        return "CapacityError";
     }
 
 

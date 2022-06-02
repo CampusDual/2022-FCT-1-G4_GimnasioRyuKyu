@@ -11,7 +11,7 @@ import { AssignClassesMonitorsRenderComponent } from './assign-classes-monitors-
 
 
 @NgModule({
-  declarations: [AssignClassesHomeComponent, AssignClassesDetailComponent, AssignClassesNewComponent, AssingClassesRenderComponent, AssignClassesMonitorsRenderComponent],
+  declarations: [AssignClassesHomeComponent, AssignClassesDetailComponent, AssignClassesNewComponent, AssingClassesRenderComponent, AssignClassesMonitorsRenderComponent,],
   imports: [
     CommonModule,
     OntimizeWebModule,
