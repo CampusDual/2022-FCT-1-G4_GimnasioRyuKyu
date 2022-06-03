@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -10,7 +13,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-         "build": {
+        "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/ontimize-web-ngx-jee-seed",
@@ -30,6 +33,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "node_modules/ontimize-web-ngx-charts/styles.scss",
               "node_modules/ontimize-web-ngx/ontimize.scss",
               "src/assets/css/app.scss",
@@ -104,6 +108,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -135,6 +140,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ontimize-web-ngx-jee-seed"
 }

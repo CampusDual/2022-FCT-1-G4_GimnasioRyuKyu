@@ -18,7 +18,8 @@ export const routes: Routes = [
       { path: 'rooms', loadChildren: () => import('./rooms/rooms.module').then(m => m.RoomsModule) },
       { path: 'subscriptions', loadChildren: () => import('./subscriptions/subscriptions.module').then(m => m.SubscriptionsModule) },
       { path: 'assign-classes', loadChildren: () => import('./assign-classes/assign-classes.module').then(m => m.AssignClassesModule) },
-      { path: 'assign-clients', loadChildren: () => import('./assign-clients/assign-clients.module').then(m => m.AssignClientsModule) }
+      { path: 'assign-clients', loadChildren: () => import('./assign-clients/assign-clients.module').then(m => m.AssignClientsModule) },
+      { path: 'calendar', loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule2) }
     ]
   }
 ];

@@ -12,4 +12,5 @@ export const MENU_CONFIG: MenuRootItem[] = [
   { id: 'subscriptions', name: 'subscriptions', icon: 'payment', route: '/main/subscriptions' },
   { id: 'assign-classes', name: 'assing classes', icon: 'room_preferences', route: '/main/assign-classes' },
   { id: 'assign-clients', name: 'assing clients', icon: 'manage_accounts', route: '/main/assign-clients' }
+  // { id: 'calendar', name: 'calendar', icon: 'calendar_month', route: '/main/calendar' }
 ];
