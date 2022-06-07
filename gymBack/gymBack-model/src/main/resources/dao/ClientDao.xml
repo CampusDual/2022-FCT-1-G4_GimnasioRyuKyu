@@ -43,5 +43,35 @@
 			   ]]>
             </Sentence>
         </Query>
+        <Query id="MONTH_INCOME">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM vincomes
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+        <Query id="MONTH_ACTIVES">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM vactives_for_month
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+        <Query id="MONTH_INSCRIPTIONS">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM vtotal_inscriptions
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
     </Queries>
 </JdbcEntitySetup>

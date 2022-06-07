@@ -26,6 +26,12 @@
   "REPEATED_CLIENT_CLASS":"El cliente ya está registrado en esta clase",
 
 
+  "TOTAL_CLIENTS":"Clientes Totales",
+
+
+  "calendar": "Calendario",
+
+
   "clients":"Clientes",
   "actives": "Activos",
   "photo": "Foto",

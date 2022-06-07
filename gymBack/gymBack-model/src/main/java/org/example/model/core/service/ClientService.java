@@ -32,12 +32,22 @@ public class ClientService implements IClientService {
             throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.clientDao, keyMap, attrList);
     }
-
+    public EntityResult monthInscriptionsQuery(Map<String, Object> keyMap, List<?> attrList)
+            throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.clientDao, keyMap, attrList, ClientDao.MONTH_INSCRIPTIONS_QUERY);
+    }
     public EntityResult activeClientQuery(Map<String, Object> keyMap, List<?> attrList)
             throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.clientDao, keyMap, attrList, ClientDao.ACTIVE_CLIENTS_QUERY);
     }
-
+    public EntityResult monthIncomeQuery(Map<String, Object> keyMap, List<?> attrList)
+            throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.clientDao, keyMap, attrList, ClientDao.MONTH_INCOME_QUERY);
+    }
+    public EntityResult monthActivesQuery(Map<String, Object> keyMap, List<?> attrList)
+            throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.clientDao, keyMap, attrList, ClientDao.MONTH_ACTIVES_QUERY);
+    }
     @Override
     @Transactional(rollbackFor = Exception.class)
     public EntityResult clientInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {

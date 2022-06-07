@@ -1,5 +1,9 @@
-<img src="assets/images/logo3_1_2.png" width="400px" style="display: block;
-margin-left: auto;
-margin-right: auto;
-padding-top: 225px;
-">
+<div fxLayout="column">
+    <div fxLayoutAlign="space-between center">
+      <p class="home-card-title" fxFlex>{{'TOTAL_CLIENTS' | oTranslate }}:&nbsp;</p>
+      <p class="home-card-home-amount" fxFlex> {{ accountAmount }}</p>
+    </div>
+</div>
+  <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="graphData" [chart-parameters]="chartParameters" fxFlex></o-chart>
+  <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="subsgraphData" [chart-parameters]="subschartParameters" fxFlex></o-chart>
+  <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="subsubsgraphData" [chart-parameters]="subsubschartParameters" fxFlex></o-chart>

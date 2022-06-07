@@ -1,3 +1,5 @@
+import { Router, ActivatedRoute } from '@angular/router';
+import { CalendarService } from './../../../shared/calendar.service';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { setHours, setMinutes } from 'date-fns';
 import { colors } from '../demo-utils/colors';
@@ -17,6 +19,29 @@ export class CalendarHomeComponent {
   view: CalendarView = CalendarView.Day;
 
   viewDate: Date = new Date();
+
+  iEvents : Array<Event>;
+
+  constructor(private calendarService: CalendarService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+
+  }
+
+  ngOnInit() {
+   this.refreshData();
+  }
+
+  refreshData() {
+    this.calendarService.getEvents().subscribe(
+      response => this.handleSuccessfulResponse(response),
+    );
+  }
+
+  handleSuccessfulResponse(response) {
+    this.iEvents = response;
+  }
+
 
   events: CalendarEvent[] = [
     {

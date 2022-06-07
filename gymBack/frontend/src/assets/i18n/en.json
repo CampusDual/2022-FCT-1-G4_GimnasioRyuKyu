@@ -26,6 +26,12 @@
   "REPEATED_CLIENT_CLASS":"The client is already registered in this class",
 
 
+  "TOTAL_CLIENTS":"Total Clients",
+
+
+  "calendar": "Calendar",
+
+
   "clients":"Clients",
   "actives": "Active",
   "photo": "Photo",
