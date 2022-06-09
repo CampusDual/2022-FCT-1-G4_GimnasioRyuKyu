@@ -29,4 +29,5 @@ public class ClientDao extends OntimizeJdbcDaoSupport {
     public static final String MONTH_INCOME_QUERY="MONTH_INCOME";
     public static final String MONTH_ACTIVES_QUERY="MONTH_ACTIVES";
     public static final String MONTH_INSCRIPTIONS_QUERY="MONTH_INSCRIPTIONS";
+    public static final String ACTIVES_VS_INACTIVES_QUERY="ACTIVE_vs_INACTIVE";
 }

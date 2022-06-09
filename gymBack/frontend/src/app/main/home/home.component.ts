@@ -1,6 +1,4 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { ChartSeries, PieChartConfiguration } from 'ontimize-web-ngx-charts';
-import { D3LocaleService } from '../../shared/d3-locale/d3Locale.service';
 import { DiscreteBarChartConfiguration } from 'ontimize-web-ngx-charts';
 import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { OntimizeService } from 'ontimize-web-ngx'
@@ -9,7 +7,8 @@ import { OntimizeService } from 'ontimize-web-ngx'
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   accountAmount: any;
@@ -19,6 +18,7 @@ export class HomeComponent implements OnInit {
   protected subsgraphData: Array<Object>;
   public subsubschartParameters: DiscreteBarChartConfiguration;
   protected subsubsgraphData: Array<Object>;
+
 
   constructor(private router: Router,private actRoute: ActivatedRoute,private ontimizeService: OntimizeService,
     private cd: ChangeDetectorRef) {
@@ -41,7 +41,8 @@ export class HomeComponent implements OnInit {
     );
 
     this.chartParameters = new DiscreteBarChartConfiguration();
-    this.chartParameters.height = 130;
+    this.chartParameters.height = 300;
+    this.chartParameters.width=500;
     this.chartParameters.showLegend = false;
     this.chartParameters.y1Axis.showMaxMin = false;
     this.chartParameters.x1Axis.showMaxMin = false;
@@ -100,7 +101,9 @@ export class HomeComponent implements OnInit {
 
 
     this.subschartParameters = new DiscreteBarChartConfiguration();
-    this.subschartParameters.height = 130;
+    this.subschartParameters.height = 300;
+    this.subschartParameters.width = 400;
+
     this.subschartParameters.showLegend = false;
     this.subschartParameters.y1Axis.showMaxMin = false;
     this.subschartParameters.x1Axis.showMaxMin = false;
@@ -146,7 +149,9 @@ export class HomeComponent implements OnInit {
 
 
     this.subsubschartParameters = new DiscreteBarChartConfiguration();
-    this.subsubschartParameters.height = 130;
+    this.subsubschartParameters.height = 300;
+    this.subschartParameters.width = 400;
+
     this.subsubschartParameters.showLegend = false;
     this.subsubschartParameters.y1Axis.showMaxMin = false;
     this.subsubschartParameters.x1Axis.showMaxMin = false;
@@ -160,6 +165,7 @@ export class HomeComponent implements OnInit {
         {
           'key': 'Discrete serie',
           'values': values
+
         }
       ]
     }

@@ -1,9 +1,61 @@
-<div fxLayout="column">
-    <div fxLayoutAlign="space-between center">
-      <p class="home-card-title" fxFlex>{{'TOTAL_CLIENTS' | oTranslate }}:&nbsp;</p>
-      <p class="home-card-home-amount" fxFlex> {{ accountAmount }}</p>
-    </div>
-</div>
+<div class="activeVsInactiveChart">
+  <div class="title">
+  <p>{{'ACTIVE_VS_INACTIVE' | oTranslate }}</p><br>
+  </div>
   <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="graphData" [chart-parameters]="chartParameters" fxFlex></o-chart>
+  <div class="clientsTotal">
+    <p class="home-card-title" fxFlex>{{'TOTAL_CLIENTS' | oTranslate }}:&nbsp;</p>
+    <p class="home-card-home-amount" fxFlex> {{ accountAmount }}</p>
+  </div>
+</div>
+<div class="incomeChart">
   <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="subsgraphData" [chart-parameters]="subschartParameters" fxFlex></o-chart>
+</div>
+<div class="monthlyActiveChart">
   <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="subsubsgraphData" [chart-parameters]="subsubschartParameters" fxFlex></o-chart>
+</div>
+
+
+
+<o-grid #grid show-page-size="yes" grid-item-width="1:2">
+  <o-grid-item class="container-item">
+    <o-column>
+      <o-row>
+        <h1>{{'ACTIVE_VS_INACTIVE' | oTranslate }}</h1>
+      </o-row>
+      <o-row>
+        <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="graphData" [chart-parameters]="chartParameters" fxFlex></o-chart>
+      </o-row>
+    </o-column>
+  </o-grid-item>
+  <o-grid-item class="container-item">
+    <o-column>
+      <o-row>
+        <h1>{{'ACTIVE_VS_INACTIVE' | oTranslate }}</h1>
+      </o-row>
+      <o-row>
+        <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="graphData" [chart-parameters]="chartParameters" fxFlex></o-chart>
+      </o-row>
+    </o-column>
+  </o-grid-item>
+  <o-grid-item class="container-item">
+    <o-column>
+      <o-row>
+        <h1>{{'ACTIVE_VS_INACTIVE' | oTranslate }}</h1>
+      </o-row>
+      <o-row>
+        <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="graphData" [chart-parameters]="chartParameters" fxFlex></o-chart>
+      </o-row>
+    </o-column>
+  </o-grid-item>
+  <o-grid-item class="container-item">
+    <o-column>
+      <o-row>
+        <h1>{{'ACTIVE_VS_INACTIVE' | oTranslate }}</h1>
+      </o-row>
+      <o-row>
+        <o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="graphData" [chart-parameters]="chartParameters" fxFlex></o-chart>
+      </o-row>
+    </o-column>
+  </o-grid-item>
+</o-grid>

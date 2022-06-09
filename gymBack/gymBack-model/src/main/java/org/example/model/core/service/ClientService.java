@@ -8,12 +8,15 @@ import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.IClientService;
 
 import org.example.model.core.dao.ClientDao;
+import org.example.model.core.dao.ClientSubHistory;
 import org.example.model.core.dao.SubscriptionDao;
+import org.example.model.core.dao.SubscriptionHistoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
 import java.util.*;
 
 @Lazy
@@ -23,9 +26,12 @@ public class ClientService implements IClientService {
     @Autowired
     ClientDao clientDao;
     @Autowired
+    ClientSubHistory clientSubHistoryDao;
+    @Autowired
     private DefaultOntimizeDaoHelper daoHelper;
     @Autowired
     private SubscriptionService subscriptionService;
+
 
     @Override
     public EntityResult clientQuery(Map<String, Object> keyMap, List<?> attrList)
@@ -47,6 +53,10 @@ public class ClientService implements IClientService {
     public EntityResult monthActivesQuery(Map<String, Object> keyMap, List<?> attrList)
             throws OntimizeJEERuntimeException {
         return this.daoHelper.query(this.clientDao, keyMap, attrList, ClientDao.MONTH_ACTIVES_QUERY);
+    }
+    public EntityResult activesVsInactivesQuery(Map<String, Object> keyMap, List<?> attrList)
+            throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.clientDao, keyMap, attrList, ClientDao.ACTIVES_VS_INACTIVES_QUERY);
     }
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -71,6 +81,9 @@ public class ClientService implements IClientService {
         this.insertNonRelatedData(nonClientData);
         attrMap.putAll(nonClientData);
         updateExpirationDate(attrMap);
+        if(attrMap.containsKey(ClientDao.ID_SUBSCRIPTION)){
+        addToHistoryUpdate(attrMap,keyMap);
+        }
         return this.daoHelper.update(this.clientDao, attrMap, keyMap);
     }
 
@@ -130,4 +143,21 @@ public class ClientService implements IClientService {
             }
         }
     }
+
+
+
+    private EntityResult addToHistoryUpdate(Map<String,Object> attrMap, Map<String,Object> keyMap){
+        Date date=new Date();
+        Timestamp timestamp=new Timestamp(date.getTime());
+        int id_client= (int) keyMap.get(ClientDao.ID);
+        int id_sub=(int) attrMap.get(ClientDao.ID_SUBSCRIPTION);
+
+        Map<String,Object> attr=new HashMap<>();
+        attr.put(ClientSubHistory.ATTR_ID_SUB,id_sub);
+        attr.put(ClientSubHistory.ATTR_ID_CLIENT,id_client);
+        attr.put(ClientSubHistory.ATTR_TIMESTAMP,timestamp);
+
+        return this.daoHelper.insert(this.clientSubHistoryDao, attr);
+    }
+
 }

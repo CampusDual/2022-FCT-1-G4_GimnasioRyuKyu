@@ -10,8 +10,6 @@ export class CalendarService extends OntimizeBaseService{
 
   url:String = 'http://207.188.182.136:33333/roomsClasses/roomClass';
 
-
-
   constructor(private http:HttpClient, protected injector: Injector) {
     super(injector);
 
@@ -36,6 +34,5 @@ export class CalendarService extends OntimizeBaseService{
     };
     return this.http.get(this.url + '' , options);
   }
-
 
 }

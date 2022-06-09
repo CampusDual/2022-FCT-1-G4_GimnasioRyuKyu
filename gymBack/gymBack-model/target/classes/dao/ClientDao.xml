@@ -73,5 +73,15 @@
 			   ]]>
             </Sentence>
         </Query>
+        <Query id="ACTIVE_vs_INACTIVE">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM vactives_vs_inactives
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
     </Queries>
 </JdbcEntitySetup>

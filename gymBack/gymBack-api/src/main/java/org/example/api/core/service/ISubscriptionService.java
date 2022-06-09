@@ -11,7 +11,7 @@ public interface ISubscriptionService {
 
     public EntityResult subscriptionInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
 
-    public EntityResult subscriptionUpdate(Map<String, Object> attrMap, Map<?, ?> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult subscriptionUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
     public EntityResult subscriptionDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 }
