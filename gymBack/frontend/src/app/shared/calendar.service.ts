@@ -8,7 +8,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CalendarService extends OntimizeBaseService{
 
-  url:String = 'http://207.188.182.136:33333/roomsClasses/roomClass';
+  url:String = 'http://207.188.182.136:33333/api/api';
+   // url:String = 'http://localhost:33333/roomsClasses/roomClass?columns=id_room_class,id_room,id_class,date,h_start,h_end';
 
   constructor(private http:HttpClient, protected injector: Injector) {
     super(injector);
@@ -32,7 +33,14 @@ export class CalendarService extends OntimizeBaseService{
     const options = {
       headers : this.buildHeaders()
     };
-    return this.http.get(this.url + '' , options);
+    return this.http.get(this.url + '?columns=id_room_class,date,h_start,h_end,id_monitor' , options);
   }
+
+ /* public getEvents(){
+    const options = {
+      headers : this.buildHeaders()
+    };
+    return this.http.get(this.url + '' , options);
+  }*/
 
 }

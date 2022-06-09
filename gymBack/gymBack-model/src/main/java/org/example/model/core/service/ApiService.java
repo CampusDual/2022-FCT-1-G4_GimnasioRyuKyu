@@ -5,6 +5,7 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.IApiService;
 import org.example.model.core.dao.ApiDao;
+import org.example.model.core.dao.RoomClassDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class ApiService implements IApiService {
 
     @Override
     public EntityResult apiQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
-        return this.daoHelper.query(this.apiDao, keyMap, attrList);
+        return this.daoHelper.query(this.apiDao, keyMap, attrList, ApiDao.QUERY_ROOM_CLASS);
     }
 
 }

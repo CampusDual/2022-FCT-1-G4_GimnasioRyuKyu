@@ -15,6 +15,7 @@ public class ApiDao extends OntimizeJdbcDaoSupport{
     public static final String ATTR_H_START = "h_start";
     public static final String ATTR_H_END = "h_end";
     public static final String ATTR_MONITOR="id_monitor";
+    public static final String QUERY_ROOM_CLASS = "ROOMCLASS";
 
     public ApiDao(){
         super();

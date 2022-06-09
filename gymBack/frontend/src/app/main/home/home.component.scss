@@ -1,14 +1,21 @@
-.bg {
-  background-color: darkred;
-}
-.activeVsInactiveChart{
-
-}
-.incomeChart{
-
-  margin-left: 500px;
+.graph{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-mat-grid-tile .mat-grid-tile.ng-star-inserted{
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.centerPieChart{
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+}
+.pieTitle{
+  margin-left: center;
 }
