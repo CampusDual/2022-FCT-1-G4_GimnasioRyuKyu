@@ -11,5 +11,6 @@ public interface IClassService {
     public EntityResult classInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
     public EntityResult classUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
     public EntityResult classDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
+    public EntityResult showClassesQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
 
 }

@@ -24,7 +24,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { AppRoutingModule } from './app-routing.module';
+
 import { HomeComponent } from './components/home/home.component';
+import { HomeService } from './components/home/home.service';
+
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -52,8 +57,9 @@ import { HomeComponent } from './components/home/home.component';
     MdbTooltipModule,
     MdbValidationModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
