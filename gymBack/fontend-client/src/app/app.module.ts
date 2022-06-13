@@ -29,6 +29,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HomeService } from './components/home/home.service';
 
 import { HttpClientModule } from "@angular/common/http";
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { HttpClientModule } from "@angular/common/http";
     AppComponent,
     LoginComponent,
     PricingComponent,
-    HomeComponent
+    HomeComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
