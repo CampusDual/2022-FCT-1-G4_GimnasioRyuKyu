@@ -1,19 +1,21 @@
-<div fxLayout="column" fxLayoutAlign="space-evenly stretch" class="clients-assign-classes"  fxFill>
-  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="24px">
-    <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40">
-      <o-combo #comboClient attr="id_client" label="comboClient" required="yes" value-column="id"
-        service="clients" entity="activeClient" columns="name;lastname;dni"
-        visible-columns="name;lastname;dni" searchable="yes" keys="id" null-selection="no">
-        <!--<app-assign-clients-render-client></app-assign-clients-render-client>-->
-      </o-combo>
-      <mat-divider></mat-divider>
-      <o-combo #comboClass attr="id_assing_room" label="comboClass" required="yes" query-method="query"
-        service="roomsClasses" entity="roomClass" value-column="id_room_class" columns="id_room;class_name;date;h_start"
-        visible-columns="class_name;date;h_start" searchable="yes" keys="id_room_class"  null-selection="no">
-        <!--<app-assign-clients-render></app-assign-clients-render>-->
-      </o-combo>
-      <mat-divider></mat-divider>
-      <o-button title="Add class" label="Add class"></o-button>
+<o-form fxFill #form service="clients" entity="client" keys="id" header-actions="R;I;U;D" show-header-navigation="no">
+  <div fxLayout="column" fxLayoutAlign="space-evenly stretch" class="clients-assign-classes"  fxFill>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="24px">
+      <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40">
+        <o-combo #comboClient attr="id_client" label="comboClient" required="yes" value-column="id"
+          service="clients" entity="activeClient" columns="name;lastname;dni"
+          visible-columns="name;lastname;dni" searchable="yes" keys="id" null-selection="no">
+          <!--<app-assign-clients-render-client></app-assign-clients-render-client>-->
+        </o-combo>
+        <mat-divider></mat-divider>
+        <o-combo #comboClass attr="id_assing_room" label="comboClass" required="yes" query-method="query"
+          service="roomsClasses" entity="roomClass" value-column="id_room_class" columns="id_room;class_name;date;h_start"
+          visible-columns="class_name;date;h_start" searchable="yes" keys="id_room_class"  null-selection="no">
+          <!--<app-assign-clients-render></app-assign-clients-render>-->
+        </o-combo>
+        <mat-divider></mat-divider>
+        <o-button title="Add class" label="Add class"></o-button>
+      </div>
     </div>
   </div>
-</div>
+</o-form>
