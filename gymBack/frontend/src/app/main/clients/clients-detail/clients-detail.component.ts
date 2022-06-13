@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
+import { ClientsAssignClassesComponent } from './clients-assign-classes/clients-assign-classes.component';
 
 @Component({
   selector: 'app-clients-detail',
@@ -9,7 +12,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 export class ClientsDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    protected dialog: MatDialog,
+    protected sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit() { }
 
@@ -24,5 +30,12 @@ export class ClientsDetailComponent implements OnInit {
     genderText: 'Other'
   }];
 
+  public openDetail(data: any): void {
+    this.dialog.open(ClientsAssignClassesComponent, {
+      height: '330px',
+      width: '520px',
+      data: data
+    });
+  }
 
 }
