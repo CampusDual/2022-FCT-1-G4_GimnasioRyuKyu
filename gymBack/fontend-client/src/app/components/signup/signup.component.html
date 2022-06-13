@@ -5,21 +5,22 @@
 <th>
 
 
-   <table style="display: block; margin-left: auto; margin-right: auto " >
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+
+   <table style="margin: 10px;">
 <tr>
 
-    <div style="margin-bottom: 15px; margin-left: 300px">
-<img src="../assets/images/user_profile.png" alt="Avatar" class="avatar" width="250px">
+    <div style="text-align:center; margin-bottom: 10px;">
+<img src="../assets/images/user_profile.png" alt="Avatar" class="avatar" width="200px">
     </div>
 </tr> 
   
   
   <tr style="text-align:center;">
-    <div style="margin-left: 300px; margin-bottom:20px">
     <input type="file" id="userpic"name="profImage" style="display: none;">
     <button> <label for="userpic" id="labelarchivo">Choose a photo</label></button>
   
-          <input type="hidden" name="_token"></div>
+          <input type="hidden" name="_token">
   </tr>
 
   
@@ -39,8 +40,7 @@
         </div>
       </div>
     </div>
- 
-    <tr>
+  <tr>
     <th>
 <div class="form-outline mb-4">
       <input class="form-control" type="text" value="" id="form2Example33"/>
@@ -51,7 +51,7 @@
  
   <th>
 <!-- Password input -->
-    <div class="form-outline mb-4" style="margin-left: 90px;">
+    <div class="form-outline mb-4" style="margin-left: 20px;">
       <input type="password" id="form3Example4" class="form-control" />
       <label class="form-label" for="form3Example4">Password</label>
     </div>
@@ -65,7 +65,7 @@
 
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input type="email" id="form3Example3" class="form-control"  size="10 px"/>
+      <input type="email" id="form3Example3" class="form-control" />
       <label class="form-label" for="form3Example3">Email address</label>
     </div>
   
@@ -77,38 +77,26 @@
         <input type="tel" class="form-control" />
         <label class="form-label" for="form2Example33">Phone number</label>
       </div>
-  
- 
 
+      
       <div class="form-outline mb-4">
         <label for="form2Example33" style="margin-left: 11px;">Birthdate</label>
         <input class="form-control" type="date" value="" id="form2Example33"/>
       </div>
 
-     </td>
-
-<td>
-      <div class="form-outline mb-4" style="margin-left: 10px;">
-        <input type="radio" id="form2Example33" name="genre" value="Masculine" style= "margin-left: 15px;"/>
-        <label for="form2Example33" style="margin-left:5px;margin-right: 5px;" >Masculine</label>
-        <input type="radio" id="form2Example33" name="genre" value="Femenine"  style="margin-left: 20px;"/>
-        <label for="form2Example33" style="margin-left:5px">Femenine</label>
-      </div>
-
-
     
 
-
-   <!-- Checkbox -->
-    <div class="form-outline mb-4" style="margin-left:8px;">
-      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" style= "margin-left: 15px;" />
-      <label class="form-label" for="form2Example33">
-        Subscribe to our newsletter
-      </label>
-    </div>
+      <div class="form-outline mb-4" style="margin-left: 10px;">
+        <input type="radio" id="form2Example33" name="genre" value="Masculine"/>
+        <label for="form2Example33" style="margin-left:5px;margin-right: 5px;" >Masculine</label>
+        <input type="radio" id="form2Example33" name="genre" value="Femenine" />
+        <label for="form2Example33" style="margin-left:5px">Femenine</label>
+      </div>
   
     <!-- Submit button -->
-    <button style= "margin-left: 15px;"type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+
 
   </td>
 
