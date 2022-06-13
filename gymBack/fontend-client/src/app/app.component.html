@@ -1,3 +1,13 @@
+<style>
+
+p{
+  font-weight: bolder;
+  color: white;
+  font-size: large;
+  padding-top: 5px;
+}
+</style>
+
 <header>
   <!-- Intro settings -->
   <!-- Navbar -->
@@ -10,15 +20,15 @@
       <div class="collapse navbar-collapse" id="navbarExample01">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" aria-current="page"  [routerLink]="['/home']"> <img src="../assets/images/LogoNegro.png" height="30" width="30" /></a>
+            <a class="nav-link" aria-current="page"  [routerLink]="['/home']"> <img src="../assets/images/logoGYMBlanco.png" height="40" width="40" /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/pricing']">Pricing</a>
+            <a class="nav-link" [routerLink]="['/pricing']"><p>Pricing</p></a>
           </li>
         </ul>
         <ul class="navbar-nav navbar-right">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/login']">LogIn</a>
+          <li class="nav-item" >
+            <a class="nav-link" [routerLink]="['/login']"><p>Login</p></a>
           </li>
         </ul>
       </div>
