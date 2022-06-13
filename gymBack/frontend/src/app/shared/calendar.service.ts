@@ -33,7 +33,7 @@ export class CalendarService extends OntimizeBaseService{
     const options = {
       headers : this.buildHeaders()
     };
-    return this.http.get(this.url + '?columns=id_room_class,date,h_start,h_end,id_monitor' , options);
+    return this.http.get(this.url + '?columns=id_room_class,date,h_start,h_end,id_monitor,class_name,monitor_name,room_name' , options);
   }
 
  /* public getEvents(){
