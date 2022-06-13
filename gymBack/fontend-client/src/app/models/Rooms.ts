@@ -1,4 +1,5 @@
-export class Classes{
+export class Rooms{
   NAME:string;
   DESCRIPTION:string;
+  PHOTO:string;
 }
