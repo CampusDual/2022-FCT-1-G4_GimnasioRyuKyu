@@ -1,5 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-clients-assign-classes',
@@ -8,9 +7,7 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 })
 export class ClientsAssignClassesComponent implements OnInit {
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: any
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }

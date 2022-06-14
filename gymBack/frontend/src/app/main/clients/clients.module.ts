@@ -8,14 +8,18 @@ import { ClientsNewComponent } from './clients-new/clients-new.component';
 import { ClientsSubRenderComponent } from './clients-detail/clients-sub-render/clients-sub-render.component';
 import { ClientsListRenderComponent } from './clients-detail/clients-list-render/clients-list-render.component';
 import { ClientsAssignClassesComponent } from './clients-detail/clients-assign-classes/clients-assign-classes.component';
+import { ClientsAssignClassesRenderComponent } from './clients-detail/clients-assign-classes/clients-assign-classes-render/clients-assign-classes-render.component';
 
 
 @NgModule({
-  declarations: [ClientsHomeComponent, ClientsDetailComponent, ClientsNewComponent, ClientsSubRenderComponent, ClientsListRenderComponent, ClientsAssignClassesComponent],
+  declarations: [ClientsHomeComponent, ClientsDetailComponent, ClientsNewComponent, ClientsSubRenderComponent, ClientsListRenderComponent, ClientsAssignClassesComponent, ClientsAssignClassesRenderComponent],
   imports: [
     CommonModule,
     OntimizeWebModule,
     ClientsRoutingModule
+  ],
+  entryComponents:[
+    ClientsAssignClassesComponent
   ]
 })
 export class ClientsModule {

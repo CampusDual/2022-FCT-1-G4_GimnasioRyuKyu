@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { ClientsAssignClassesComponent } from './clients-assign-classes/clients-assign-classes.component';
+
 
 @Component({
   selector: 'app-clients-detail',
@@ -27,12 +27,5 @@ export class ClientsDetailComponent implements OnInit {
     genderCode: "O",
     genderText: 'Other'
   }];
-
-  public openDetail(): void {
-    this.dialog.open(ClientsAssignClassesComponent, {
-      height: '330px',
-      width: '520px'
-    });
-  }
 
 }

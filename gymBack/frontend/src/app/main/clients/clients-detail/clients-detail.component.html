@@ -57,8 +57,8 @@
   <!-- Classes -->
   <o-row class="colapsiblesStyles">
     <o-column-collapsible fxFlex="95" title="{{ 'Client classes' | oTranslate }}" appearance="outline">
-      <o-button title="New class" label="New class" (click)="openDetail()"></o-button>
-      <o-list #list attr="classesTable" keys="id_assing_room;id_client_class"
+      <o-form-layout-manager mode="dialog" attr="formClasses" key="id_assing_room;id_client_class" show-header-navigation="no">
+        <o-list #list attr="classesTable" keys="id_assing_room;id_client_class"
         columns="id_client;class_name;date;h_start" service="clientsClasses" entity="clientClass"
         quick-filter="true" quick-filter-columns="class_name;h_start" refresh-button="true" insert-button="true" insert-button-position="top" delete-button="true"
         selectable="true" dense="false" detail-button-in-row="dalse" detail-button-in-row-icon="chevron_right"
@@ -69,6 +69,7 @@
           </o-list-item-text>
         </o-list-item>
       </o-list>
+      </o-form-layout-manager>
     </o-column-collapsible>
   </o-row>
 </o-form>
