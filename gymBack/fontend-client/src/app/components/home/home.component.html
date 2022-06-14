@@ -1,6 +1,4 @@
 <style>
-
-
 </style>
 <header>
   <!-- Background image -->
@@ -35,16 +33,61 @@
   <div id="divMethod">
   <h3 id="methodh3">EL MÉTODO RYU KYU</h3>
   <table>
-    <tr> <td><img src="../../../assets/images/pesa-blanco.png" width="65" height="65"/><p class="parafMeth">Trabajo duro</p></td>
-      <td ><img src="../../../assets/images/fruta-blanco.png" width="65" height="65"/> <p class="parafMeth">Nutrición</p></td>
-      <td ><img src="../../../assets/images/cerebro-blanco.png" width="65" height="65"/><p class="parafMeth">Motivación</p></td></tr>
+    <tr>
+      <td><img src="../../../assets/images/planificacion.png" width="65" height="65"/><p class="parafMeth">Planificación</p></td>
+      <td><img src="../../../assets/images/pesa.png" width="65" height="65"/><p class="parafMeth">Trabajo duro</p></td>
+      <td ><img src="../../../assets/images/fruta.png" width="65" height="65"/> <p class="parafMeth">Nutrición</p></td>
+      <td ><img src="../../../assets/images/cerebro.png" width="65" height="65"/><p class="parafMeth">Motivación</p></td></tr>
   </table>
 </div>
-<h2 id="actDirigidas"> ACTIVIDADES DIRIGIDAS </h2>
-<mdb-tabs [justified]="true" [pills]="true"  [vertical]="true" >
-  <mdb-tab  *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}> <p id="className">{{data.NAME}}</p> <p> {{data.DESCRIPTION}}</p></mdb-tab>
-</mdb-tabs>
 
+<div id="directedClassDiv">
+  <h2 id="actDirigidas"> ACTIVIDADES DIRIGIDAS </h2>
+<mdb-tabs id="mdTabsClass" [vertical]="true" >
+  <mdb-tab id="mdTabClass" *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}><p id="className">{{data.NAME}}</p>{{data.DESCRIPTION}}</mdb-tab>
+</mdb-tabs>
+</div>
 
 </main>
 
+<!-- Footer -->
+<footer class="page-footer font-small">
+
+  <!-- Footer Links -->
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+
+        <table>
+          <tr>
+            <td><a href="http://www.instagram.com"><img src="../../../assets/images/instagram.png" width="40" height="40"/></a> </td>
+            <td><a href="http://www.facebook.com"><img src="../../../assets/images/facebook.png" width="40" height="40"/></a> </td>
+            <td><a href="https://open.spotify.com/playlist/4tGURsbozPLeSbZBW80YXN"><img src="../../../assets/images/spotify.png" width="40" height="40"/></a> </td>
+        </table>
+        <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11828.748078470615!2d-8.682439!3d42.167681!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa1aa0c1fe70fc8c4!2sImatia%20Innovation!5e0!3m2!1ses!2ses!4v1655201648103!5m2!1ses!2ses" width="300" height="300" style="border:0; margin:auto; display:block; padding-top: 3%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h6 class="text-center" style="padding-top: 2%;"><img src="../../../assets/images/ubicacion.png" width="25" height="25"/>Edificio Citexvi, Fonte das Abelleiras 36310 Vigo, Pontevedra</h6>
+    <h6 class="text-center" ><img src="../../../assets/images/telefono.png" width="25" height="25"/>986 34 27 74</h6>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+    <a style="color:#ca0034" [routerLink]="['/home']"> RyuKyu.com  <img src="../../../assets/images/logoGYM.png" width="25" height="25"/></a>
+
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
