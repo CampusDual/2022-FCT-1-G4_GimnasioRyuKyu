@@ -5,7 +5,7 @@
 <header>
   <!-- Background image -->
   <div id="intro-example" class="p-5 text-center bg-image position-relative">
-    <!-- <video class="position-absolute" style="min-width: auto; min-height:auto; left: 0; top: 0" playsinline autoplay
+   <!-- <video class="position-absolute" style="min-width: auto; min-height:auto; left: 0; top: 0" playsinline autoplay
       muted loop>
       <source class="h-100" src="../assets/images/comba-girl.mp4" type="video/mp4" />
     </video> -->
@@ -13,9 +13,9 @@
     <div class="mask" style="background-color: rgba(0, 0, 0, 0)">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 id="homeTitle">ÚNETE AL MÉTODO RYU KYU</h1>
-          <h4 id="homeSurTitle">NUESTRA PASIÓN ES AYUDARTE A LOGRAR TUS OBJETIVOS</h4>
-          <!--  <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
+          <h1  id="homeTitle">ÚNETE AL MÉTODO RYU KYU</h1>
+          <h4  id="homeSurTitle">NUESTRA PASIÓN ES AYUDARTE A LOGRAR TUS OBJETIVOS</h4>
+        <!--  <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
             rel="nofollow" target="_blank">Start tutorial</a>
           <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
             role="button">Download MDB UI KIT</a> -->
@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <!-- <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
+   <!-- <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
       <path fill="#fff" d="M 0 297.33 L 1440 183.98 L 1440 320 L 0 320 Z"></path>
     </svg> -->
   </div>
@@ -32,27 +32,19 @@
 </header>
 
 <main id="main">
+  <div id="divMethod">
   <h3 id="methodh3">EL MÉTODO RYU KYU</h3>
   <table>
-    <tr>
-      <td><img src="../../../assets/images/pesa.png" width="65" height="65" />
-        <p class="parafMeth">Trabajo duro</p>
-      </td>
-      <td><img src="../../../assets/images/fruta.png" width="65" height="65" />
-        <p class="parafMeth">Nutrición</p>
-      </td>
-      <td><img src="../../../assets/images/cerebro.png" width="65" height="65" />
-        <p class="parafMeth">Motivación</p>
-      </td>
-    </tr>
+    <tr> <td><img src="../../../assets/images/pesa-blanco.png" width="65" height="65"/><p class="parafMeth">Trabajo duro</p></td>
+      <td ><img src="../../../assets/images/fruta-blanco.png" width="65" height="65"/> <p class="parafMeth">Nutrición</p></td>
+      <td ><img src="../../../assets/images/cerebro-blanco.png" width="65" height="65"/><p class="parafMeth">Motivación</p></td></tr>
   </table>
+</div>
+<h2 id="actDirigidas"> ACTIVIDADES DIRIGIDAS </h2>
+<mdb-tabs [justified]="true" [pills]="true"  [vertical]="true" >
+  <mdb-tab  *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}> <p id="className">{{data.NAME}}</p> <p> {{data.DESCRIPTION}}</p></mdb-tab>
+</mdb-tabs>
 
-  <h2 id="actDirigidas"> ACTIVIDADES DIRIGIDAS </h2>
-  <div>
-    <mdb-tabs class="mdTabsClass" [vertical]="true">
-      <mdb-tab class="mdTabClass" *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}>
-        <p class="className">{{data.NAME}}</p>{{data.DESCRIPTION}}
-      </mdb-tab>
-    </mdb-tabs>
-  </div>
+
 </main>
+
