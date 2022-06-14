@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Classes } from 'src/app/models/Classes';
 import { Rooms } from 'src/app/models/Rooms';
+import { Subscriptions } from 'src/app/models/Subscriptions';
 import { HomeService } from './home.service';
 
 @Component({
@@ -11,17 +12,18 @@ import { HomeService } from './home.service';
 export class HomeComponent implements OnInit {
   classesData: Classes[]=[];
   roomsData: Rooms[]=[];
+  subsData:Subscriptions[]=[];
   constructor(public homeService:HomeService) { }
 
   ngOnInit(): void {
     this.getClasses();
     this.getRooms();
+    this.getSubs();
   }
   private getClasses(){
     this.homeService.getClasses().subscribe(
       res => {
         this.classesData = res.data;
-        console.log(this.classesData);
       },
       error => console.log(error)
     )
@@ -31,7 +33,15 @@ export class HomeComponent implements OnInit {
     this.homeService.getRooms().subscribe(
       res => {
         this.roomsData = res.data;
-        console.log(this.roomsData);
+      },
+      error => console.log(error)
+    )
+  }
+
+  private getSubs(){
+    this.homeService.getSubs().subscribe(
+      res => {
+        this.subsData = res.data;
       },
       error => console.log(error)
     )

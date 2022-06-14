@@ -29,9 +29,8 @@
 
 <main id="main">
   <h3 id="methodh3">EL MÉTODO RYU KYU</h3>
-  <table>
+  <table id="tableMethod">
     <tr>
-
       <td><img src="../../../assets/images/planificacion.png" width="65" height="65"/><p class="parafMeth">Planificación</p></td>
       <td><img src="../../../assets/images/pesa.png" width="65" height="65"/><p class="parafMeth">Trabajo duro</p></td>
       <td ><img src="../../../assets/images/fruta.png" width="65" height="65"/> <p class="parafMeth">Nutrición</p></td>
@@ -39,14 +38,27 @@
   </table>
 
 <div id="directedClassDiv">
-  <h2 id="actDirigidas"> ACTIVIDADES DIRIGIDAS </h2>
+  <h2 id="h2HomeTitles"> ACTIVIDADES DIRIGIDAS </h2>
 <mdb-tabs id="mdTabsClass" [vertical]="true" >
   <mdb-tab id="mdTabClass" *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}><p id="className">{{data.NAME}}</p>{{data.DESCRIPTION}}</mdb-tab>
 </mdb-tabs>
 </div>
 
+<div id="subPrices">
+  <h2 id="h2HomeTitles"> TARIFAS </h2>
+<table style="margin:auto;">
+    <tr *ngFor="let data of subsData; index as i; first as isFirst;" style="padding-bottom: 5%;">
+      <td WIDTH="400"
+	    HEIGHT="100" style="padding-right: 10%;"> Acceso total por {{data.SUB_MONTHS}} meses</td>
+      <td WIDTH="400"
+	    HEIGHT="100" style="padding-left: 10%;"> {{data.PRICE}} €</td>
+    </tr>
+</table>
+</div>
+
+
 <div id="directedClassDiv" style="padding-bottom: 5%;">
-  <h2 id="actDirigidas"> ¿DÓNDE ESTAMOS? </h2>
+  <h2 id="h2HomeTitles"> ¿DÓNDE ESTAMOS? </h2>
   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11828.748078470615!2d-8.682439!3d42.167681!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa1aa0c1fe70fc8c4!2sImatia%20Innovation!5e0!3m2!1ses!2ses!4v1655201648103!5m2!1ses!2ses" width="450" height="375" style="border:0; margin:auto; display:block; padding-top: 1%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 
