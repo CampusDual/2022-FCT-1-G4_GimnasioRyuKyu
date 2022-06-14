@@ -1,81 +1,11 @@
 <style>
-  /* Default height for small devices */
-  #intro-example {
-    height: 400px;
-  }
 
-  /* Height for devices larger than 992px */
-  @media (min-width: 992px) {
-    #intro-example {
-      height: 600px;
-    }
-  }
-
-  header{
-    background-image: url("../../../assets/images/modelo-fitness.jpg");
-  }
-
-  .card .mask {
-    z-index: 10;
-  }
-
-  #homeTitle{
-    font-family: 'Open Sans';
-font-weight: 900;
-font-size: 100px;
-  }
-  #homeSurTitle{
-font-weight: 900;
-font-size: 25px;
-  }
-
-  #actDirigidas{
-    padding-top: 3%;
-    font-size:25px;
-    padding-left: 15%;
-    font-style: italic;
-    font-weight: bolder;
-    }
-  #mdTabsClass{
-    padding-left: 25%;
-    }
-    #mdTabClass{
-    color: white;
-    }
-    #className{
-      font-style: initial;
-      font-size: 20px;
-      text-transform: uppercase;
-    }
-    #main{
-      background-color: #ca0034;
-      color:white;
-    }
-    table{
-
-      width: 100%;
-    }
-    td{
-      padding-top: 3%;
-      text-align: center;
-    }
-    .parafMeth{
-      color:black;
-      font-weight: bold;
-      font-size: 20px;
-    }
-    #methodh3{
-      padding-top: 2%;
-      text-align: center;
-      color:black;
-      font-weight: bold;
-    }
 
 </style>
 <header>
   <!-- Background image -->
   <div id="intro-example" class="p-5 text-center bg-image position-relative">
-   <!-- <video class="position-absolute" style="min-width: auto; min-height:auto; left: 0; top: 0" playsinline autoplay
+    <!-- <video class="position-absolute" style="min-width: auto; min-height:auto; left: 0; top: 0" playsinline autoplay
       muted loop>
       <source class="h-100" src="../assets/images/comba-girl.mp4" type="video/mp4" />
     </video> -->
@@ -83,9 +13,9 @@ font-size: 25px;
     <div class="mask" style="background-color: rgba(0, 0, 0, 0)">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1  id="homeTitle">ÚNETE AL MÉTODO RYU KYU</h1>
-          <h4  id="homeSurTitle">NUESTRA PASIÓN ES AYUDARTE A LOGRAR TUS OBJETIVOS</h4>
-        <!--  <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
+          <h1 id="homeTitle">ÚNETE AL MÉTODO RYU KYU</h1>
+          <h4 id="homeSurTitle">NUESTRA PASIÓN ES AYUDARTE A LOGRAR TUS OBJETIVOS</h4>
+          <!--  <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
             rel="nofollow" target="_blank">Start tutorial</a>
           <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
             role="button">Download MDB UI KIT</a> -->
@@ -93,7 +23,7 @@ font-size: 25px;
       </div>
     </div>
 
-   <!-- <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
+    <!-- <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
       <path fill="#fff" d="M 0 297.33 L 1440 183.98 L 1440 320 L 0 320 Z"></path>
     </svg> -->
   </div>
@@ -104,16 +34,25 @@ font-size: 25px;
 <main id="main">
   <h3 id="methodh3">EL MÉTODO RYU KYU</h3>
   <table>
-    <tr> <td><img src="../../../assets/images/pesa.png" width="65" height="65"/><p class="parafMeth">Trabajo duro</p></td>
-      <td ><img src="../../../assets/images/fruta.png" width="65" height="65"/> <p class="parafMeth">Nutrición</p></td>
-      <td ><img src="../../../assets/images/cerebro.png" width="65" height="65"/><p class="parafMeth">Motivación</p></td></tr>
+    <tr>
+      <td><img src="../../../assets/images/pesa.png" width="65" height="65" />
+        <p class="parafMeth">Trabajo duro</p>
+      </td>
+      <td><img src="../../../assets/images/fruta.png" width="65" height="65" />
+        <p class="parafMeth">Nutrición</p>
+      </td>
+      <td><img src="../../../assets/images/cerebro.png" width="65" height="65" />
+        <p class="parafMeth">Motivación</p>
+      </td>
+    </tr>
   </table>
 
   <h2 id="actDirigidas"> ACTIVIDADES DIRIGIDAS </h2>
   <div>
-<mdb-tabs id="mdTabsClass" [vertical]="true" >
-  <mdb-tab id="mdTabClass" *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}><p id="className">{{data.NAME}}</p>{{data.DESCRIPTION}}</mdb-tab>
-</mdb-tabs>
-</div>
+    <mdb-tabs class="mdTabsClass" [vertical]="true">
+      <mdb-tab class="mdTabClass" *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}>
+        <p class="className">{{data.NAME}}</p>{{data.DESCRIPTION}}
+      </mdb-tab>
+    </mdb-tabs>
+  </div>
 </main>
-
