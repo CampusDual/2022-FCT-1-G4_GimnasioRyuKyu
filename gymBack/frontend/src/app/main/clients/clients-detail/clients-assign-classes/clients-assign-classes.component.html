@@ -1,4 +1,4 @@
-<o-form fxFill  service="clientsClasses" entity="clientClass" keys="id_client_class" undo-button="no" class="formClientsAssignClasses">
+<o-form fxFill  service="clientsClasses" entity="clientClass" keys="id_client_class" undo-button="no" class="formClientsAssignClasses" header-position="bottom">
   <div fxLayout="row" class="clients-assign-classes">
       <div fxLayout="column" fxLayoutAlign="center center">
         <!--
@@ -13,7 +13,7 @@
           visible-columns="name;lastname;dni" searchable="yes" keys="id" null-selection="no" enabled="no">
         </o-combo>
 
-        <o-combo #comboClass attr="id_assing_room" label="comboClass" required="yes" query-method="query"
+        <o-combo #comboClass attr="id_room_class" label="comboClass" required="yes" query-method="query"
           service="roomsClasses" entity="roomClass" value-column="id_room_class" columns="id_room;class_name;date;h_start"
           visible-columns="class_name;date;h_start" searchable="yes" keys="id_room_class"  null-selection="no">
           <app-clients-assign-classes-render></app-clients-assign-classes-render>

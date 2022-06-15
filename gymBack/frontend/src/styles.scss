@@ -142,3 +142,16 @@ mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:selected{
   padding-bottom: 0;
 }
 
+.formClientsAssignClasses .o-form-toolbar.ng-star-inserted{
+  padding: 0;
+}
+
+.formClientsAssignClasses .o-form-toolbar-header.mat-toolbar.mat-toolbar-single-row{
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
+.formClientsAssignClasses .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools{
+  width: 75% !important; //Revisar
+}
+
