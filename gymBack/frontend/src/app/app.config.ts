@@ -5,7 +5,7 @@ import { SERVICE_CONFIG } from './shared/app.services.config';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: 'http://207.188.182.136:33333',
+  apiEndpoint: 'http://localhost:33333',
   bundle: {
     path: 'bundle'
   },
