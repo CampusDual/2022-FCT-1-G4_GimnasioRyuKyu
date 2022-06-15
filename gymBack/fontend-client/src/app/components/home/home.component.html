@@ -1,48 +1,17 @@
-<style>
-  /* Default height for small devices */
-  #intro-example {
-    height: 400px;
-  }
-
-  /* Height for devices larger than 992px */
-  @media (min-width: 992px) {
-    #intro-example {
-      height: 600px;
-    }
-  }
-
-  .card .mask {
-    z-index: 10;
-  }
-
-  #actDirigidas{
-    font-size:30px;
-    padding-left: 15%;
-    padding-bottom: 1%;
-  }
-  #mdTabClass{
-    padding-left: 10%;
-    }
-    #className{
-      font-style: initial;
-      font-size: 20px;
-      text-transform: uppercase;
-    }
-</style>
 <header>
   <!-- Background image -->
   <div id="intro-example" class="p-5 text-center bg-image position-relative">
-   <!-- <video class="position-absolute" style="min-width: auto; min-height:auto; left: 0; top: 0" playsinline autoplay
+    <!-- <video class="position-absolute" style="min-width: auto; min-height:auto; left: 0; top: 0" playsinline autoplay
       muted loop>
       <source class="h-100" src="../assets/images/comba-girl.mp4" type="video/mp4" />
     </video> -->
-    <img src="../../../assets/images/modelo-fitness.jpg" class="img-fluid"/>
+
     <div class="mask" style="background-color: rgba(0, 0, 0, 0)">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Únete al método RyuKyu</h1>
-          <h4 class="mb-4">Nuestra pasión es ayudarte a lograr tus objetivos</h4>
-        <!--  <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
+          <h1 id="homeTitle">ÚNETE AL MÉTODO RYU KYU</h1>
+          <h4 id="homeSurTitle">NUESTRA PASIÓN ES AYUDARTE A LOGRAR TUS OBJETIVOS</h4>
+          <!--  <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A" role="button"
             rel="nofollow" target="_blank">Start tutorial</a>
           <a class="btn btn-outline-light btn-lg m-2" href="https://mdbootstrap.com/docs/standard/" target="_blank"
             role="button">Download MDB UI KIT</a> -->
@@ -50,20 +19,89 @@
       </div>
     </div>
 
-    <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
+    <!-- <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
       <path fill="#fff" d="M 0 297.33 L 1440 183.98 L 1440 320 L 0 320 Z"></path>
-    </svg>
+    </svg> -->
   </div>
 
   <!-- Background image -->
 </header>
 
-<main>
-  <h2 id="actDirigidas"> Actividades dirigidas </h2>
+<main id="main">
+  <h3 id="methodh3">EL MÉTODO RYU KYU</h3>
+  <table id="tableMethod">
+    <tr>
+      <td><img src="../../../assets/images/planificacion.png" width="65" height="65"/><p class="parafMeth">Planificación</p></td>
+      <td><img src="../../../assets/images/pesa.png" width="65" height="65"/><p class="parafMeth">Trabajo duro</p></td>
+      <td ><img src="../../../assets/images/fruta.png" width="65" height="65"/> <p class="parafMeth">Nutrición</p></td>
+      <td ><img src="../../../assets/images/cerebro.png" width="65" height="65"/><p class="parafMeth">Motivación</p></td></tr>
+  </table>
 
-<mdb-tabs id="mdTabClass" [vertical]="true">
-  <mdb-tab *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}><p id="className">{{data.NAME}}</p>{{data.DESCRIPTION}}</mdb-tab>
+<div id="directedClassDiv">
+  <h2 id="h2HomeTitles"> ACTIVIDADES DIRIGIDAS </h2>
+<mdb-tabs id="mdTabsClass" [vertical]="true" >
+  <mdb-tab id="mdTabClass" *ngFor="let data of classesData; index as i; first as isFirst;" title={{data.NAME}}><p id="className">{{data.NAME}}</p>{{data.DESCRIPTION}}</mdb-tab>
 </mdb-tabs>
+</div>
 
-</main>
+<div id="subPrices">
+  <h2 id="h2HomeTitles"> TARIFAS </h2>
+<table style="margin:auto;">
+    <tr *ngFor="let data of subsData; index as i; first as isFirst;" style="padding-bottom: 5%;">
+      <td WIDTH="400"
+	    HEIGHT="100" style="padding-right: 10%;"> Acceso total por {{data.SUB_MONTHS}} meses</td>
+      <td WIDTH="400"
+	    HEIGHT="100" style="padding-left: 10%;"> {{data.PRICE}} €</td>
+    </tr>
+</table>
+</div>
+
+
+<div id="directedClassDiv" style="padding-bottom: 5%;">
+  <h2 id="h2HomeTitles"> ¿DÓNDE ESTAMOS? </h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11828.748078470615!2d-8.682439!3d42.167681!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa1aa0c1fe70fc8c4!2sImatia%20Innovation!5e0!3m2!1ses!2ses!4v1655201648103!5m2!1ses!2ses" width="450" height="375" style="border:0; margin:auto; display:block; padding-top: 1%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small">
+
+  <!-- Footer Links -->
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+
+        <table>
+          <tr>
+            <td><a href="http://www.instagram.com"><img src="../../../assets/images/instagram.png" width="40" height="40"/></a> </td>
+            <td><a href="http://www.facebook.com"><img src="../../../assets/images/facebook.png" width="40" height="40"/></a> </td>
+            <td><a href="https://open.spotify.com/playlist/4tGURsbozPLeSbZBW80YXN"><img src="../../../assets/images/spotify.png" width="40" height="40"/></a> </td>
+        </table>
+        <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+
+    <h6 class="text-center" style="padding-top: 2%;"><img src="../../../assets/images/ubicacion.png" width="25" height="25"/>Edificio Citexvi, Fonte das Abelleiras 36310 Vigo, Pontevedra</h6>
+    <h6 class="text-center" ><img src="../../../assets/images/telefono.png" width="25" height="25"/>986 34 27 74</h6>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+    <a style="color:#ca0034" [routerLink]="['/home']"> RyuKyu.com  <img src="../../../assets/images/logoGYM.png" width="25" height="25"/></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
 
