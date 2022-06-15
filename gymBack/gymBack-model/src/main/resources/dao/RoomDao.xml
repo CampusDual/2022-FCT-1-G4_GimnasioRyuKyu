@@ -13,6 +13,15 @@
     </UpdateKeys>
     <GeneratedKey>id</GeneratedKey>
     <Queries>
-
+        <Query id="SHOW_ROOMS">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM room
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
     </Queries>
 </JdbcEntitySetup>

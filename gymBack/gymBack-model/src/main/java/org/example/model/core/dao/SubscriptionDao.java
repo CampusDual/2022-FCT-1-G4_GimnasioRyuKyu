@@ -14,4 +14,6 @@ public class SubscriptionDao extends OntimizeJdbcDaoSupport {
     public static final String PRICE = "price";
     public static final String SUB_MONTHS = "sub_months";
 
+    public static final String SHOW_SUBS_QUERY = "SHOW_SUBS";
+
 }

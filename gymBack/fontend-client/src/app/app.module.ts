@@ -21,10 +21,22 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/login/login.component';
+import { PricingComponent } from './components/pricing/pricing.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { HomeComponent } from './components/home/home.component';
+import { HomeService } from './components/home/home.service';
+
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    PricingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +56,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,4 +16,5 @@ public class RoomDao extends OntimizeJdbcDaoSupport {
     public static final String ATTR_PHOTO = "photo";
     public static final String ATTR_MAX_ROOM_CAPACITY="max_room_capacity";
 
+    public static final String SHOW_ROOMS_QUERY = "SHOW_ROOMS";
 }
