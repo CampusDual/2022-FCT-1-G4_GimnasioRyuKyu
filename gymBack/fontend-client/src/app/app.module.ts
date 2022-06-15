@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from "@angular/forms"
 
 import { AppComponent } from './app.component';
 
@@ -41,6 +42,7 @@ import { SignupComponent } from './components/signup/signup.component';
     SignupComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MdbAccordionModule,

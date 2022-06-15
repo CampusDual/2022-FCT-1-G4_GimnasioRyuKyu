@@ -17,7 +17,7 @@
   
   
   <tr style="text-align:center;">
-    <input type="file" id="userpic"name="profImage" style="display: none;">
+    <input type="file" id="userpic"name="photo" [(ngModel)]="photo" style="display: none;">
     <button> <label for="userpic" id="labelarchivo">Choose a photo</label></button>
   
           <input type="hidden" name="_token">
@@ -29,22 +29,22 @@
     <div class="row mb-4" style="margin-top: 10px;">
       <div class="col">
         <div class="form-outline">
-          <input type="text" id="form3Example1" class="form-control" />
-          <label class="form-label" for="form3Example1">First name</label>
+          <input type="text" id="form3Example1" class="form-control" name="name" [(ngModel)]="name"/>
+          <label class="form-label" for="form3Example1" >First name</label>
         </div>
       </div>
       <div class="col">
         <div class="form-outline">
-          <input type="text" id="form3Example2" class="form-control" />
-          <label class="form-label" for="form3Example2">Last name</label>
+          <input type="text" id="form3Example2" class="form-control" name="lastname" [(ngModel)]="lastname"/>
+          <label class="form-label" for="form3Example2" >Last name</label>
         </div>
       </div>
     </div>
   <tr>
     <th>
 <div class="form-outline mb-4">
-      <input class="form-control" type="text" value="" id="form2Example33"/>
-      <label class="form-label" for="form2Example33">DNI</label>
+      <input class="form-control" type="text" value="" id="form2Example313" name="DNI" [(ngModel)]="DNI"/>
+      <label class="form-label" for="form2Example313" >DNI</label>
     </div>
 
     </th>
@@ -52,7 +52,7 @@
   <th>
 <!-- Password input -->
     <div class="form-outline mb-4" style="margin-left: 20px;">
-      <input type="password" id="form3Example4" class="form-control" />
+      <input type="password" id="form3Example4" class="form-control" name="password" [(ngModel)]="password" />
       <label class="form-label" for="form3Example4">Password</label>
     </div>
 
@@ -65,7 +65,7 @@
 
     <!-- Email input -->
     <div class="form-outline mb-4">
-      <input type="email" id="form3Example3" class="form-control" />
+      <input type="email" id="form3Example3" class="form-control" name="email"  [(ngModel)]="email" />
       <label class="form-label" for="form3Example3">Email address</label>
     </div>
   
@@ -74,34 +74,31 @@
 
 
  <div class="form-outline mb-4">
-        <input type="tel" class="form-control" />
+        <input type="tel" class="form-control" name="phone" [(ngModel)]="phone" />
         <label class="form-label" for="form2Example33">Phone number</label>
       </div>
 
       
       <div class="form-outline mb-4">
-        <label for="form2Example33" style="margin-left: 11px;">Birthdate</label>
-        <input class="form-control" type="date" value="" id="form2Example33"/>
+        <label for="form21Example33" style="margin-left: 11px;" >Birthdate</label>
+        <input class="form-control" type="date" name="birthdate" id="form21Example33" [(ngModel)]="birthdate"/>
       </div>
 
     
 
       <div class="form-outline mb-4" style="margin-left: 10px;">
-        <input type="radio" id="form2Example33" name="genre" value="Masculine"/>
-        <label for="form2Example33" style="margin-left:5px;margin-right: 5px;" >Masculine</label>
-        <input type="radio" id="form2Example33" name="genre" value="Femenine" />
-        <label for="form2Example33" style="margin-left:5px">Femenine</label>
+        <input type="radio" id="form22Example33" name="genremasc" value="Masculine" [(ngModel)]="genremasc"/>
+        <label for="form22Example33" style="margin-left:5px;margin-right: 5px;" >Masculine</label>
+        <input type="radio" id="form23Example33" name="genrefem" value="Femenine" [(ngModel)]="genrefem"/>
+        <label for="form23Example33" style="margin-left:5px">Femenine</label>
       </div>
   
     <!-- Submit button -->
-    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+    <button type="submit" class="btn btn-primary btn-block mb-4" (click)="signup()" >Sign up</button>
 
 
 
   </td>
-
-
-
 
 </table>
   
@@ -109,16 +106,7 @@
 
 </tr>
 
-
 </table>
-
-  
-
-
-
-
-
-   
 
   </form>
   
