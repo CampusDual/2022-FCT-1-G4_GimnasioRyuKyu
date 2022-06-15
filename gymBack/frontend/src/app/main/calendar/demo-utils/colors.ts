@@ -11,4 +11,8 @@ export const colors: any = {
     primary: '#e3bc08',
     secondary: '#FDF1BA',
   },
+  customRed: {
+    primary: '#ab0015',
+    secondary: '#da4d71',
+  },
 };

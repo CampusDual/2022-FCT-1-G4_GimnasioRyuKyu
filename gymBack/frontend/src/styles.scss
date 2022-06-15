@@ -55,7 +55,7 @@ mat-sidenav-container o-app-sidenav-image .o-app-sidenav-image-container.ng-star
 }
 
 
-//Calendario
+//Calendar Header
 mwl-demo-utils-calendar-header .row{
   display: flex !important;
   justify-content: space-between !important;
@@ -100,6 +100,11 @@ mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:selected{
 
 .calendarRightBtn{
   border-radius: 0 10px 10px 0;
+}
+
+.my-custom-class span {
+  color: white !important;
+  font-weight: bold;
 }
 
 /*mwl-demo-utils-calendar-header{

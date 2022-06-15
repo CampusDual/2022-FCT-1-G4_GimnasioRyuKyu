@@ -1,15 +1,12 @@
-import { Observable } from 'ontimize-web-ngx';
-import {Event} from '../../../shared/models/event';
-import { Router, ActivatedRoute } from '@angular/router';
-import { CalendarService } from './../../../shared/calendar.service';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { setHours, setMinutes } from 'date-fns';
-import { colors } from '../demo-utils/colors';
-import { map } from 'rxjs/operators';
-import {
-  CalendarEvent,
-  CalendarView,
-} from 'angular-calendar';
+import { Observable } from "ontimize-web-ngx";
+import { Event } from "../../../shared/models/event";
+import { Router, ActivatedRoute, Data } from "@angular/router";
+import { CalendarService } from "./../../../shared/calendar.service";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { setHours, setMinutes } from "date-fns";
+import { colors } from "../demo-utils/colors";
+import { map } from "rxjs/operators";
+import { CalendarEvent, CalendarView } from "angular-calendar";
 import {
   isSameMonth,
   isSameDay,
@@ -20,45 +17,33 @@ import {
   startOfDay,
   endOfDay,
   format,
-} from 'date-fns';
-
-
-function getTimezoneOffsetString(date: Date): string {
-  const timezoneOffset = date.getTimezoneOffset();
-  const hoursOffset = String(
-    Math.floor(Math.abs(timezoneOffset / 60))
-  ).padStart(2, '0');
-  const minutesOffset = String(Math.abs(timezoneOffset % 60)).padEnd(2, '0');
-  const direction = timezoneOffset > 0 ? '-' : '+';
-
-  return `T00:00:00${direction}${hoursOffset}:${minutesOffset}`;
-}
+} from "date-fns";
 
 @Component({
-  selector: 'app-calendar-home',
-  templateUrl: './calendar-home.component.html',
+  selector: "app-calendar-home",
+  templateUrl: "./calendar-home.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./calendar-home.component.css']
+  styleUrls: ["./calendar-home.component.css"],
 })
 export class CalendarHomeComponent {
-
   view: CalendarView = CalendarView.Week;
 
   viewDate: Date = new Date();
 
-  events$: Observable<CalendarEvent<{ event: Event}>[]>;
+  events$: Observable<CalendarEvent<{ event: Event }>[]>;
 
-  constructor(private calendarService: CalendarService,
+  activeDayIsOpen: boolean = false;
+
+  constructor(
+    private calendarService: CalendarService,
     private router: Router,
-    private activatedRoute: ActivatedRoute) {
-
-  }
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.fetchEvents();
-    this.events$.subscribe( x => console.log(x));
+    this.events$.subscribe((x) => console.log(x));
   }
-
 
   fetchEvents(): void {
     const getStart: any = {
@@ -74,24 +59,47 @@ export class CalendarHomeComponent {
     }[this.view];
 
     this.events$ = this.calendarService.getEvents().pipe(
-        map(({ results }: { results: Event[] }) => {
-          return results.map((event: Event) => {
-            return {
-              title: event.id_room_class,
-              start: new Date(event.h_start),
-              color: colors.yellow,
-              allDay: false,
-              meta: {
-                event,
-              },
-            };
-          });
-        })
-      );
+      map((results: any) => {
+        return results.data.map((event: Event) => {
+          return {
+            title:
+              event.room_name +
+              ": " +
+              event.class_name +
+              " - " +
+              event.monitor_name,
+            start: setHours(parseFloat(event.date), parseFloat(event.h_start)),
+            end: setHours(parseFloat(event.date), parseFloat(event.h_end)),
+            color: colors.customRed,
+            cssClass: "my-custom-class",
+          };
+        });
+      })
+    );
   }
 
-/*
+  dayClicked({
+    date,
+    events,
+  }: {
+    date: Date;
+    events: CalendarEvent<{ event: Event }>[];
+  }): void {
+    if (isSameMonth(date, this.viewDate)) {
+      if (
+        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+        events.length === 0
+      ) {
+        this.activeDayIsOpen = false;
+      } else {
+        this.activeDayIsOpen = true;
+        this.viewDate = date;
+      }
+    }
+  }
 
+
+  /*
   refreshData() {
     this.calendarService.getEvents().subscribe(
       response => this.handleSuccessfulResponse(response),
