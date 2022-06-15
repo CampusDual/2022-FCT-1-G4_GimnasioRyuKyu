@@ -1,36 +1,38 @@
 
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card" style="border-radius: 1rem;">
-            <div class="card-body p-5 text-center">
+<div class="login-bg-container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-3">
+      <div class="card" style="border-radius: 1rem">
+        <div class="card-body p-5 text-center">
+          <div class="my-md-5 pb-5">
+            <h1 class="fw-bold mb-0">Ryukyu Gym</h1>
 
-              <div class="my-md-5 pb-5">
+            <img src="../assets/images/logoGYM.png" height="110" width="110" />
+            <form method="post" class="my-4">
+              <mdb-form-control class="my-3">
+                <input mdbInput type="text" id="form1" class="form-control"  [(ngModel)]="email" name="email" />
+                <label mdbLabel class="form-label" for="form1">Email</label>
+              </mdb-form-control>
+              <mdb-form-control class="my-3">
+                <input mdbInput type="password" id="form2" class="form-control" [(ngModel)]="password" name="password"/>
+                <label mdbLabel class="form-label" for="form2">Password</label>
+              </mdb-form-control>
+            <button
+              class="btn btn-primary btn-lg btn-rounded gradient-custom px-5 text-light"
+              type="submit" (click)="login()">
+              Login
+            </button>
+          </form>
+          </div>
 
-                <h1 class="fw-bold mb-0">Welcome</h1>
-
-                <i class="fas fa-user-astronaut fa-3x my-5"></i>
-
-                <div class="form-outline mb-4">
-                  <input type="email" id="typeEmail" class="form-control form-control-lg" />
-                  <label class="form-label" for="typeEmail">Email</label>
-                </div>
-
-                <div class="form-outline mb-5">
-                  <input type="password" id="typePassword" class="form-control form-control-lg" />
-                  <label class="form-label" for="typePassword">Password</label>
-                </div>
-
-                <button class="btn btn-primary btn-lg btn-rounded gradient-custom text-body px-5" type="submit">Login</button>
-
-              </div>
-
-              <div>
-                <p class="mb-0">Don't have an account? <a href="#!" class="text-body fw-bold">Sign Up</a></p>
-              </div>
-
-            </div>
+          <div>
+            <p class="mb-0">
+              Don't have an account?
+              <a href="#!" class="text-body fw-bold">Sign Up</a>
+            </p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
