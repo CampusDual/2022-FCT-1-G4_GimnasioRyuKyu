@@ -22,9 +22,10 @@
   </o-row>
   <o-row class="colapsiblesStyles">
     <o-column-collapsible fxFlex title="{{ 'clients' | oTranslate }}" appearance="outline">
-      <o-list #list attr="clientsTable" keys="id_assing_room;id_client_class" columns="client_name;lastname;dni;photo"
+      <o-form-layout-manager mode="dialog" attr="formClients" key="id_client_class;id_assing_room" show-header-navigation="no">
+        <o-list #list attr="clientsTable" keys="id_assing_room;id_client_class" columns="client_name;lastname;dni;photo"
         service="clientsClasses" entity="clientClass" quick-filter="true" quick-filter-columns="client_name;lastname;dni"
-        refresh-button="true" insert-button="false" delete-button="true" selectable="true" dense="false"
+        refresh-button="true" insert-button="true" delete-button="true" selectable="true" dense="false"
         insert-button-position="top" detail-button-in-row="false" detail-button-in-row-icon="chevron_right"
         edit-button-in-row="false" detail-mode="none" parent-keys="id_assing_room:id_room_class">
         <o-list-item *ngFor="let row of list.dataArray">
@@ -32,6 +33,7 @@
           </o-list-item-text>
         </o-list-item>
       </o-list>
+      </o-form-layout-manager>
     </o-column-collapsible>
   </o-row>
 </o-form>

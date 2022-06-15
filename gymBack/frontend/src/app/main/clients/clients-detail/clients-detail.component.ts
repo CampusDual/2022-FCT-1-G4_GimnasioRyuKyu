@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { MatDialog } from '@angular/material';
-
 
 @Component({
   selector: 'app-clients-detail',
@@ -11,9 +9,7 @@ import { MatDialog } from '@angular/material';
 
 export class ClientsDetailComponent implements OnInit {
 
-  constructor(
-    protected dialog: MatDialog
-  ) { }
+  constructor() { }
 
   ngOnInit() { }
 

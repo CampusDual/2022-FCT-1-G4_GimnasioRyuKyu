@@ -114,36 +114,14 @@ mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:selected{
 }*/
 
 
-//Assign classes client window
+//Assign classes/clients and clients/classes  windows
 .cdk-overlay-pane.o-form-layout-dialog-overlay{
   width: 400px !important;
-  height: 330px !important;
-}
-
-.cdk-overlay-pane.o-form-layout-dialog-overlay o-combo{
-  width: 320px;
-}
-
-.o-form-toolbar.o-form-toolbar-header.mat-toolbar-tools{
-  width: 50% !important;
+  height: 270px !important;
 }
 
 .title-container.mat-dialog-title{
   visibility: hidden;
-}
-
-.form-layout-dialog-container.mat-dialog-content{
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.mat-dialog-container.ng-tns-c70-38.ng-trigger.ng-trigger-dialogContainer.ng-star-inserted{
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.formClientsAssignClasses .o-form-toolbar.ng-star-inserted{
-  padding: 0;
 }
 
 .formClientsAssignClasses .o-form-toolbar-header.mat-toolbar.mat-toolbar-single-row{
@@ -151,7 +129,27 @@ mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:selected{
   box-shadow: none !important;
 }
 
+.cdk-overlay-pane.o-form-layout-dialog-overlay o-combo{
+  width: 320px;
+}
+
 .formClientsAssignClasses .o-form-toolbar .o-form-toolbar-header .mat-toolbar-tools{
   width: 75% !important; //Revisar
+}
+
+.comboClientWindow{
+  visibility:hidden;
+  position: relative;
+  margin-bottom: -70px;
+  z-index: 1;
+  top: 10;
+}
+
+.inputClassWindow{
+  visibility:hidden;
+  position: relative;
+  margin-bottom: -70px;
+  z-index: 1;
+  top: 10;
 }
 
