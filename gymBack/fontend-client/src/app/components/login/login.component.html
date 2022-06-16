@@ -10,11 +10,11 @@
             <img src="../assets/images/logoGYM.png" height="110" width="110" />
             <form method="post" class="my-4">
               <mdb-form-control class="my-3">
-                <input mdbInput type="text" id="form1" class="form-control"  [(ngModel)]="email" name="email" />
+                <input mdbInput type="text" id="form1" class="form-control"  [(ngModel)]="model.email" name="email" />
                 <label mdbLabel class="form-label" for="form1">Email</label>
               </mdb-form-control>
               <mdb-form-control class="my-3">
-                <input mdbInput type="password" id="form2" class="form-control" [(ngModel)]="password" name="password"/>
+                <input mdbInput type="password" id="form2" class="form-control" [(ngModel)]="model.password" name="password"/>
                 <label mdbLabel class="form-label" for="form2">Password</label>
               </mdb-form-control>
             <button
