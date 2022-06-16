@@ -1,0 +1,13 @@
+<!-- Ventana clases -->
+<o-form fxFill  service="clientsClasses" entity="clientClass" keys="id_client_class" undo-button="no" class="formClientsAssignClasses" header-position="bottom">
+  <div fxLayout="row">
+      <div fxLayout="column" fxLayoutAlign="center center">
+
+        <o-combo #comboClient attr="id_client" label="comboClient" required="yes" value-column="id"
+          service="clients" entity="activeClient" columns="name;lastname;dni"
+          visible-columns="name;lastname;dni" searchable="yes" keys="id" null-selection="no">
+        </o-combo>
+
+      </div>
+  </div>
+</o-form>
