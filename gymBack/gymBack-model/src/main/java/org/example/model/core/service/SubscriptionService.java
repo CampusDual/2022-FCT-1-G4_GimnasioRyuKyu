@@ -5,6 +5,7 @@ import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.ISubscriptionService;
+import org.example.model.core.dao.ClassDao;
 import org.example.model.core.dao.RoomDao;
 import org.example.model.core.dao.SubscriptionDao;
 import org.example.model.core.dao.SubscriptionHistoryDao;
@@ -51,6 +52,11 @@ public class SubscriptionService implements ISubscriptionService {
     public EntityResult subscriptionDelete(Map<String, Object> keyMap)
             throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.subscriptionDao, keyMap);
+    }
+
+    public EntityResult showSubsQuery(Map<String, Object> keyMap, List<String> attrList)
+            throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.subscriptionDao, keyMap, attrList, SubscriptionDao.SHOW_SUBS_QUERY);
     }
 
 

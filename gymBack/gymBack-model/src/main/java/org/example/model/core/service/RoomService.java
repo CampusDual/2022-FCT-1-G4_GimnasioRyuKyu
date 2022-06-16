@@ -4,6 +4,7 @@ import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.IRoomService;
+import org.example.model.core.dao.ClassDao;
 import org.example.model.core.dao.RoomDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -42,5 +43,10 @@ public class RoomService implements IRoomService {
     public EntityResult roomDelete(Map<String, Object> keyMap)
             throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.roomDao, keyMap);
+    }
+
+    public EntityResult showRoomsQuery(Map<String, Object> keyMap, List<String> attrList)
+            throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.roomDao, keyMap, attrList, RoomDao.SHOW_ROOMS_QUERY);
     }
 }

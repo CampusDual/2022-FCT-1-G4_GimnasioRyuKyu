@@ -6,6 +6,7 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.example.api.core.service.IClassService;
 import org.example.model.core.dao.ClassDao;
+import org.example.model.core.dao.ClientDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,10 @@ public class ClassService implements IClassService {
     @Override
     public EntityResult classDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
         return this.daoHelper.delete(this.classDao, keyMap);
+    }
+
+    public EntityResult showClassesQuery(Map<String, Object> keyMap, List<String> attrList)
+            throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.classDao, keyMap, attrList, ClassDao.SHOW_CLASSES_QUERY);
     }
 }

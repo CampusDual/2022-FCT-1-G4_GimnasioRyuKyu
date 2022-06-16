@@ -12,4 +12,16 @@
         <Column>id</Column>
     </UpdateKeys>
     <GeneratedKey>id</GeneratedKey>
+    <Queries>
+        <Query id="SHOW_CLASSES">
+            <Sentence>
+                <![CDATA[
+			     SELECT
+                    #COLUMNS#
+                   FROM class
+                 #WHERE#
+			   ]]>
+            </Sentence>
+        </Query>
+    </Queries>
 </JdbcEntitySetup>
