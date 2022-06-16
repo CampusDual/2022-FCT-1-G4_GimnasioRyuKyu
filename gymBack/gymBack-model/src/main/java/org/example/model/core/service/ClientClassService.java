@@ -33,6 +33,9 @@ public class ClientClassService implements IClientClassService {
 
     @Override
     public EntityResult clientClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+        if (attrMap.containsKey("id_assing_room")) {
+            attrMap.put("id_room_class", attrMap.remove("id_assing_room"));
+        }
         EntityResult toret = new EntityResultMapImpl();
         toret.setCode(EntityResult.OPERATION_WRONG);
         switch(checkIfCapacityAvailable(getIdClientNew(attrMap), getIdRoomClassNew(attrMap), attrMap)){

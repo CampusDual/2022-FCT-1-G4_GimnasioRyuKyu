@@ -22,7 +22,7 @@
   </o-row>
   <o-row class="colapsiblesStyles">
     <o-column-collapsible fxFlex title="{{ 'clients' | oTranslate }}" appearance="outline">
-      <o-form-layout-manager mode="dialog" attr="formClients" key="id_client_class;id_assing_room" show-header-navigation="no">
+      <o-form-layout-manager mode="dialog" attr="formClients" keys="id_client_class;id_assing_room" show-header-navigation="no">
         <o-list #list attr="clientsTable" keys="id_assing_room;id_client_class" columns="client_name;lastname;dni;photo"
         service="clientsClasses" entity="clientClass" quick-filter="true" quick-filter-columns="client_name;lastname;dni"
         refresh-button="true" insert-button="true" delete-button="true" selectable="true" dense="false"

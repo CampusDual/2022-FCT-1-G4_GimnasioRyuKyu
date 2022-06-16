@@ -1,18 +1,7 @@
+<!-- Ventana clases -->
 <o-form fxFill  service="clientsClasses" entity="clientClass" keys="id_client_class" undo-button="no" class="formClientsAssignClasses" header-position="bottom">
   <div fxLayout="row">
       <div fxLayout="column" fxLayoutAlign="center center">
-
-        <o-text-input fxFill attr="id_room_class" class="inputClassWindow" value-column="id_room_class"
-          service="roomsClasses" entity="roomClass" columns="class_name;date;h_start"
-          visible-columns="class_name;date;h_start" keys="id_room_class" enabled="no">
-        </o-text-input>
-
-        <!--
-        <o-combo #comboClass attr="id_room_class" label="comboClass" required="yes" query-method="query"
-          service="roomsClasses" entity="roomClass" value-column="id_room_class" columns="id_room;class_name;date;h_start"
-          visible-columns="class_name;date;h_start" searchable="yes" keys="id_room_class"  null-selection="no">
-          <app-clients-assign-classes-render></app-clients-assign-classes-render>
-        </o-combo>-->
 
         <o-combo #comboClient attr="id_client" label="comboClient" required="yes" value-column="id"
           service="clients" entity="activeClient" columns="name;lastname;dni"
