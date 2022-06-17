@@ -1,1 +1,6 @@
+org\example\api\core\service\ISubscriptionService.class
+org\example\api\core\service\IApiService.class
+org\example\api\core\service\IMonitorService.class
+org\example\api\core\service\ISubscriptionHistoryService.class
+org\example\api\core\service\IClientSubHistoryService.class
 org\example\api\core\service\IUserService.class

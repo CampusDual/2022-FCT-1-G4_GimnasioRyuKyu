@@ -1,3 +1,6 @@
+org\example\ws\core\rest\ApiRestController.class
+org\example\ws\core\rest\SubscriptionRestController.class
+org\example\ws\core\rest\MonitorRestController.class
 org\example\ws\core\rest\TestRestController.class
-org\example\ws\core\rest\MainRestController.class
 org\example\ws\core\rest\UserRestController.class
+org\example\ws\core\rest\MainRestController.class
