@@ -25,44 +25,25 @@
       <td ><img src="../../../assets/images/cerebro.png" width="65" height="65"/><p class="parafMeth">Motivación</p></td></tr>
   </table>
 
-  <div class="d-flex">
-    <ul ngbNav class="nav-pills" orientation="vertical">
-      <li ngbNavItem="top">
-        <a ngbNavLink>Top</a>
-        <ng-template ngbNavContent>
-          <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-            master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-            keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
-            salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-        </ng-template>
-      </li>
-      <li ngbNavItem="middle">
-        <a ngbNavLink>Middle</a>
-        <ng-template ngbNavContent>
-          <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
-            farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-            ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
-            helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
-            8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
-            stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-        </ng-template>
-      </li>
-      <li ngbNavItem="bottom">
-        <a ngbNavLink>Bottom</a>
-        <ng-template ngbNavContent>
-          <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
-            Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
-            Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
-            egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
-            tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
-            magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
-            neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
-        </ng-template>
-      </li>
-    </ul>
-  </div>
+  <!-- Nav tabs --> <!--
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button *ngFor="let data of classesData; index as i; first as isFirst;" class="nav-link active" id="{{data.NAME}}-tab" data-bs-toggle="tab" data-bs-target="#{{data.NAME}}" type="button" role="tab" aria-controls="{{data.NAME}}" aria-selected="true">Home</button>
+  </li>
+</ul> -->
 
-  <pre>Active: {{ active }}</pre>
+
+<div id="subPrices">
+  <h2 id="h2HomeTitles"> CLASES </h2>
+<table style="margin:auto;">
+    <tr *ngFor="let data of classesData; index as i; first as isFirst;" style="padding-bottom: 5%;">
+      <td WIDTH="400"
+	    HEIGHT="100" style="padding-right: 10%;"> {{data.NAME}}</td>
+      <td WIDTH="400"
+	    HEIGHT="100" style="padding-left: 10%;"> {{data.DESCRIPTION}}</td>
+    </tr>
+</table>
+</div>
 
 
 <div id="subPrices">
