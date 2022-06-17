@@ -1,0 +1,99 @@
+{
+  "APP_TITLE": "Quickstart",
+  "VERSION": "Version",
+  "EXAMPLE_LOGIN_INFO": "Use this user and password for login",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "LOGIN": "Login",
+  "LOGOUT": "Log out",
+  "VIEW": "Views",
+  "HOME": "Home",
+  "LOGIN_TITLE": "Log in to your account",
+  "ERROR_REQUIRED_FIELD": "Field is required",
+  "ERROR_MIN_LENGTH_REQUIRED": "The value length entered must be at least 8 characters.",
+  "ERROR_SESSION_EXPIRED": "Session expired",
+  "ERROR_USER_REQUIRED": "Incorrect username",
+  "ERROR_PASS_REQUIRED": "Incorrect password",
+  "ERROR_USER_PASS_INCORRECT": "Invalid username or password",
+  "REMEMBER_ME": "Remember me",
+  "FORGOT_PWD": "Forgot your password?",
+  "FOOTER_CREATED_BY": "Created by Imatia Innovation",
+  "FOOTER_RIGHTS": "All rights reserved",
+
+
+  "ROOM_TIME_ERROR":"This room is occupied for the selected time",
+  "CAPACITY_ERROR":"Full capacity for this class",
+  "REPEATED_CLIENT_CLASS":"The client is already registered in this class",
+
+
+  "MONTH_CLIENTS":"Monthly inscriptions",
+  "MONTH_INCOME":"Monthly incomes",
+  "ACTIVE_VS_INACTIVE":"Active/inactive users",
+
+
+  "calendar": "Calendar",
+
+
+  "clients":"Clients",
+  "actives": "Active",
+  "photo": "Photo",
+  "id_client":"Membership No.",
+  "dni": "DNI",
+  "name":"Name",
+  "lastname":"Lastname",
+  "phone":"Phone",
+  "email":"Email",
+  "gender":"Gender",
+  "birthday":"Date of birth",
+  "registration_date":"Registration date",
+  "active":"Subscription status",
+  "Male":"Male",
+  "Female":"Female",
+  "Other":"Other",
+  "comboSubMonth": "Select months",
+  "sub_expiration_date": "Subscription expires",
+  "Manage subscription": "Manage subscription",
+  "Client classes": "Client classes",
+
+
+  "monitors": "Monitors",
+  "id_monitor":"Employee No.",
+
+
+  "classes":"Classes",
+  "description": "Description",
+
+
+  "rooms":"Rooms",
+  "max_room_capacity": "Capacity",
+
+
+  "assing classes": "Assign classes",
+  "room_class":"Classes assignation",
+  "class_name":"Class",
+  "room_name":"Room",
+  "date":"Date",
+  "h_start":"Start",
+  "h_end":"End",
+  "comboClass":"Select class",
+  "comboRoom":"Select room",
+  "comboMonitor":"Select monitor",
+  "comboHour":"Select hour",
+  "monitor_name": "Monitor",
+  "capacity": "Capacity",
+
+
+  "assing clients":"Assign clients",
+  "client_class":"Clients assignation",
+  "client_name":"Client",
+  "comboClient": "Select client",
+
+
+  "subscriptions":"Rates",
+  "price":"Price",
+  "sub_months":"Number of months",
+  "active_clients":"Active clients",
+  "inactive_clients":"Inactive clients",
+  "total_incomes":"Total incomes",
+  "total_inscriptions":"Total inscriptions"
+}

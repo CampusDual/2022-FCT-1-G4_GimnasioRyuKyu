@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from "@angular/forms"
 import { AppComponent } from './app.component';
+import { AuthService } from './auth.service';
 
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -21,21 +22,19 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { routing } from "./app-routing.module";
 import { LoginComponent } from './components/login/login.component';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { AppRoutingModule } from './app-routing.module';
-
 import { HomeComponent } from './components/home/home.component';
-import { HomeService } from './components/home/home.service';
-
-import { HttpClientModule } from "@angular/common/http";
-
+import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     PricingComponent,
+    LoginComponent,
     HomeComponent
   ],
   imports: [
@@ -57,9 +56,13 @@ import { HttpClientModule } from "@angular/common/http";
     MdbTooltipModule,
     MdbValidationModule,
     AppRoutingModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    routing
+
   ],
-  providers: [HomeService],
+  providers: [CookieService
+    , AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

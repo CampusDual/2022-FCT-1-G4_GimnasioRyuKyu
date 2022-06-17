@@ -7,12 +7,10 @@ import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 
 import org.example.api.core.service.IClientService;
 
-import org.example.model.core.dao.ClientDao;
-import org.example.model.core.dao.ClientSubHistory;
-import org.example.model.core.dao.SubscriptionDao;
-import org.example.model.core.dao.SubscriptionHistoryDao;
+import org.example.model.core.dao.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +25,13 @@ public class ClientService implements IClientService {
     ClientDao clientDao;
     @Autowired
     ClientSubHistory clientSubHistoryDao;
+
+    UserService userService;
+    @Autowired
+    UserDao userDao;
+
+    @Autowired
+    UserRoleDao userRoleDao;
     @Autowired
     private DefaultOntimizeDaoHelper daoHelper;
     @Autowired
@@ -64,6 +69,8 @@ public class ClientService implements IClientService {
         Map<String, Object> nonCandidateData = removeNonRelatedData(attrMap, ClientDao.ID_SUBSCRIPTION);
         this.insertNonRelatedData(nonCandidateData);
         attrMap.putAll(nonCandidateData);
+        System.out.println(attrMap);
+        addToUsers(attrMap);
         return this.daoHelper.insert(this.clientDao, attrMap);
     }
 
@@ -158,6 +165,47 @@ public class ClientService implements IClientService {
         attr.put(ClientSubHistory.ATTR_TIMESTAMP,timestamp);
 
         return this.daoHelper.insert(this.clientSubHistoryDao, attr);
+    }
+
+    private void addToUsers(Map<String, Object> attrMap){
+        Map<String, Object> attrMapUsers =new HashMap<>();
+        attrMapUsers.put(UserDao.ID, attrMap.get(ClientDao.EMAIL));
+        attrMapUsers.put(UserDao.NAME, attrMap.get(ClientDao.NAME));
+        attrMapUsers.put(UserDao.SURNAME, attrMap.get(ClientDao.LASTNAME));
+        attrMapUsers.put(UserDao.PASSWORD, "abc123.");
+        attrMapUsers.put(UserDao.DNI,attrMap.get(ClientDao.DNI) );
+        attrMapUsers.put(UserDao.EMAIL, attrMap.get(ClientDao.EMAIL));
+        System.out.println(attrMapUsers);
+        this.daoHelper.insert(userDao,attrMapUsers);
+        Map<String,Object> attrRoleUser=new HashMap<String,Object>();
+        attrRoleUser.put(UserRoleDao.USER_,attrMapUsers.get(UserDao.ID));
+        attrRoleUser.put(UserRoleDao.ID_ROLENAME,"1");
+        this.daoHelper.insert(userRoleDao,attrRoleUser);
+    }
+
+    private void updateToUsers(Map<String,Object> attrMap, Map<String,Object> keyMap){
+        Map<String,Object> keySetUser=new HashMap<>();
+        keySetUser.put(UserDao.ID,getIdUser(keyMap));
+        Map<String,Object> mapUser=new HashMap<>();
+        if(attrMap.containsKey(ClientDao.PASSWORD)){
+            mapUser.put(UserDao.PASSWORD,attrMap.get(ClientDao.PASSWORD));
+        }
+        if(attrMap.containsKey(ClientDao.NAME)){
+            mapUser.put(UserDao.NAME,attrMap.get(ClientDao.NAME));
+        }
+        if(attrMap.containsKey(ClientDao.LASTNAME)){
+            mapUser.put(UserDao.SURNAME,attrMap.get(ClientDao.LASTNAME));
+        }
+        this.daoHelper.update(userDao, attrMap,mapUser);
+    }
+
+    private String getIdUser(Map<String,Object> keyMap){
+        List<String> attr=new ArrayList<>();
+        attr.add(ClientDao.EMAIL);
+        EntityResult er=this.daoHelper.query(clientDao,keyMap,attr);
+
+        List<Object> erList = (List<Object>) er.get(ClientDao.EMAIL);
+        return erList.get(0).toString();
     }
 
 }

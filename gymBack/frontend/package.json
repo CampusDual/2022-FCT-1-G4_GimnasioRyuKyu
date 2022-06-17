@@ -3,7 +3,7 @@
   "version": "8.2.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4200 -o",
+    "start": "ng serve --port 4202 -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

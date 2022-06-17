@@ -1,0 +1,99 @@
+{
+  "APP_TITLE": "JEE seed",
+  "VERSION": "Versión",
+  "EXAMPLE_LOGIN_INFO": "Usuario y contraseña de ejemplo",
+  "USERNAME": "Usuario",
+  "PASSWORD": "Contraseña",
+  "LOGIN": "Entrar",
+  "LOGOUT": "Salir",
+  "VIEW": "Vistas",
+  "HOME": "Inicio",
+  "LOGIN_TITLE": "Inicia sesión en tu cuenta",
+  "ERROR_REQUIRED_FIELD": "El campo es requerido",
+  "ERROR_MIN_LENGTH_REQUIRED": "El valor introducido tiene que tener una longitud mínima de 8 caracteres",
+  "ERROR_SESSION_EXPIRED": "La sesión ha caducado",
+  "ERROR_USER_REQUIRED": "Nombre de usuario incorrecto",
+  "ERROR_PASS_REQUIRED": "Contraseña incorrecta",
+  "ERROR_USER_PASS_INCORRECT": "Usuario o contraseña incorrecta",
+  "REMEMBER_ME": "Recuérdame",
+  "FORGOT_PWD": "¿Has olvidado tu contraseña?",
+  "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
+  "FOOTER_RIGHTS": "Todos los derechos reservados",
+
+
+  "ROOM_TIME_ERROR":"Esta sala esta ocupada para el tiempo seleccionado",
+  "CAPACITY_ERROR":"Esta clase esta llena",
+  "REPEATED_CLIENT_CLASS":"El cliente ya está registrado en esta clase",
+
+
+  "MONTH_CLIENTS":"Inscripciones mensuales",
+  "MONTH_INCOME":"Ingresos mensuales",
+  "ACTIVE_VS_INACTIVE":"Usuarios activos/inactivos",
+
+
+  "calendar": "Calendario",
+
+
+  "clients":"Clientes",
+  "actives": "Activos",
+  "photo": "Foto",
+  "id_client":"Nº Socio",
+  "dni": "DNI",
+  "name":"Nombre",
+  "lastname":"Apellidos",
+  "phone":"Teléfono",
+  "email":"Correo",
+  "gender":"Género",
+  "birthday":"Fecha de nacimiento",
+  "registration_date":"Fecha de registro",
+  "active":"Estado subcripción",
+  "Male":"Hombre",
+  "Female":"Mujer",
+  "Other":"Otro",
+  "comboSubMonth": "Seleccionar meses",
+  "sub_expiration_date": "Caducidad subscripción",
+  "Manage subscription": "Administrar subscripción",
+  "Client classes": "Clases del cliente",
+
+
+  "monitors": "Monitores",
+  "id_monitor":"Nº empleado",
+
+
+  "classes":"Clases",
+  "description": "Descripción",
+
+
+  "rooms":"Salas",
+  "max_room_capacity": "Aforo",
+
+
+  "assing classes": "Asignación clases",
+  "room_class":"Asignación de clases",
+  "class_name":"Clase",
+  "room_name":"Sala",
+  "date":"Fecha",
+  "h_start":"Inicio",
+  "h_end":"Fin",
+  "comboClass":"Seleccionar clase",
+  "comboRoom":"Seleccionar sala",
+  "comboMonitor":"Seleccionar monitor",
+  "comboHour":"Seleccionar hora",
+  "monitor_name": "Monitor",
+  "capacity": "Aforo",
+
+
+  "assing clients":"Asignación clientes",
+  "client_class":"Asignación de clientes",
+  "client_name":"Cliente",
+  "comboClient": "Seleccionar cliente",
+
+
+  "subscriptions":"Tarifas",
+  "price":"Precio",
+  "sub_months":"Cantidad de meses",
+  "active_clients":"Clientes activos",
+  "inactive_clients":"Clientes inactivos",
+  "total_incomes":"Ingresos totales",
+  "total_inscriptions":"Inscripciones totales"
+}
