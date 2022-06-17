@@ -20,10 +20,17 @@ export class ProfileComponent implements OnInit {
 
 
 
-  ngOnInit() {
+  ngOnInit() {}
 
-  }
-
-
+  public genderArray = [{
+    genderCode: "M",
+    genderText: 'Male'
+  }, {
+    genderCode: "F",
+    genderText: 'Female'
+  }, {
+    genderCode: "O",
+    genderText: 'Other'
+  }];
 
 }
