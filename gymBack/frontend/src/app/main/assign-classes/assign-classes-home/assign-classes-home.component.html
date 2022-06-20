@@ -1,4 +1,4 @@
-<o-form-layout-manager title="{{ 'room_class' | oTranslate }}" separator=" " mode="tab" label-columns="class detail">
+<o-form-layout-manager title="{{ 'room_class' | oTranslate }}" attr="roomClassForm" mode="tab" label-columns="class_name">
     <div fxFill>
       <o-table class="o-table-column-centered" fxFlex attr="roomClassTable" service="roomsClasses" entity="roomClass" keys="id_room_class"
         insert-button="yes" refresh-button="yes" delete-button="yes" query-rows="20" auto-adjust="true"
