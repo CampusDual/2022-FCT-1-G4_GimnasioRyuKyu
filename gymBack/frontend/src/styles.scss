@@ -107,6 +107,10 @@ mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:selected{
   font-weight: bold;
 }
 
+.my-custom-class span:hover{
+  text-decoration: none !important;
+}
+
 /*mwl-demo-utils-calendar-header{
   position: fixed;
   z-index: 1;

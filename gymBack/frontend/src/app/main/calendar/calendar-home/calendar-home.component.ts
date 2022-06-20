@@ -97,31 +97,4 @@ export class CalendarHomeComponent {
       }
     }
   }
-
-
-  /*
-  refreshData() {
-    this.calendarService.getEvents().subscribe(
-      response => this.handleSuccessfulResponse(response),
-    );
-  }
-
-  handleSuccessfulResponse(response) {
-    this.iEvents = response;
-  }
-
-  events: CalendarEvent[] = [
-    {
-      title: 'No event end date',
-      start: setHours(setMinutes(new Date(), 0), 3),
-      end: setHours(setMinutes(new Date(), 0), 4),
-      color: colors.blue,
-    },
-    {
-      title: 'No event end date',
-      start: setHours(setMinutes(new Date(), 0), 5),
-      end: setHours(setMinutes(new Date(), 0), 6),
-      color: colors.yellow,
-    },
-  ];*/
 }

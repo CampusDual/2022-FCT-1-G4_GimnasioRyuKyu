@@ -1,1 +1,4 @@
 
+.my-custom-class span:hover {
+  color: #f00;
+}
