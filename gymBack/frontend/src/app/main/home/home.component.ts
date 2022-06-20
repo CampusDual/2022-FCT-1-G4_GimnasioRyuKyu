@@ -29,7 +29,7 @@ export class HomeComponent {
 
     this.incomeMultiBarChartParameters = new MultiBarChartConfiguration();
     this.incomeMultiBarChartParameters.color = ['#e00000'];
-    this.incomeMultiBarChartParameters.width= 300;
+    this.incomeMultiBarChartParameters.width= 700;
     this.incomeMultiBarChartParameters.height= 300;
     this.incomeMultiBarChartParameters.showLegend=false;
     this.incomeMultiBarChartParameters.showControls=false;
@@ -40,7 +40,7 @@ export class HomeComponent {
     this.inscriptionMultiBarChartParameters.showLegend=false;
     this.inscriptionMultiBarChartParameters.showControls=false;
     this.inscriptionMultiBarChartParameters.height= 300;
-    this.inscriptionMultiBarChartParameters.width= 300;
+    this.inscriptionMultiBarChartParameters.width= 700;
   }
 
 }
