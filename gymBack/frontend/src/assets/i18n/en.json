@@ -95,5 +95,7 @@
   "active_clients":"Active clients",
   "inactive_clients":"Inactive clients",
   "total_incomes":"Total incomes",
-  "total_inscriptions":"Total inscriptions"
+  "total_inscriptions":"Total inscriptions",
+
+  "NO_SUB_ERROR": "Selected client doesn´t have an active subscription"
 }
