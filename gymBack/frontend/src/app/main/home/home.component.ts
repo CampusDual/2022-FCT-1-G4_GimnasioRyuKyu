@@ -27,6 +27,7 @@ export class HomeComponent {
     this.donutChartParameters.donutRatio = 0.5;
     this.donutChartParameters.color = ['#565656', '#e00000'];
 
+
     this.incomeMultiBarChartParameters = new MultiBarChartConfiguration();
     this.incomeMultiBarChartParameters.color = ['#e00000'];
     this.incomeMultiBarChartParameters.width= 700;
@@ -34,6 +35,11 @@ export class HomeComponent {
     this.incomeMultiBarChartParameters.showLegend=false;
     this.incomeMultiBarChartParameters.showControls=false;
     this.incomeMultiBarChartParameters.showYAxis=true;
+    this.incomeMultiBarChartParameters.margin.left=100
+    this.incomeMultiBarChartParameters.x1Axis.axisLabel="Date";
+    this.incomeMultiBarChartParameters.y1Axis.axisLabel="Euros";
+
+
 
     this.inscriptionMultiBarChartParameters = new MultiBarChartConfiguration();
     this.inscriptionMultiBarChartParameters.color = ['#e00000'];
@@ -41,6 +47,9 @@ export class HomeComponent {
     this.inscriptionMultiBarChartParameters.showControls=false;
     this.inscriptionMultiBarChartParameters.height= 300;
     this.inscriptionMultiBarChartParameters.width= 700;
+    this.inscriptionMultiBarChartParameters.x1Axis.axisLabel="Date";
+    this.inscriptionMultiBarChartParameters.y1Axis.axisLabel="Inscriptions";
+    
   }
 
 }

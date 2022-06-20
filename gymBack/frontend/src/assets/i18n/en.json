@@ -20,7 +20,7 @@
   "FOOTER_CREATED_BY": "Created by Imatia Innovation",
   "FOOTER_RIGHTS": "All rights reserved",
 
-
+  "Incomes":"Incomes",
   "ROOM_TIME_ERROR":"This room is occupied for the selected time",
   "CAPACITY_ERROR":"Full capacity for this class",
   "REPEATED_CLIENT_CLASS":"The client is already registered in this class",
