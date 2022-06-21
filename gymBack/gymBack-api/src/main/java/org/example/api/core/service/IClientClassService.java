@@ -12,4 +12,5 @@ public interface IClientClassService {
     public EntityResult clientClassUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
     public EntityResult clientClassDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
+    public EntityResult showClientsClassesQuery(Map<String,Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
 }

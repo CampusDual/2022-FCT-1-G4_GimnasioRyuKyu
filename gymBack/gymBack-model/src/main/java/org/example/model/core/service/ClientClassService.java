@@ -35,6 +35,11 @@ public class ClientClassService implements IClientClassService {
     }
 
     @Override
+    public EntityResult showClientsClassesQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.clientClassDao, keyMap, attrList, ClientClassDao.QUERY_CLIENT_CLASS);
+    }
+
+    @Override
     public EntityResult clientClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         if (attrMap.containsKey("id_assing_room")) {
             attrMap.put("id_room_class", attrMap.remove("id_assing_room"));

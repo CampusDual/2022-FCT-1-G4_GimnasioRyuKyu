@@ -27,7 +27,7 @@ ontimize:
          upper-like: true
    security:
       mode: default
-      ignorePaths: /api/**, /classes/showClasses, /rooms/showRooms, /subscriptions/showSubs
+      ignorePaths: /api/**, /classes/showClasses, /rooms/showRooms, /subscriptions/showSubs, /clients/activeClient, /clientsClasses/showClientsClasses
       role-information-service:
          role-repository: UserRoleDao
          role-name-column: rolename
