@@ -31,21 +31,37 @@
             <li class="nav-item" >
               <a class="nav-link" [routerLink]="['/main/login']" *ngIf="!isLoggedIn()"><p>Login</p></a>
             </li>
-            <li>
-              <a class="nav-link" [routerLink]="['/']" *ngIf="isLoggedIn()" (click)="logout()"><p>Logout</p></a>
-            </li>
-            <li>
-              <a class="nav-link" *ngIf="isLoggedIn()"><p>Bienvenido, {{title}}</p></a>
-
-            </li>
           </ul>
+        </div>
+        <div class="o-user-info-container colorW" *ngIf="isLoggedIn()">
+          <ng-container>
+            <div class="o-user-info-wrapper" fxLayout="row" fxLayoutAlign="center center" [matMenuTriggerFor]="menu"
+              fxLayoutGap="16px">
+              <span class="o-user-info-username textB">Perfil</span>
+              <mat-icon svgIcon="ontimize:keyboard_arrow_down"></mat-icon>
+            </div>
+            <mat-menu #menu="matMenu" yPosition="below" class="o-mat-menu">
+              <button type="button" mat-menu-item (click)="logout()">
+                <mat-icon>person</mat-icon>
+                <span> Mi Perfil</span>
+              </button>
+              <button type="button" mat-menu-item (click)="logout()">
+                <mat-icon>perm_contact_calendar</mat-icon>
+                <span>Calendario</span>
+              </button>
+              <button type="button" mat-menu-item (click)="logout()">
+                <mat-icon svgIcon="ontimize:power_settings_new"></mat-icon>
+                <span>{{ 'LOGOUT' | oTranslate }}</span>
+              </button>
+            </mat-menu>
+          </ng-container>
         </div>
       </div>
     </nav>
     <!-- Navbar -->
   </header>
 
-
+<!--
   <o-bar-menu title="APP_TITLE">
     <o-bar-menu-group title="OPTIONS">
       <o-bar-menu-group title="LANGUAGE">
@@ -56,7 +72,7 @@
       <o-bar-menu-item title="LOGOUT" icon="power_settings_new" route="/main/login" confirm="MESSAGES.CONFIRM_LOGOUT"></o-bar-menu-item>
     </o-bar-menu-group>
   </o-bar-menu>
-
+-->
 
   <router-outlet>
 

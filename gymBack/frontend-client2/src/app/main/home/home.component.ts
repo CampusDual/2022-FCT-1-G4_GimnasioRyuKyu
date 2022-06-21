@@ -10,6 +10,7 @@ import { HomeService } from '../../shared/service/home.service';
   styleUrls: ["./home.component.scss"],
 
 })
+
 export class HomeComponent implements OnInit{
   active = 'top'
   classesData: Classes[]=[];
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit{
     this.getClasses();
     this.getRooms();
     this.getSubs();
+
   }
   private getClasses(){
     this.homeService.getClasses().subscribe(
@@ -49,5 +51,4 @@ export class HomeComponent implements OnInit{
       error => console.log(error)
     )
   }
-
 }
