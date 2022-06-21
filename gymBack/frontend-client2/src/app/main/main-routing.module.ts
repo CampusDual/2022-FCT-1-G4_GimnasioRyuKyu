@@ -13,7 +13,8 @@ export const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
       { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-      { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) }
+      { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
+      { path: 'calendar', loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule) }
     ]
   }
 ];
