@@ -6,7 +6,7 @@ import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { setHours, setMinutes } from "date-fns";
 import { colors } from "../demo-utils/colors";
 import { map } from "rxjs/operators";
-import { CalendarEvent, CalendarView } from "angular-calendar";
+import { CalendarEvent, CalendarEventTitleFormatter, CalendarView } from "angular-calendar";
 import {
   isSameMonth,
   isSameDay,
@@ -18,12 +18,19 @@ import {
   endOfDay,
   format,
 } from "date-fns";
+import { CustomEventTitleFormatter } from "../demo-utils/custom-event-title-formatter.provider";
 
 @Component({
   selector: "app-calendar-home",
   templateUrl: "./calendar-home.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ["./calendar-home.component.css"],
+  providers: [
+    {
+      provide: CalendarEventTitleFormatter,
+      useClass: CustomEventTitleFormatter,
+    },
+  ],
 })
 export class CalendarHomeComponent {
   view: CalendarView = CalendarView.Week;
