@@ -98,5 +98,6 @@
   "total_inscriptions":"Inscripciones totales",
   "inscriptions":"Inscripciones",
 
-  "NO_SUB_ERROR": "El cliente seleccionado no tiene una suscripción activa"
+  "NO_SUB_ERROR": "El cliente seleccionado no tiene una suscripción activa",
+  "MAX_CAPACITY_ERROR": "El aforo de la clase supera el máximo de la sala"
 }

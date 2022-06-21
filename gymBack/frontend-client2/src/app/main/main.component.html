@@ -29,7 +29,14 @@
           </ul>
           <ul class="navbar-nav navbar-right">
             <li class="nav-item" >
-              <a class="nav-link" [routerLink]="['/main/login']"><p>Login</p></a>
+              <a class="nav-link" [routerLink]="['/main/login']" *ngIf="!isLoggedIn()"><p>Login</p></a>
+            </li>
+            <li>
+              <a class="nav-link" [routerLink]="['/']" *ngIf="isLoggedIn()" (click)="logout()"><p>Logout</p></a>
+            </li>
+            <li>
+              <a class="nav-link" *ngIf="isLoggedIn()"><p>Bienvenido, {{title}}</p></a>
+
             </li>
           </ul>
         </div>
@@ -37,6 +44,20 @@
     </nav>
     <!-- Navbar -->
   </header>
+
+
+  <o-bar-menu title="APP_TITLE">
+    <o-bar-menu-group title="OPTIONS">
+      <o-bar-menu-group title="LANGUAGE">
+        <o-locale-bar-menu-item locale="en" title="English"></o-locale-bar-menu-item>
+        <o-locale-bar-menu-item locale="es" title="Español"></o-locale-bar-menu-item>
+      </o-bar-menu-group>
+      <o-bar-menu-separator></o-bar-menu-separator>
+      <o-bar-menu-item title="LOGOUT" icon="power_settings_new" route="/main/login" confirm="MESSAGES.CONFIRM_LOGOUT"></o-bar-menu-item>
+    </o-bar-menu-group>
+  </o-bar-menu>
+
+
   <router-outlet>
 
   </router-outlet>

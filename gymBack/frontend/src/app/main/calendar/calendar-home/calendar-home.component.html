@@ -12,7 +12,7 @@
   <div class="">
     <div *ngIf="events$ | async; else loading; let events">
       <div [ngSwitch]="view">
-        <mwl-calendar-month-view *ngSwitchCase="'month'" [activeDayIsOpen]="true" [viewDate]="viewDate"
+        <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate"
           [events]="events" [activeDayIsOpen]="activeDayIsOpen"
           >
         </mwl-calendar-month-view>

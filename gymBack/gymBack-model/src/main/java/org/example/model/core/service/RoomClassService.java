@@ -4,6 +4,7 @@ import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.dto.EntityResultMapImpl;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
+import org.apache.commons.lang3.ObjectUtils;
 import org.example.api.core.service.IRoomClassService;
 import org.example.model.core.dao.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +34,11 @@ public class RoomClassService implements IRoomClassService {
     public EntityResult roomClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         try {
             transformToHour(attrMap);
-            checkMaxCapacity(getIdRoomNew(attrMap), attrMap);
-            return this.daoHelper.insert(this.roomClassDao, attrMap);
+           if(checkMaxCapacity(getIdRoomNew(attrMap), attrMap)!=null) {
+               return checkMaxCapacity(getIdRoomNew(attrMap), attrMap);
+           }
+                return this.daoHelper.insert(this.roomClassDao, attrMap);
+
         } catch (Exception e) {
             EntityResult toret = new EntityResultMapImpl();
             toret.setCode(EntityResult.OPERATION_WRONG);
@@ -49,9 +53,11 @@ public class RoomClassService implements IRoomClassService {
             attrMap.put("id_room_class", attrMap.remove("id_assing_class"));
         }
         try {
-            transformToHour(attrMap);
-            checkMaxCapacity(getIdRoomUpdate(attrMap, keyMap), attrMap);
-            return this.daoHelper.update(this.roomClassDao, attrMap, keyMap);
+            transformToHour(attrMap);if(checkMaxCapacity(getIdRoomUpdate(attrMap, keyMap), attrMap)!=null) {
+                return checkMaxCapacity(getIdRoomUpdate(attrMap, keyMap), attrMap);
+            }
+                return this.daoHelper.update(this.roomClassDao, attrMap, keyMap);
+
         } catch (Exception e) {
             EntityResult toret = new EntityResultMapImpl();
             toret.setCode(EntityResult.OPERATION_WRONG);
@@ -83,7 +89,7 @@ public class RoomClassService implements IRoomClassService {
     }
 
 
-    private void checkMaxCapacity(int idRoom, Map<String, Object> attrMap) {
+    private EntityResult checkMaxCapacity(int idRoom, Map<String, Object> attrMap) {
         List<String> attrList = new ArrayList<>();
         Map<String, Object> keys = new HashMap<>();
         int capacity = 0;
@@ -96,9 +102,13 @@ public class RoomClassService implements IRoomClassService {
             String maxCapacityString = maxCapacities.get(0).toString();
             int maxCapacity = Integer.parseInt(maxCapacityString);
             if (capacity > maxCapacity) {
-                attrMap.put(RoomClassDao.ATTR_CAPACITY, maxCapacity);
+                EntityResult toret = new EntityResultMapImpl();
+                toret.setCode(EntityResult.OPERATION_WRONG);
+                toret.setMessage("MAX_CAPACITY_ERROR");
+                return toret;
             }
         }
+        return null;
     }
 
     private int getIdRoomNew(Map<String, Object> attrMap) {

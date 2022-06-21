@@ -98,5 +98,6 @@
   "total_incomes":"Total incomes",
   "total_inscriptions":"Total inscriptions",
 
-  "NO_SUB_ERROR": "Selected client doesn´t have an active subscription"
+  "NO_SUB_ERROR": "Selected client doesn´t have an active subscription",
+  "MAX_CAPACITY_ERROR": "Capacity selected for this class is higher than the max capacity for this room"
 }
