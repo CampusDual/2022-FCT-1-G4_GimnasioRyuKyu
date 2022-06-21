@@ -1,6 +1,8 @@
 <o-form service="roomsClasses" entity="roomClass" keys="id_room_class" header-actions="R;I;U;D" show-header-navigation="no">
   <o-text-input attr="id_room_class" sql-type="INTEGER" enabled="no" hidden="true"></o-text-input>
   <o-row layout-gap="15px">
+    <o-text-input attr="class_name" label="comboClass" required="yes" value-column="id_class" query-method="query"
+    service="classes" entity="class" columns="class_name" visible-columns="class_name" hidden="true"></o-text-input>
       <o-combo #comboClass attr="id_class" label="comboClass" required="yes" value-column="id" query-method="query"
         service="classes" entity="class" columns="name" visible-columns="name" searchable="yes" keys="id" null-selection="no">
       </o-combo>
