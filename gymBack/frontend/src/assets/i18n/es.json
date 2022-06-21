@@ -96,6 +96,7 @@
   "inactive_clients":"Clientes inactivos",
   "total_incomes":"Ingresos totales",
   "total_inscriptions":"Inscripciones totales",
+  "inscriptions":"Inscripciones",
 
   "NO_SUB_ERROR": "El cliente seleccionado no tiene una suscripción activa"
 }

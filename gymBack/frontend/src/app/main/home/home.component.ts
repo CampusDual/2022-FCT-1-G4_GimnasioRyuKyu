@@ -4,7 +4,7 @@ import {
 import {
   Component
 } from "@angular/core";
-import { OntimizeService } from "ontimize-web-ngx";
+import { OntimizeService, OTranslateService } from "ontimize-web-ngx";
 import { ChangeDetectorRef, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -17,9 +17,11 @@ export class HomeComponent {
   donutChartParameters: DonutChartConfiguration;
   incomeMultiBarChartParameters: MultiBarChartConfiguration;
   inscriptionMultiBarChartParameters: MultiBarChartConfiguration;
+  oTranslate: any;
 
-  constructor() {
+  constructor(public translate: OTranslateService) {
 
+    
     this.donutChartParameters = new DonutChartConfiguration();
     this.donutChartParameters.showLabels = false;
     this.donutChartParameters.cornerRadius = 15;
@@ -36,9 +38,9 @@ export class HomeComponent {
     this.incomeMultiBarChartParameters.showControls=false;
     this.incomeMultiBarChartParameters.showYAxis=true;
     this.incomeMultiBarChartParameters.margin.left=100
-    this.incomeMultiBarChartParameters.x1Axis.axisLabel="Date";
+    this.incomeMultiBarChartParameters.x1Axis.axisLabel=this.translate.get("date");
     this.incomeMultiBarChartParameters.y1Axis.axisLabel="Euros";
-
+    
 
 
     this.inscriptionMultiBarChartParameters = new MultiBarChartConfiguration();
@@ -47,8 +49,8 @@ export class HomeComponent {
     this.inscriptionMultiBarChartParameters.showControls=false;
     this.inscriptionMultiBarChartParameters.height= 300;
     this.inscriptionMultiBarChartParameters.width= 700;
-    this.inscriptionMultiBarChartParameters.x1Axis.axisLabel="Date";
-    this.inscriptionMultiBarChartParameters.y1Axis.axisLabel="Inscriptions";
+    this.inscriptionMultiBarChartParameters.x1Axis.axisLabel=this.translate.get("date");
+    this.inscriptionMultiBarChartParameters.y1Axis.axisLabel=this.translate.get("inscriptions");
     
   }
 
