@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CalendarService extends OntimizeBaseService{
 
-  url:String = 'http://localhost:33333/api/api';
+  url:String = 'http://207.188.180.150:33333/api/api';
    // url:String = 'http://localhost:33333/roomsClasses/roomClass?columns=id_room_class,id_room,id_class,date,h_start,h_end';
 
   constructor(private http:HttpClient, protected injector: Injector) {
