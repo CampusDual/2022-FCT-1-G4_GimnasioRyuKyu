@@ -13,21 +13,13 @@ import { CalendarComponent } from './calendar.component';
 @NgModule({
 
   imports: [
-
     CommonModule,
-
     OntimizeWebModule,
-
     CalendarRoutingModule
-
   ],
 
   declarations: [
-
     CalendarComponent
-
   ]
-
 })
-
 export class CalendarModule { }

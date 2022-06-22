@@ -30,6 +30,14 @@ export class MainComponent implements OnInit {
   this.router.navigate(['/main/calendar'],{relativeTo:this.actRoute});
   }
 
+  calendar2(){
+    this.router.navigate(['/main/calendar2'],{relativeTo:this.actRoute});
+    }
+
+  profile(){
+    this.router.navigate(['/main/profile'],{relativeTo:this.actRoute});
+    }
+
     logout() {
       this.authService.logout();
       this.router.navigate(['/main/login'], { relativeTo: this.actRoute });

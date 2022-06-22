@@ -1,10 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 *{
   font-family: 'Open Sans'
   }
 
+.bodyClient{
+  overflow-x: hidden;
+}
 
+//Calendar Header
+mwl-demo-utils-calendar-header .row{
+  display: flex !important;
+  justify-content: space-between !important;
+}
 
+mwl-demo-utils-calendar-header .col-md-4 .btn-group{
+  padding: 0;
+  margin-top: 10px;
+}
+
+mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button{
+  padding: 10px;
+  color: white;
+  background-color: #747474;
+  border-width: 0;
+}
+
+.btn{
+  padding: 0;
+}
+
+mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:hover{
+  padding: 10px;
+  color: white;
+  background-color: #ca0034;
+  border-width: 0;
+}
+
+mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:active{
+  padding: 10px;
+  color: white;
+  background-color: #bd0027;
+  border-width: 0;
+}
+
+mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:selected{
+  padding: 10px;
+  color: white;
+  background-color: #ca0034;
+  border-width: 0;
+}
+
+.calendarLeftBtn{
+  border-radius: 10px 0 0 10px;
+}
+
+.calendarRightBtn{
+  border-radius: 0 10px 10px 0;
+}
+
+.my-custom-class span {
+  color: white !important;
+  font-weight: bold;
+}
+
+.my-custom-class span:hover{
+  text-decoration: none !important;
+}
 

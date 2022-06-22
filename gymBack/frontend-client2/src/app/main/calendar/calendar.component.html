@@ -1,5 +1,15 @@
 <h1>Calendario de {{title}}</h1>
-<p>Nombre: {{name}}</p>
-<p>Apellidos: {{lastname}}</p>
-<p>DNI: {{dni}}</p>
-<p>Número de socio: {{idClient}}</p>
+<p>Nombre: {{currentClient.NAME}}</p>
+<p>Apellidos: {{currentClient.LASTNAME}}</p>
+<p>DNI: {{currentClient.DNI}}</p>
+<p>Número de socio: {{currentClient.ID}}</p>
+
+<!-- Calendario -->
+<p>CLASES:</p>
+<ul>
+    <li *ngFor="let item of clientsClasses">
+      {{ item }}
+    </li>
+</ul>
+
+

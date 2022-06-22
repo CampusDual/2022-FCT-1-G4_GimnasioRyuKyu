@@ -1,0 +1,24 @@
+<div>
+  <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+  </mwl-demo-utils-calendar-header>
+
+  <ng-template #loading>
+    <div class="text-center">
+      <em class="fas fa-spin fa-spinner fa-5x"></em> <br/>
+      Loading events...
+    </div>
+  </ng-template>
+  <div class="">
+    <div *ngIf="events$ | async; else loading; let events">
+      <div [ngSwitch]="view">
+        <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate"
+          [events]="events" [activeDayIsOpen]="activeDayIsOpen">
+        </mwl-calendar-month-view>
+        <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events">
+        </mwl-calendar-week-view>
+        <mwl-calendar-day-view *ngSwitchCase="'day'" [viewDate]="viewDate" [events]="events">
+        </mwl-calendar-day-view>
+      </div>
+    </div>
+  </div>
+</div>

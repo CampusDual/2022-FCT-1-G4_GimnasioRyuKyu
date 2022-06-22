@@ -14,7 +14,7 @@
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
           aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
+          <em class="fas fa-bars"></em>
         </button>
         <div class="collapse navbar-collapse" id="navbarExample01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -41,13 +41,17 @@
               <mat-icon svgIcon="ontimize:keyboard_arrow_down"></mat-icon>
             </div>
             <mat-menu #menu="matMenu" yPosition="below" class="o-mat-menu">
-              <button type="button" mat-menu-item (click)="logout()">
+              <button type="button" mat-menu-item (click)="profile()">
                 <mat-icon>person</mat-icon>
                 <span> Mi Perfil</span>
               </button>
               <button type="button" mat-menu-item (click)="calendar()">
                 <mat-icon>perm_contact_calendar</mat-icon>
                 <span>Calendario</span>
+              </button>
+              <button type="button" mat-menu-item (click)="calendar2()">
+                <mat-icon>perm_contact_calendar</mat-icon>
+                <span>Calendario2</span>
               </button>
               <button type="button" mat-menu-item (click)="logout()">
                 <mat-icon svgIcon="ontimize:power_settings_new"></mat-icon>

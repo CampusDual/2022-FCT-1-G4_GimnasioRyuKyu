@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
 })
 export class HomeService {
 
-  urlClasses = "http://207.188.180.150:33333/classes/showClasses?columns=NAME,DESCRIPTION";
-  urlRooms = "http://207.188.180.150:33333/rooms/showRooms?columns=NAME,DESCRIPTION,PHOTO";
-  urlSubs = "http://207.188.180.150:33333/subscriptions/showSubs?columns=SUB_MONTHS,PRICE";
+  urlClasses = "http://207.188.183.218:33333/classes/showClasses?columns=NAME,DESCRIPTION";
+  urlRooms = "http://207.188.183.218:33333/rooms/showRooms?columns=NAME,DESCRIPTION,PHOTO";
+  urlSubs = "http://207.188.183.218:33333/subscriptions/showSubs?columns=SUB_MONTHS,PRICE";
  constructor(private http:HttpClient){}
 
  getClasses() {

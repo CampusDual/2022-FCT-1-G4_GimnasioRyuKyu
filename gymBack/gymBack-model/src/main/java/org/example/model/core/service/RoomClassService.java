@@ -31,6 +31,12 @@ public class RoomClassService implements IRoomClassService {
     }
 
     @Override
+    public EntityResult showRoomClassQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
+        return this.daoHelper.query(this.roomClassDao, keyMap, attrList, RoomClassDao.QUERY_ROOM_CLASS);
+    }
+
+
+    @Override
     public EntityResult roomClassInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
         try {
             transformToHour(attrMap);

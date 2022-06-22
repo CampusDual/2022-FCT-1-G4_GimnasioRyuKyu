@@ -1,7 +1,15 @@
+// .profileForm{
+//   background-color: white;
+// }
+
 .columPhoto{
   width: 200px;
   margin-top: 8px;
   margin-right: 20px;
+}
+
+.columnInputs{
+  background-color: lightgrey;
 }
 
 .clientPhoto.o-image .o-image-content.o-image-auto-fit .o-image-display-container>img{
@@ -9,9 +17,9 @@
   max-height: 100%;
 }
 
-.birthdayDate{
-  margin-top: 7px;
-}
+// .birthdayDate{
+//   margin-top: 7px;
+// }
 
 .subExpirationDate{
   margin-top: 6px;
@@ -21,3 +29,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.photoBack{
+  width: 50%;
+}
+

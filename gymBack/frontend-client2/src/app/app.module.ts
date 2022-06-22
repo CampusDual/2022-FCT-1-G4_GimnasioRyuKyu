@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { CONFIG } from './app.config';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 // Standard providers...
 // Defining custom providers (if needed)...
@@ -16,6 +18,10 @@ export const customProviders: any = [
 
 @NgModule({
   imports: [
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,}),
     ONTIMIZE_MODULES,
     OntimizeWebModule,
     AppRoutingModule,
