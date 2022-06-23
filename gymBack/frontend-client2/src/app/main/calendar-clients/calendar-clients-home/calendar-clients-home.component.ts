@@ -1,6 +1,6 @@
 import { CalendarService } from './../../../shared/service/calendar.service';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from "ontimize-web-ngx";
+import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { AuthService, Observable } from 'ontimize-web-ngx';
 import { Event } from "../../../shared/models/event";
 import { Router, ActivatedRoute, Data } from "@angular/router";
 import { setHours, setMinutes } from "date-fns";
@@ -34,7 +34,7 @@ import { Clients } from '../../../shared/models/Clients';
     },
   ],
 })
-export class CalendarClientsHomeComponent implements OnInit {
+export class CalendarClientsHomeComponent{
 
   view: CalendarView = CalendarView.Week;
   viewDate: Date = new Date();
@@ -49,33 +49,63 @@ export class CalendarClientsHomeComponent implements OnInit {
     router: Router;
     title = '';
 
+
   constructor(
     private Router: Router,
     private activatedRoute: ActivatedRoute,
     public calendarService:CalendarService,
+    @Inject(AuthService) private authService: AuthService
   ) { }
 
   ngOnInit() {
+    this.getUserName();
+    this.getClient();
     this.fetchEvents();
-    console.log(this.events$);
-  }
-
-  getClientClasses(){
-    this.calendarService.getClientsClasses().subscribe(
-             res => {
-               this.clientsClasses = res.data;
-              this.clientsClasses.map(clientClass =>{
-                if(clientClass.ID_CLIENT==(this.currentClient.ID)){
-                 console.log(clientClass);
-                }
-               })
-
-             },
-             error => console.log(error)
-           )
-           return this.clientsClasses;
+    this.events$.subscribe((x) => console.log(x));
    }
 
+   getUserName() {
+    this.title = this.authService.getSessionInfo().user;
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
+
+  getSessionInfo() {
+    return this.authService.getSessionInfo();
+  }
+
+  private getClient() {
+    this.calendarService.getClients().subscribe(
+      (res) => {
+        this.clients = res.data;
+        let clientUser = this.clients.filter(
+          (client) => client.EMAIL.indexOf(this.title) > -1
+        );
+        this.currentClient = clientUser.length > 0 ? clientUser[0] : null;
+        console.log(this.currentClient);
+      },
+      (error) => console.log(error)
+    );
+   // this.getClientClasses();
+  }
+
+
+
+  getClientClasses() {
+    this.calendarService.getClientsClasses().subscribe(
+      (res) => {
+        this.clientsClasses = res.data;
+        let classesUser = this.clientsClasses.filter(
+          (clientClass) => clientClass.ID_CLIENT==(this.currentClient.ID)
+        );
+        this.clientsClasses = classesUser;
+        console.log(this.clientsClasses);
+      },
+      (error) => console.log(error)
+    );
+  }
 
   fetchEvents(): void {
     const getStart: any = {
@@ -93,22 +123,42 @@ export class CalendarClientsHomeComponent implements OnInit {
     this.events$ = this.calendarService.getClientsClasses().pipe(
       map((results: any) => {
         return results.data.map((event: Event) => {
+          console.log(event);
           return {
             title:
-              event.room_name +
+              event.CLASS_NAME +
               ": " +
-              event.class_name +
+              event.CLASS_NAME +
               " - " +
-              event.monitor_name,
-            start: setHours(parseFloat(event.date), parseFloat(event.h_start)),
-            end: setHours(parseFloat(event.date), parseFloat(event.h_end)),
+              event.MONITOR_NAME,
+            start: setHours(parseFloat(event.DATE), parseFloat(event.H_START)),
+            end: setHours(parseFloat(event.DATE), parseFloat(event.H_END)),
             color: colors.customRed,
             cssClass: "my-custom-class",
           };
-
         });
       })
     );
+  }
+
+  dayClicked({
+    date,
+    events,
+  }: {
+    date: Date;
+    events: CalendarEvent<{ event: Event }>[];
+  }): void {
+    if (isSameMonth(date, this.viewDate)) {
+      if (
+        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
+        events.length === 0
+      ) {
+        this.activeDayIsOpen = false;
+      } else {
+        this.activeDayIsOpen = true;
+        this.viewDate = date;
+      }
+    }
   }
 
 }

@@ -4,11 +4,12 @@
 <p>DNI: {{currentClient.DNI}}</p>
 <p>Número de socio: {{currentClient.ID}}</p>
 
+
 <!-- Calendario -->
 <p>CLASES:</p>
 <ul>
     <li *ngFor="let item of clientsClasses">
-      {{ item }}
+      ({{item.DATE}}) {{ item.CLASS_NAME }}  {{item.H_START}}-{{item.H_END}} Monitor: {{item.MONITOR_NAME}}
     </li>
 </ul>
 

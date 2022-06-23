@@ -40,7 +40,7 @@ export class MainComponent implements OnInit {
 
     logout() {
       this.authService.logout();
-      this.router.navigate(['/main/login'], { relativeTo: this.actRoute });
+      this.router.navigate(['/main/home'], { relativeTo: this.actRoute });
     }
 
     isLoggedIn() {

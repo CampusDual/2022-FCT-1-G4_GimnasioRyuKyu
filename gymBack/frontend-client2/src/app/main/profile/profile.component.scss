@@ -1,35 +1,19 @@
-// .profileForm{
-//   background-color: white;
-// }
-
-.columPhoto{
-  width: 200px;
-  margin-top: 8px;
-  margin-right: 20px;
+.flexContainer{
+  //display: flex !important;
+  //flex-direction: row !important;
+  // display: grid;
+  // width: 100%;
+  // grid-template-columns: 1fr 6fr;
+  // grid-template-areas: "image infoC";
 }
 
-.columnInputs{
-  background-color: lightgrey;
+.imageContainer{
+  // width: auto;
+  // max-width: 30% auto;
+  //grid-area: image;
 }
 
-.clientPhoto.o-image .o-image-content.o-image-auto-fit .o-image-display-container>img{
-  max-width: 100%;
-  max-height: 100%;
+.infoContainer{
+  // max-width: 70%;
+  //grid-area: infoC;
 }
-
-// .birthdayDate{
-//   margin-top: 7px;
-// }
-
-.subExpirationDate{
-  margin-top: 6px;
-}
-
-.colapsiblesStyles{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.photoBack{
-  width: 50%;
-}
-

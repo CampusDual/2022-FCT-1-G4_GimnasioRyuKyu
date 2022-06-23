@@ -4,4 +4,8 @@ export class Clients{
   LASTNAME:string;
   EMAIL:string;
   DNI:string;
+  PHONE:string;
+  SUB_EXPIRATION_DATE:string;
+  BIRTHDAY:string;
+  PHOTO:string;
 }

@@ -47,13 +47,13 @@
   "gender":"Género",
   "birthday":"Fecha de nacimiento",
   "registration_date":"Fecha de registro",
-  "active":"Estado subcripción",
+  "active":"Estado suscripción",
   "Male":"Hombre",
   "Female":"Mujer",
   "Other":"Otro",
   "comboSubMonth": "Seleccionar meses",
-  "sub_expiration_date": "Caducidad subscripción",
-  "Manage subscription": "Administrar subscripción",
+  "sub_expiration_date": "Caducidad suscripción",
+  "Manage subscription": "Administrar suscripción",
   "Client classes": "Clases del cliente",
 
 

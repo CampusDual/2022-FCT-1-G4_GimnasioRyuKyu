@@ -1,5 +1,6 @@
 <div>
-  <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+  <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate" (viewDateChange)="fetchEvents()"
+    (viewChange)="fetchEvents()">
   </mwl-demo-utils-calendar-header>
 
   <ng-template #loading>
@@ -12,7 +13,7 @@
     <div *ngIf="events$ | async; else loading; let events">
       <div [ngSwitch]="view">
         <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate"
-          [events]="events" [activeDayIsOpen]="activeDayIsOpen">
+          [events]="events" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)">
         </mwl-calendar-month-view>
         <mwl-calendar-week-view *ngSwitchCase="'week'" [viewDate]="viewDate" [events]="events">
         </mwl-calendar-week-view>

@@ -1,11 +1,9 @@
 export interface Event {
-  id_room_class: string;
-  date: string;
-  h_start: string;
-  h_end: string;
-  id_monitor: string;
-  class_name: string;
-  monitor_name: string;
-  room_name: string;
+  ID_CLIENT_CLASS: string;
+  DATE: string;
+  H_START: string;
+  H_END: string;
+  CLASS_NAME: string;
+  MONITOR_NAME: string;
 
 }

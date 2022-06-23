@@ -7,7 +7,7 @@ import { Clients } from "../models/Clients";
 })
 export class CalendarService {
 
-  urlClients = "http://207.188.183.218:33333/clients/activeClient?columns=ID,NAME,LASTNAME,EMAIL,DNI";
+  urlClients = "http://207.188.183.218:33333/clients/activeClient?columns=ID,NAME,LASTNAME,EMAIL,DNI,PHONE,SUB_EXPIRATION_DATE,BIRTHDAY,PHOTO";
   urlClientsClasses = "http://207.188.183.218:33333/clientsClasses/showClientsClasses?columns=ID_CLIENT,ID_ASSING_ROOM,DATE,CLASS_NAME,H_START,H_END,MONITOR_NAME";
 
 
@@ -20,8 +20,5 @@ export class CalendarService {
  getClientsClasses() {
   return this.http.get<any>(this.urlClientsClasses);
  }
-
-
-
 
 }
