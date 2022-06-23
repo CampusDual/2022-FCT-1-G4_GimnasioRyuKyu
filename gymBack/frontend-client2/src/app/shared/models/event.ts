@@ -1,4 +1,5 @@
 export interface Event {
+  ID_CLIENT:string;
   ID_CLIENT_CLASS: string;
   DATE: string;
   H_START: string;

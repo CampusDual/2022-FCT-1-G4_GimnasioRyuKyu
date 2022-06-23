@@ -103,10 +103,11 @@ export class CalendarComponent implements OnInit {
         );
         this.currentClient = clientUser.length > 0 ? clientUser[0] : null;
         console.log(this.currentClient);
+        this.getClientClasses();
       },
       (error) => console.log(error)
     );
-    this.getClientClasses();
+
   }
 
 

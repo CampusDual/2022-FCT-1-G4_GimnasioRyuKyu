@@ -56,12 +56,10 @@ export class ProfileComponent implements OnInit {
         let clientUser = this.clients.filter(
           (client) => client.EMAIL.indexOf(this.title) > -1
         );
+
         this.currentClient = clientUser.length > 0 ? clientUser[0] : null;
         let birthday=formatDate(new Date(this.currentClient.BIRTHDAY),'dd/MM/yyyy','en_US');
         this.currentClient.BIRTHDAY= birthday;
-        let subDate=formatDate(new Date(this.currentClient.SUB_EXPIRATION_DATE),'dd/MM/yyyy','en_US');
-        this.currentClient.SUB_EXPIRATION_DATE= subDate;
-
         console.log(this.currentClient);
       },
       (error) => console.log(error)

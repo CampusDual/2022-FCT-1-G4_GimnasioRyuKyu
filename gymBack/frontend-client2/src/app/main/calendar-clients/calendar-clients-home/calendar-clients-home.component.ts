@@ -61,7 +61,7 @@ export class CalendarClientsHomeComponent{
     this.getUserName();
     this.getClient();
     this.fetchEvents();
-    this.events$.subscribe((x) => console.log(x));
+    //this.events$.subscribe((x) => console.log(x));
    }
 
    getUserName() {
@@ -85,15 +85,16 @@ export class CalendarClientsHomeComponent{
         );
         this.currentClient = clientUser.length > 0 ? clientUser[0] : null;
         console.log(this.currentClient);
+        this.getClientClasses();
       },
       (error) => console.log(error)
     );
-   // this.getClientClasses();
+
   }
 
 
 
-  getClientClasses() {
+  getClientClasses() :any {
     this.calendarService.getClientsClasses().subscribe(
       (res) => {
         this.clientsClasses = res.data;
@@ -102,6 +103,7 @@ export class CalendarClientsHomeComponent{
         );
         this.clientsClasses = classesUser;
         console.log(this.clientsClasses);
+        return this.clientsClasses;
       },
       (error) => console.log(error)
     );
@@ -120,10 +122,9 @@ export class CalendarClientsHomeComponent{
       day: endOfDay,
     }[this.view];
 
-    this.events$ = this.calendarService.getClientsClasses().pipe(
+    this.events$ = this.getClientClasses().pipe(
       map((results: any) => {
         return results.data.map((event: Event) => {
-          console.log(event);
           return {
             title:
               event.CLASS_NAME +
@@ -136,7 +137,8 @@ export class CalendarClientsHomeComponent{
             color: colors.customRed,
             cssClass: "my-custom-class",
           };
-        });
+        }
+        );
       })
     );
   }

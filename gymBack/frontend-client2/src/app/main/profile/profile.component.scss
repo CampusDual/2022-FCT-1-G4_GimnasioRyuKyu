@@ -1,19 +1,7 @@
-.flexContainer{
-  //display: flex !important;
-  //flex-direction: row !important;
-  // display: grid;
-  // width: 100%;
-  // grid-template-columns: 1fr 6fr;
-  // grid-template-areas: "image infoC";
-}
-
 .imageContainer{
-  // width: auto;
-  // max-width: 30% auto;
-  //grid-area: image;
+  width: 100%;
 }
 
 .infoContainer{
-  // max-width: 70%;
-  //grid-area: infoC;
+  width: 100%;
 }
