@@ -70,3 +70,19 @@ mwl-demo-utils-calendar-header .col-md-4 .btn-group .btn button:selected{
   text-decoration: none !important;
 }
 
+.mat-tab-label{
+  padding-bottom: 1% !important;
+  font-size: large !important;
+  color:white !important;
+}
+
+.mat-tab-group{
+  padding-top: 2% !important;
+  font-size: large !important;
+  color:white !important;
+  text-align: center !important;
+}
+
+.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-header-pagination-chevron {
+  border-color: #ca0034 !important;
+}

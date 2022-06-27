@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService, LocalStorageService, NavigationService } from 'ontimize-web-ngx';
 import { Observable } from 'rxjs';
+import { CalendarService } from './../../shared/service/calendar.service';
+import { Clients } from '../../shared/models/Clients';
 
 @Component({
   selector: 'login',
@@ -18,6 +20,7 @@ export class LoginComponent implements OnInit {
   sessionExpired = false;
 
   router: Router;
+  clients: Clients[]=[];
 
   constructor(
     private actRoute: ActivatedRoute,
@@ -25,7 +28,8 @@ export class LoginComponent implements OnInit {
     @Inject(NavigationService) public navigation: NavigationService,
     @Inject(AuthService) private authService: AuthService,
     @Inject(LocalStorageService) private localStorageService,
-    public injector: Injector
+    public injector: Injector,
+    public calendarService:CalendarService
   ) {
     this.router = router;
 
@@ -61,11 +65,28 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.value.password;
     if (userName && userName.length > 0 && password && password.length > 0) {
       const self = this;
-      this.authService.login(userName, password)
-        .subscribe(() => {
-          self.sessionExpired = false;
-          self.router.navigate([''], { relativeTo: this.actRoute });
-        }, this.handleError);
+
+      this.calendarService.getClients().subscribe(
+        (res) => {
+          this.clients = res.data;
+          let clientUser = this.clients.filter(
+            (client) => client.EMAIL.indexOf(userName) > -1
+          );
+          if(clientUser.length>0){
+            this.authService.login(userName, password)
+            .subscribe(() => {
+              self.sessionExpired = false;
+              self.router.navigate([''], { relativeTo: this.actRoute });
+            }, this.handleError);
+          }else{
+            console.error("El cliente no está activo");
+          }
+
+        },
+        (error) => console.log(error)
+      );
+
+
     }
   }
 

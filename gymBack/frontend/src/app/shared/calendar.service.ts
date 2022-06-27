@@ -1,5 +1,5 @@
 import { Injectable, Injector } from '@angular/core';
-import { Observable, OntimizeBaseService, Util } from 'ontimize-web-ngx';
+import { OntimizeBaseService, Util } from 'ontimize-web-ngx';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
@@ -35,12 +35,5 @@ export class CalendarService extends OntimizeBaseService{
     };
     return this.http.get(this.url + '?columns=id_room_class,date,h_start,h_end,id_monitor,class_name,monitor_name,room_name' , options);
   }
-
- /* public getEvents(){
-    const options = {
-      headers : this.buildHeaders()
-    };
-    return this.http.get(this.url + '' , options);
-  }*/
 
 }

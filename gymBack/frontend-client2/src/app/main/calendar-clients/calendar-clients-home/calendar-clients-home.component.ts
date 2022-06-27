@@ -1,23 +1,12 @@
 import { CalendarService } from './../../../shared/service/calendar.service';
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
 import { AuthService, Observable } from 'ontimize-web-ngx';
 import { Event } from "../../../shared/models/event";
-import { Router, ActivatedRoute, Data } from "@angular/router";
-import { setHours, setMinutes } from "date-fns";
+import { Router } from "@angular/router";
+import { setHours,isSameMonth,isSameDay} from "date-fns";
 import { colors } from "../demo-utils/colors";
 import { map } from "rxjs/operators";
 import { CalendarEvent, CalendarEventTitleFormatter, CalendarView } from "angular-calendar";
-import {
-  isSameMonth,
-  isSameDay,
-  startOfMonth,
-  endOfMonth,
-  startOfWeek,
-  endOfWeek,
-  startOfDay,
-  endOfDay,
-  format,
-} from "date-fns";
 import { CustomEventTitleFormatter } from "../demo-utils/custom-event-title-formatter.provider";
 import { ClientsClasses } from '../../../shared/models/ClientsClasses';
 import { Clients } from '../../../shared/models/Clients';
@@ -51,8 +40,6 @@ export class CalendarClientsHomeComponent{
 
 
   constructor(
-    private Router: Router,
-    private activatedRoute: ActivatedRoute,
     public calendarService:CalendarService,
     @Inject(AuthService) private authService: AuthService
   ) { }
@@ -61,7 +48,6 @@ export class CalendarClientsHomeComponent{
     this.getUserName();
     this.getClient();
     this.fetchEvents();
-    //this.events$.subscribe((x) => console.log(x));
    }
 
    getUserName() {
@@ -102,7 +88,6 @@ export class CalendarClientsHomeComponent{
           (clientClass) => clientClass.ID_CLIENT==(this.currentClient.ID)
         );
         this.clientsClasses = classesUser;
-        console.log(this.clientsClasses);
         return this.clientsClasses;
       },
       (error) => console.log(error)
@@ -110,19 +95,7 @@ export class CalendarClientsHomeComponent{
   }
 
   fetchEvents(): void {
-    const getStart: any = {
-      month: startOfMonth,
-      week: startOfWeek,
-      day: startOfDay,
-    }[this.view];
-
-    const getEnd: any = {
-      month: endOfMonth,
-      week: endOfWeek,
-      day: endOfDay,
-    }[this.view];
-
-    this.events$ = this.getClientClasses().pipe(
+    this.events$ = this.calendarService.getEvents(this.currentClient.ID).pipe(
       map((results: any) => {
         return results.data.map((event: Event) => {
           return {
@@ -137,8 +110,7 @@ export class CalendarClientsHomeComponent{
             color: colors.customRed,
             cssClass: "my-custom-class",
           };
-        }
-        );
+        });
       })
     );
   }

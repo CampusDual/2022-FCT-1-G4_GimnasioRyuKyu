@@ -1,23 +1,12 @@
 import { Observable } from "ontimize-web-ngx";
 import { Event } from "../../../shared/models/event";
-import { Router, ActivatedRoute, Data } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { CalendarService } from "./../../../shared/calendar.service";
 import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { setHours, setMinutes } from "date-fns";
+import { setHours, isSameMonth, isSameDay } from "date-fns";
 import { colors } from "../demo-utils/colors";
 import { map } from "rxjs/operators";
 import { CalendarEvent, CalendarEventTitleFormatter, CalendarView } from "angular-calendar";
-import {
-  isSameMonth,
-  isSameDay,
-  startOfMonth,
-  endOfMonth,
-  startOfWeek,
-  endOfWeek,
-  startOfDay,
-  endOfDay,
-  format,
-} from "date-fns";
 import { CustomEventTitleFormatter } from "../demo-utils/custom-event-title-formatter.provider";
 
 @Component({
@@ -33,7 +22,7 @@ import { CustomEventTitleFormatter } from "../demo-utils/custom-event-title-form
   ],
 })
 export class CalendarHomeComponent {
-  
+
   view: CalendarView = CalendarView.Week;
   viewDate: Date = new Date();
   events$: Observable<CalendarEvent<{ event: Event }>[]>;
@@ -51,17 +40,6 @@ export class CalendarHomeComponent {
   }
 
   fetchEvents(): void {
-    const getStart: any = {
-      month: startOfMonth,
-      week: startOfWeek,
-      day: startOfDay,
-    }[this.view];
-
-    const getEnd: any = {
-      month: endOfMonth,
-      week: endOfWeek,
-      day: endOfDay,
-    }[this.view];
 
     this.events$ = this.calendarService.getEvents().pipe(
       map((results: any) => {

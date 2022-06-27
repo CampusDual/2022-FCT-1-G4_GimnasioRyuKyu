@@ -26,12 +26,9 @@ export class MainComponent implements OnInit {
     this.getUserName();
   }
 
-  calendar(){
-  this.router.navigate(['/main/calendar'],{relativeTo:this.actRoute});
-  }
 
-  calendar2(){
-    this.router.navigate(['/main/calendar2'],{relativeTo:this.actRoute});
+  calendar(){
+    this.router.navigate(['/main/calendar'],{relativeTo:this.actRoute});
     }
 
   profile(){

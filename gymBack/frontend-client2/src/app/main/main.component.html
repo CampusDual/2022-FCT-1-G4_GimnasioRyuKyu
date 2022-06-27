@@ -19,13 +19,8 @@
         <div class="collapse navbar-collapse" id="navbarExample01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page"  [routerLink]="['/main/home']"> <img src="../assets/images/logoGYMBlanco.png" height="40" width="40" /></a>
+              <a class="nav-link" aria-current="page"  [routerLink]="['/main/home']"> <img src="../assets/images/logoGYMBlanco.png" height="40" width="40" alt="logo empresa" /></a>
             </li>
-            <!--
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/main/profile']"><p>Profile</p></a>
-            </li>
-            -->
           </ul>
           <ul class="navbar-nav navbar-right">
             <li class="nav-item" >
@@ -49,10 +44,6 @@
                 <mat-icon>perm_contact_calendar</mat-icon>
                 <span>Calendario</span>
               </button>
-              <button type="button" mat-menu-item (click)="calendar2()">
-                <mat-icon>perm_contact_calendar</mat-icon>
-                <span>Calendario2</span>
-              </button>
               <button type="button" mat-menu-item (click)="logout()">
                 <mat-icon svgIcon="ontimize:power_settings_new"></mat-icon>
                 <span>{{ 'LOGOUT' | oTranslate }}</span>
@@ -64,19 +55,6 @@
     </nav>
     <!-- Navbar -->
   </header>
-
-<!--
-  <o-bar-menu title="APP_TITLE">
-    <o-bar-menu-group title="OPTIONS">
-      <o-bar-menu-group title="LANGUAGE">
-        <o-locale-bar-menu-item locale="en" title="English"></o-locale-bar-menu-item>
-        <o-locale-bar-menu-item locale="es" title="Español"></o-locale-bar-menu-item>
-      </o-bar-menu-group>
-      <o-bar-menu-separator></o-bar-menu-separator>
-      <o-bar-menu-item title="LOGOUT" icon="power_settings_new" route="/main/login" confirm="MESSAGES.CONFIRM_LOGOUT"></o-bar-menu-item>
-    </o-bar-menu-group>
-  </o-bar-menu>
--->
 
   <router-outlet>
 

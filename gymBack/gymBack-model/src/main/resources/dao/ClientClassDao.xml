@@ -23,6 +23,12 @@
                 <AmbiguousColumn name="id_assing_client" prefix="cc" databaseName="id_room_class"/>
                 <AmbiguousColumn name="id_monitor" prefix="m" databaseName="id"/>
                 <AmbiguousColumn name="monitor_name" prefix="m" databaseName="name"/>
+                <AmbiguousColumn name="monitor_lastname" prefix="m" databaseName="lastname"/>
+                <AmbiguousColumn name="client_lastname" prefix="v" databaseName="lastname"/>
+                <AmbiguousColumn name="monitor_dni" prefix="m" databaseName="dni"/>
+                <AmbiguousColumn name="client_dni" prefix="v" databaseName="dni"/>
+                <AmbiguousColumn name="monitor_photo" prefix="m" databaseName="photo"/>
+                <AmbiguousColumn name="client_photo" prefix="v" databaseName="photo"/>
             </AmbiguousColumns>
             <Sentence>
                 <![CDATA[
